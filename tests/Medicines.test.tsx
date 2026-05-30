@@ -6,6 +6,15 @@ import { MEDS } from '../src/data';
 import { MedicinesScreen } from '../src/screens/Medicines';
 
 describe('MedicinesScreen', () => {
+  it('renders medicines from the MEDS data set by default', () => {
+    render(<MedicinesScreen />);
+
+    for (const medicine of MEDS) {
+      expect(screen.getAllByText(medicine.name).length).toBeGreaterThan(0);
+      expect(screen.getAllByText(medicine.next).length).toBeGreaterThan(0);
+    }
+  });
+
   it('filters medicines by the selected pet chip', async () => {
     const user = userEvent.setup();
 

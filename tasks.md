@@ -93,7 +93,7 @@
 - [x] [#60. Implement PetDetailScreen tab switching (About/Health/Notes)](#60-implement-petdetailscreen-tab-switching-abouthealthnotes) @2026-06-05 deps:59 assignee:@codex
 - [x] [#61. Implement editable notes in PetDetailScreen](#61-implement-editable-notes-in-petdetailscreen) @2026-06-05 deps:60 assignee:@codex
 - [x] [#62. Implement MedicinesScreen pet filter](#62-implement-medicinesscreen-pet-filter) @2026-06-05 deps:48 assignee:@codex
-- [ ] [#63. Bind MedicinesScreen to MEDS data](#63-bind-medicinesscreen-to-meds-data) @2026-06-05 deps:62 assignee:@codex
+- [x] [#63. Bind MedicinesScreen to MEDS data](#63-bind-medicinesscreen-to-meds-data) @2026-06-05 deps:62 assignee:@codex
 - [ ] [#64. Implement medicine status toggle (Aplicada)](#64-implement-medicine-status-toggle-aplicada) @2026-06-05 deps:63 assignee:@codex
 - [ ] [#65. Implement AppointmentsScreen calendar date marking](#65-implement-appointmentsscreen-calendar-date-marking) @2026-06-06 deps:50 assignee:@codex
 - [ ] [#66. Implement AppointmentsScreen appointment filtering by date](#66-implement-appointmentsscreen-appointment-filtering-by-date) @2026-06-06 deps:65 assignee:@codex

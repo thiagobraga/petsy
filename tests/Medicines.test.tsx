@@ -39,4 +39,25 @@ describe('MedicinesScreen', () => {
     expect(screen.getAllByText('Carprofeno').length).toBeGreaterThan(0);
     expect(screen.queryByText('Apoquel')).not.toBeInTheDocument();
   });
+
+  it('toggles a dose between Aplicar and Aplicada', async () => {
+    const user = userEvent.setup();
+
+    render(<MedicinesScreen petFilter="luna" />);
+
+    expect(screen.getByLabelText('A dar: 1')).toBeInTheDocument();
+    expect(screen.getByLabelText('Aplicadas: 1')).toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Apoquel 08:00 aplicada' }));
+
+    expect(screen.getByRole('button', { name: 'Apoquel 08:00 aplicar' })).toBeInTheDocument();
+    expect(screen.getByLabelText('A dar: 2')).toBeInTheDocument();
+    expect(screen.getByLabelText('Aplicadas: 0')).toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Bravecto Domingo aplicar' }));
+
+    expect(screen.getByRole('button', { name: 'Bravecto Domingo aplicada' })).toBeInTheDocument();
+    expect(screen.getByLabelText('A dar: 1')).toBeInTheDocument();
+    expect(screen.getByLabelText('Aplicadas: 1')).toBeInTheDocument();
+  });
 });

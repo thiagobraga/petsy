@@ -8,13 +8,26 @@ interface MedicinesScreenProps {
   petFilter?: string;
 }
 
+const doseKey = (medicineId: string, doseIndex: number) => `${medicineId}-${doseIndex}`;
+const INITIAL_APPLIED_DOSES: Record<string, boolean> = {
+  [doseKey('m1', 0)]: true,
+};
+
 // Medicines page — list for all pets, filter by pet.
 export function MedicinesScreen({ petFilter = 'all' }: MedicinesScreenProps) {
   const [tab, setTab] = React.useState('meds');
   const [active, setActive] = React.useState(petFilter);
-  const [checked, setChecked] = React.useState({ m1: true, m3: false });
+  const [appliedDoses, setAppliedDoses] =
+    React.useState<Record<string, boolean>>(INITIAL_APPLIED_DOSES);
 
   const list = MEDS.filter((m) => active === 'all' || m.petId === active);
+  const totalDoseCount = list.reduce((sum, medicine) => sum + medicine.when.length, 0);
+  const appliedDoseCount = list.reduce(
+    (sum, medicine) =>
+      sum + medicine.when.filter((_, index) => appliedDoses[doseKey(medicine.id, index)]).length,
+    0
+  );
+  const pendingDoseCount = totalDoseCount - appliedDoseCount;
 
   return (
     <div
@@ -115,8 +128,8 @@ export function MedicinesScreen({ petFilter = 'all' }: MedicinesScreenProps) {
             gap: 8,
           }}
         >
-          <SummaryTile n="2" l="A dar" tone="pink" />
-          <SummaryTile n="3" l="Aplicadas" tone="ok" />
+          <SummaryTile n={String(pendingDoseCount)} l="A dar" tone="pink" />
+          <SummaryTile n={String(appliedDoseCount)} l="Aplicadas" tone="ok" />
           <SummaryTile n="0" l="Atrasadas" tone="beige" />
         </div>
 
@@ -188,34 +201,43 @@ export function MedicinesScreen({ petFilter = 'all' }: MedicinesScreenProps) {
                   </div>
                   {/* check actions */}
                   <div style={{ display: 'flex', gap: 6, marginTop: 10 }}>
-                    {m.when.map((t, i) => (
-                      <button
-                        key={i}
-                        onClick={() =>
-                          setChecked((c) => ({ ...c, [m.id + '-' + i]: !c[m.id + '-' + i] }))
-                        }
-                        style={{
-                          flex: 1,
-                          height: 36,
-                          borderRadius: 10,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          gap: 6,
-                          background: checked[m.id + '-' + i] ? T5.pink : T5.bgDeep,
-                          color: checked[m.id + '-' + i] ? '#fff' : T5.ink2,
-                          fontWeight: 700,
-                          fontSize: 12,
-                        }}
-                      >
-                        {checked[m.id + '-' + i] ? (
-                          <Ic5.check size={14} color="#fff" stroke={3} />
-                        ) : (
-                          <Ic5.pill size={14} color={T5.ink2} />
-                        )}
-                        {checked[m.id + '-' + i] ? 'Aplicada' : 'Aplicar'}
-                      </button>
-                    ))}
+                    {m.when.map((t, i) => {
+                      const key = doseKey(m.id, i);
+                      const applied = Boolean(appliedDoses[key]);
+
+                      return (
+                        <button
+                          key={key}
+                          aria-label={`${m.name} ${t} ${applied ? 'aplicada' : 'aplicar'}`}
+                          onClick={() =>
+                            setAppliedDoses((current) => ({
+                              ...current,
+                              [key]: !current[key],
+                            }))
+                          }
+                          style={{
+                            flex: 1,
+                            height: 36,
+                            borderRadius: 10,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: 6,
+                            background: applied ? T5.pink : T5.bgDeep,
+                            color: applied ? '#fff' : T5.ink2,
+                            fontWeight: 700,
+                            fontSize: 12,
+                          }}
+                        >
+                          {applied ? (
+                            <Ic5.check size={14} color="#fff" stroke={3} />
+                          ) : (
+                            <Ic5.pill size={14} color={T5.ink2} />
+                          )}
+                          {applied ? 'Aplicada' : 'Aplicar'}
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -272,7 +294,10 @@ function SummaryTile({ n, l, tone }) {
   const tones = { pink: T5.pink, ok: '#5B8451', beige: T5.ink2 };
   const bgs = { pink: T5.pinkPale, ok: '#E4F0DE', beige: T5.bgDeep };
   return (
-    <div style={{ background: bgs[tone], borderRadius: 16, padding: '12px 14px' }}>
+    <div
+      aria-label={`${l}: ${n}`}
+      style={{ background: bgs[tone], borderRadius: 16, padding: '12px 14px' }}
+    >
       <div
         style={{ fontFamily: T5.fontDisplay, fontSize: 22, fontWeight: 700, color: tones[tone] }}
       >

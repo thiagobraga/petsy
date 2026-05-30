@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Router } from 'wouter';
 import { TOKENS } from './tokens';
 import { I } from './icons';
 import { PETS, MEDS, APPOINTMENTS, EXAMS, DIARY, MEDIA, petById } from './data';
@@ -12,6 +13,7 @@ import { AppointmentsScreen } from './screens/Appointments';
 import { DiaryScreen } from './screens/Diary';
 import { MediaScreen } from './screens/Media';
 import { UIKitScreen } from './screens/UIKit';
+import { App } from './App';
 
 (window as any).TOKENS = TOKENS;
 (window as any).I = I;
@@ -47,6 +49,8 @@ import { UIKitScreen } from './screens/UIKit';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <LoginScreen />
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>
 );

@@ -8,23 +8,23 @@
 
 ## Tasks
 
-### Phase 1: Foundation (T1-T15) — @claude
+### Phase 1: Foundation (T1-T15) — @claude ✅ COMPLETE
 
-- [ ] [#1. Initialize git repository](#1-initialize-git-repository) @2026-05-29 assignee:@claude
-- [ ] [#2. Create initial commit with current structure](#2-create-initial-commit-with-current-structure) @2026-05-29 deps:1 assignee:@claude
-- [ ] [#3. Set git user configuration for team consistency](#3-set-git-user-configuration-for-team-consistency) @2026-05-29 deps:1 assignee:@claude
-- [ ] [#4. Create package.json with project metadata](#4-create-packagejson-with-project-metadata) @2026-05-29 deps:1 assignee:@claude
-- [ ] [#5. Add React and core dependencies](#5-add-react-and-core-dependencies) @2026-05-29 deps:4 assignee:@claude
-- [ ] [#6. Add dev dependencies (Vite, Vitest, ESLint, Prettier)](#6-add-dev-dependencies-vite-vitest-eslint-prettier) @2026-05-29 deps:4 assignee:@claude
-- [ ] [#7. Create npm scripts (dev, build, preview, test, lint, format)](#7-create-npm-scripts-dev-build-preview-test-lint-format) @2026-05-29 deps:6 assignee:@claude
-- [ ] [#8. Update CLAUDE.md with npm script documentation](#8-update-claudemd-with-npm-script-documentation) @2026-05-30 deps:7 assignee:@claude
-- [ ] [#9. Create .eslintrc.json with React/JSX rules](#9-create-eslintrcjson-with-reactjsx-rules) @2026-05-30 deps:6 assignee:@claude
-- [ ] [#10. Create .prettierrc with formatting rules](#10-create-prettierrc-with-formatting-rules) @2026-05-30 deps:6 assignee:@claude
-- [ ] [#11. Configure ESLint to ignore build and test directories](#11-configure-eslint-to-ignore-build-and-test-directories) @2026-05-30 deps:9 assignee:@claude
-- [ ] [#12. Install and configure Vitest](#12-install-and-configure-vitest) @2026-05-30 deps:6 assignee:@claude
-- [ ] [#13. Install testing library (@testing-library/react)](#13-install-testing-library-testinglibrary-react) @2026-05-30 deps:12 assignee:@claude
-- [ ] [#14. Create vitest.config.ts with React preset](#14-create-vitestconfigts-with-react-preset) @2026-05-30 deps:12 assignee:@claude
-- [ ] [#15. Create example test file for component testing](#15-create-example-test-file-for-component-testing) @2026-05-30 deps:14 assignee:@claude
+- [x] [#1. Initialize git repository](#1-initialize-git-repository) @2026-05-29 assignee:@claude
+- [x] [#2. Create initial commit with current structure](#2-create-initial-commit-with-current-structure) @2026-05-29 deps:1 assignee:@claude
+- [x] [#3. Set git user configuration for team consistency](#3-set-git-user-configuration-for-team-consistency) @2026-05-29 deps:1 assignee:@claude
+- [x] [#4. Create package.json with project metadata](#4-create-packagejson-with-project-metadata) @2026-05-29 deps:1 assignee:@claude
+- [x] [#5. Add React and core dependencies](#5-add-react-and-core-dependencies) @2026-05-29 deps:4 assignee:@claude
+- [x] [#6. Add dev dependencies (Vite, Vitest, ESLint, Prettier)](#6-add-dev-dependencies-vite-vitest-eslint-prettier) @2026-05-29 deps:4 assignee:@claude
+- [x] [#7. Create npm scripts (dev, build, preview, test, lint, format)](#7-create-npm-scripts-dev-build-preview-test-lint-format) @2026-05-29 deps:6 assignee:@claude
+- [x] [#8. Update CLAUDE.md with npm script documentation](#8-update-claudemd-with-npm-script-documentation) @2026-05-30 deps:7 assignee:@claude
+- [x] [#9. Create .eslintrc.json with React/JSX rules](#9-create-eslintrcjson-with-reactjsx-rules) @2026-05-30 deps:6 assignee:@claude
+- [x] [#10. Create .prettierrc with formatting rules](#10-create-prettierrc-with-formatting-rules) @2026-05-30 deps:6 assignee:@claude
+- [x] [#11. Configure ESLint to ignore build and test directories](#11-configure-eslint-to-ignore-build-and-test-directories) @2026-05-30 deps:9 assignee:@claude
+- [x] [#12. Install and configure Vitest](#12-install-and-configure-vitest) @2026-05-30 deps:6 assignee:@claude
+- [x] [#13. Install testing library (@testing-library/react)](#13-install-testing-library-testinglibrary-react) @2026-05-30 deps:12 assignee:@claude
+- [x] [#14. Create vitest.config.ts with React preset](#14-create-vitestconfigts-with-react-preset) @2026-05-30 deps:12 assignee:@claude
+- [x] [#15. Create example test file for component testing](#15-create-example-test-file-for-component-testing) @2026-05-30 deps:14 assignee:@claude
 
 
 ### Phase 2: Git & Linting (T16-T25) — @codex

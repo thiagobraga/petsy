@@ -1,3 +1,4 @@
+import React from 'react';
 // Dashboard — pets list + horizontal medicine schedule
 const { TOKENS: T3, I: Ic3 } = window;
 

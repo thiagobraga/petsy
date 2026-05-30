@@ -1,3 +1,4 @@
+import React from 'react';
 // Diary — timeline of pet entries with photos, mood, notes.
 const { TOKENS: T7, I: Ic7 } = window;
 

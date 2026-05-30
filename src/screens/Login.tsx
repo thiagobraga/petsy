@@ -1,3 +1,4 @@
+import React from 'react';
 // Login screen — matches the reference image.
 const { TOKENS: T2, I: Ic2 } = window;
 
@@ -12,7 +13,6 @@ export function LoginScreen() {
       height: '100%', width: '100%', display: 'flex', flexDirection: 'column',
       background: `linear-gradient(180deg, ${T2.bg} 0%, ${T2.bgDeep} 100%)`,
     }}>
-      <StatusBar/>
 
       {/* paw print decorations */}
       <div style={{ position: 'absolute', top: 90, left: 24, opacity: 0.18 }}>

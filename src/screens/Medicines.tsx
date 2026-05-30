@@ -1,3 +1,4 @@
+import React from 'react';
 // Medicines page — list for all pets, filter by pet.
 const { TOKENS: T5, I: Ic5 } = window;
 

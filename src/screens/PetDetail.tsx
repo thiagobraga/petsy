@@ -1,3 +1,4 @@
+import React from 'react';
 // Pet Detail screen — header card + tabs to medicines / appointments / exams
 const { TOKENS: T4, I: Ic4 } = window;
 

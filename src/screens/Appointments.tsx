@@ -1,3 +1,4 @@
+import React from 'react';
 // Appointments — Consultas + Exames tabs, mini calendar, next + recent lists.
 const { TOKENS: T6, I: Ic6 } = window;
 

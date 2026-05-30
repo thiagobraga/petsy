@@ -1,3 +1,4 @@
+import React from 'react';
 // Media — photo grid + album cards
 const { TOKENS: T8, I: Ic8 } = window;
 

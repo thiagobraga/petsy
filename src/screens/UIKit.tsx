@@ -1,3 +1,4 @@
+import React from 'react';
 // UI Kit / Styleguide — broad designer-facing reference.
 const { TOKENS: T9, I: Ic9 } = window;
 

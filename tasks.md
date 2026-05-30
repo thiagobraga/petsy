@@ -83,9 +83,9 @@
 
 ### Phase 8: Screen Implementation (T53-T72) — @codex
 
-- [ ] [#53. Implement LoginScreen form validation](#53-implement-loginscreen-form-validation) @2026-06-04 deps:50 assignee:@codex
-- [ ] [#54. Implement LoginScreen mock authentication](#54-implement-loginscreen-mock-authentication) @2026-06-04 deps:47,53 assignee:@codex
-- [ ] [#55. Implement LoginScreen error messages](#55-implement-loginscreen-error-messages) @2026-06-04 deps:53 assignee:@codex
+- [x] [#53. Implement LoginScreen form validation](#53-implement-loginscreen-form-validation) @2026-06-04 deps:50 assignee:@codex
+- [x] [#54. Implement LoginScreen mock authentication](#54-implement-loginscreen-mock-authentication) @2026-06-04 deps:47,53 assignee:@codex
+- [x] [#55. Implement LoginScreen error messages](#55-implement-loginscreen-error-messages) @2026-06-04 deps:53 assignee:@codex
 - [ ] [#56. Implement DashboardScreen pet selection](#56-implement-dashboardscreen-pet-selection) @2026-06-04 deps:48,50 assignee:@codex
 - [ ] [#57. Bind DashboardScreen to PETS and MEDS data](#57-bind-dashboardscreen-to-pets-and-meds-data) @2026-06-04 deps:56 assignee:@codex
 - [ ] [#58. Bind DashboardScreen greeting card to user/pet](#58-bind-dashboardscreen-greeting-card-to-userpet) @2026-06-04 deps:57 assignee:@codex

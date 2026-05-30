@@ -97,7 +97,7 @@
 - [x] [#64. Implement medicine status toggle (Aplicada)](#64-implement-medicine-status-toggle-aplicada) @2026-06-05 deps:63 assignee:@codex
 - [x] [#65. Implement AppointmentsScreen calendar date marking](#65-implement-appointmentsscreen-calendar-date-marking) @2026-06-06 deps:50 assignee:@codex
 - [x] [#66. Implement AppointmentsScreen appointment filtering by date](#66-implement-appointmentsscreen-appointment-filtering-by-date) @2026-06-06 deps:65 assignee:@codex
-- [ ] [#67. Implement DiaryScreen timeline rendering](#67-implement-diaryscreen-timeline-rendering) @2026-06-06 deps:50 assignee:@codex
+- [x] [#67. Implement DiaryScreen timeline rendering](#67-implement-diaryscreen-timeline-rendering) @2026-06-06 deps:50 assignee:@codex
 - [ ] [#68. Bind DiaryScreen mood indicators to data](#68-bind-diaryscreen-mood-indicators-to-data) @2026-06-06 deps:67 assignee:@codex
 - [ ] [#69. Implement editable diary entry text](#69-implement-editable-diary-entry-text) @2026-06-06 deps:68 assignee:@codex
 - [ ] [#70. Implement MediaScreen photo grid layout](#70-implement-mediascreen-photo-grid-layout) @2026-06-07 deps:50 assignee:@codex

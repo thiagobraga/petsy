@@ -649,6 +649,8 @@ export function MiniCalendar({
           return (
             <button
               key={i}
+              aria-label={`${month} day ${d}${isMarked ? ' marked' : ''}${isActive ? ' selected' : ''}`}
+              data-marked={isMarked ? 'true' : undefined}
               onClick={() => onPick?.(d)}
               style={{
                 height: sz,

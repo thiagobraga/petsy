@@ -3,8 +3,8 @@ import React from 'react';
 const { TOKENS: T2, I: Ic2 } = window;
 
 export function LoginScreen() {
-  const [email, setEmail] = React.useState('');
-  const [pass, setPass] = React.useState('');
+  const [email, setEmail] = React.useState('test@example.com');
+  const [pass, setPass] = React.useState('password');
   const [showPass, setShowPass] = React.useState(false);
   const [remember, setRemember] = React.useState(true);
 

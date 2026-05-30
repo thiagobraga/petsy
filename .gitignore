@@ -1,0 +1,8 @@
+.git
+.vscode
+.DS_Store
+.env
+.env.*
+node_modules
+.image-slots.state.json
+.design-canvas.state.json

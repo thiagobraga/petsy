@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Petsy · Mobile App</title>
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; background: #F4E3C6;
+      font-family: 'Nunito', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    #root { height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <!-- Canvas & frame components -->
+  <script type="text/babel" src="design-canvas.jsx"></script>
+  <script type="text/babel" src="ios-frame.jsx"></script>
+  <script src="image-slot.js"></script>
+
+  <!-- Petsy design system -->
+  <script type="text/babel" src="src/tokens.jsx"></script>
+  <script type="text/babel" src="src/icons.jsx"></script>
+  <script type="text/babel" src="src/data.jsx"></script>
+  <script type="text/babel" src="src/components.jsx"></script>
+
+  <!-- Screens -->
+  <script type="text/babel" src="src/screens/Login.jsx"></script>
+  <script type="text/babel" src="src/screens/Dashboard.jsx"></script>
+  <script type="text/babel" src="src/screens/PetDetail.jsx"></script>
+  <script type="text/babel" src="src/screens/Medicines.jsx"></script>
+  <script type="text/babel" src="src/screens/Appointments.jsx"></script>
+  <script type="text/babel" src="src/screens/Diary.jsx"></script>
+  <script type="text/babel" src="src/screens/Media.jsx"></script>
+  <script type="text/babel" src="src/screens/UIKit.jsx"></script>
+
+  <script type="text/babel">
+    const { DesignCanvas, DCSection, DCArtboard, DCPostIt } = window;
+    const T = window.TOKENS;
+
+    // Phone artboard wrapper — uses our own bezel so it nests cleanly in the
+    // design canvas without iOS chrome eating the screen.
+    function Phone({ children, width = 380, height = 800 }) {
+      return (
+        <div style={{
+          width, height, borderRadius: 46, overflow: 'hidden',
+          background: '#1a0e0a', padding: 8, position: 'relative',
+          boxShadow: '0 30px 60px rgba(58,38,32,0.18), 0 0 0 1px rgba(58,38,32,0.1)',
+        }}>
+          <div style={{
+            width: '100%', height: '100%', borderRadius: 38, overflow: 'hidden',
+            background: T.bg, position: 'relative',
+          }}>
+            {/* dynamic island */}
+            <div style={{
+              position: 'absolute', top: 11, left: '50%', transform: 'translateX(-50%)',
+              width: 116, height: 32, borderRadius: 20, background: '#1a0e0a', zIndex: 50,
+            }}/>
+            {children}
+          </div>
+        </div>
+      );
+    }
+    window.Phone = Phone;
+
+    function App() {
+      return (
+        <>
+          <PetsyFonts/>
+          <DesignCanvas>
+            <DCSection id="auth" title="01 · Authentication"
+              subtitle="Sign-in flow and account entry points.">
+              <DCArtboard id="login" label="Login · social + email" width={380} height={800}>
+                <Phone><LoginScreen/></Phone>
+              </DCArtboard>
+            </DCSection>
+
+            <DCSection id="home" title="02 · Home"
+              subtitle="Dashboard with pets list and the horizontal medicine schedule.">
+              <DCArtboard id="dashboard" label="Dashboard" width={380} height={800}>
+                <Phone><DashboardScreen/></Phone>
+              </DCArtboard>
+            </DCSection>
+
+            <DCSection id="pet" title="03 · Pet"
+              subtitle="Per-pet hub. Name, raça, DOB, castração, microchip — plus links to medicines, consultas e exames.">
+              <DCArtboard id="pet-luna" label="Luna · Pet detail" width={380} height={800}>
+                <Phone><PetDetailScreen petId="luna"/></Phone>
+              </DCArtboard>
+              <DCArtboard id="pet-biscoito" label="Biscoito · Pet detail" width={380} height={800}>
+                <Phone><PetDetailScreen petId="biscoito"/></Phone>
+              </DCArtboard>
+              <DCArtboard id="pet-mel" label="Mel · Pet detail (not castrated)" width={380} height={800}>
+                <Phone><PetDetailScreen petId="mel"/></Phone>
+              </DCArtboard>
+            </DCSection>
+
+            <DCSection id="meds" title="04 · Medicines"
+              subtitle="All active medications across pets, filterable; toggle dosages as you administer them.">
+              <DCArtboard id="meds-all" label="Medicines · All pets" width={380} height={800}>
+                <Phone><MedicinesScreen petFilter="all"/></Phone>
+              </DCArtboard>
+              <DCArtboard id="meds-luna" label="Medicines · Luna only" width={380} height={800}>
+                <Phone><MedicinesScreen petFilter="luna"/></Phone>
+              </DCArtboard>
+            </DCSection>
+
+            <DCSection id="appt" title="05 · Appointments"
+              subtitle="Consultas & Exames, with mini calendar plus next + recent lists.">
+              <DCArtboard id="appt" label="Consultas & Exames" width={380} height={800}>
+                <Phone><AppointmentsScreen/></Phone>
+              </DCArtboard>
+            </DCSection>
+
+            <DCSection id="diary-media" title="06 · Diary & Media"
+              subtitle="Story-style timeline and photo galleries.">
+              <DCArtboard id="diary" label="Diário" width={380} height={800}>
+                <Phone><DiaryScreen/></Phone>
+              </DCArtboard>
+              <DCArtboard id="media" label="Mídia · Photo grid" width={380} height={800}>
+                <Phone><MediaScreen/></Phone>
+              </DCArtboard>
+            </DCSection>
+
+            <DCSection id="ds" title="07 · Design system"
+              subtitle="Tokens, components, voice. Drop image-slots ↑ on any pet card to fill in real photos; they persist.">
+              <DCArtboard id="ui-kit" label="Petsy UI Kit · v0.1" width={1240} height={2380}>
+                <UIKitScreen/>
+              </DCArtboard>
+            </DCSection>
+          </DesignCanvas>
+        </>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+  </script>
+</body>
+</html>

@@ -100,7 +100,7 @@
 - [x] [#67. Implement DiaryScreen timeline rendering](#67-implement-diaryscreen-timeline-rendering) @2026-06-06 deps:50 assignee:@codex
 - [x] [#68. Bind DiaryScreen mood indicators to data](#68-bind-diaryscreen-mood-indicators-to-data) @2026-06-06 deps:67 assignee:@codex
 - [x] [#69. Implement editable diary entry text](#69-implement-editable-diary-entry-text) @2026-06-06 deps:68 assignee:@codex
-- [ ] [#70. Implement MediaScreen photo grid layout](#70-implement-mediascreen-photo-grid-layout) @2026-06-07 deps:50 assignee:@codex
+- [x] [#70. Implement MediaScreen photo grid layout](#70-implement-mediascreen-photo-grid-layout) @2026-06-07 deps:50 assignee:@codex
 - [ ] [#71. Implement MediaScreen album view toggle](#71-implement-mediascreen-album-view-toggle) @2026-06-07 deps:70 assignee:@codex
 - [ ] [#72. Implement MediaScreen pet filter](#72-implement-mediascreen-pet-filter) @2026-06-07 deps:70 assignee:@codex
 

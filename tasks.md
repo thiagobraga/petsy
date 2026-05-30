@@ -120,14 +120,14 @@
 - [~] [#81. Write integration tests for DashboardScreen](#81-write-integration-tests-for-dashboardscreen) @2026-06-11 deps:13,57 assignee:@antigravity
 - [x] [#82. Test Docker build produces working container](#82-test-docker-build-produces-working-container) @2026-06-12 deps:51 assignee:@antigravity
 
-### Phase 11: API Layer (T83-T88) — @claude
+### Phase 11: API Layer (T83-T88) — @claude ✅ COMPLETE
 
-- [ ] [#83. Create src/api/client.ts HTTP client setup](#83-create-srcapiclientts-http-client-setup) @2026-06-13 deps:50 assignee:@claude
-- [ ] [#84. Create src/api/pets.ts pet endpoints](#84-create-srcapipetsjs-pet-endpoints) @2026-06-13 deps:83 assignee:@claude
-- [ ] [#85. Create src/api/medicines.ts medicine endpoints](#85-create-srcapimedicinesjs-medicine-endpoints) @2026-06-13 deps:83 assignee:@claude
-- [ ] [#86. Create src/api/appointments.ts appointment endpoints](#86-create-srcapiappointmentsjs-appointment-endpoints) @2026-06-13 deps:83 assignee:@claude
-- [ ] [#87. Create src/api/diary.ts diary endpoints](#87-create-srcapidia.ts-diary-endpoints) @2026-06-13 deps:83 assignee:@claude
-- [ ] [#88. Create src/api/media.ts media endpoints](#88-create-srcapimediajs-media-endpoints) @2026-06-13 deps:83 assignee:@claude
+- [x] [#83. Create src/api/client.ts HTTP client setup](#83-create-srcapiclientts-http-client-setup) @2026-06-13 deps:50 assignee:@claude
+- [x] [#84. Create src/api/pets.ts pet endpoints](#84-create-srcapipetsjs-pet-endpoints) @2026-06-13 deps:83 assignee:@claude
+- [x] [#85. Create src/api/medicines.ts medicine endpoints](#85-create-srcapimedicinesjs-medicine-endpoints) @2026-06-13 deps:83 assignee:@claude
+- [x] [#86. Create src/api/appointments.ts appointment endpoints](#86-create-srcapiappointmentsjs-appointment-endpoints) @2026-06-13 deps:83 assignee:@claude
+- [x] [#87. Create src/api/diary.ts diary endpoints](#87-create-srcapidia.ts-diary-endpoints) @2026-06-13 deps:83 assignee:@claude
+- [x] [#88. Create src/api/media.ts media endpoints](#88-create-srcapimediajs-media-endpoints) @2026-06-13 deps:83 assignee:@claude
 
 ### Phase 12: API Documentation (T89-T91) — @antigravity
 

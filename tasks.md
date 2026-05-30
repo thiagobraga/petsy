@@ -90,7 +90,7 @@
 - [x] [#57. Bind DashboardScreen to PETS and MEDS data](#57-bind-dashboardscreen-to-pets-and-meds-data) @2026-06-04 deps:56 assignee:@codex
 - [x] [#58. Bind DashboardScreen greeting card to user/pet](#58-bind-dashboardscreen-greeting-card-to-userpet) @2026-06-04 deps:57 assignee:@codex
 - [x] [#59. Implement PetDetailScreen dynamic pet data loading](#59-implement-petdetailscreen-dynamic-pet-data-loading) @2026-06-05 deps:50 assignee:@codex
-- [ ] [#60. Implement PetDetailScreen tab switching (About/Health/Notes)](#60-implement-petdetailscreen-tab-switching-abouthealthnotes) @2026-06-05 deps:59 assignee:@codex
+- [x] [#60. Implement PetDetailScreen tab switching (About/Health/Notes)](#60-implement-petdetailscreen-tab-switching-abouthealthnotes) @2026-06-05 deps:59 assignee:@codex
 - [ ] [#61. Implement editable notes in PetDetailScreen](#61-implement-editable-notes-in-petdetailscreen) @2026-06-05 deps:60 assignee:@codex
 - [ ] [#62. Implement MedicinesScreen pet filter](#62-implement-medicinesscreen-pet-filter) @2026-06-05 deps:48 assignee:@codex
 - [ ] [#63. Bind MedicinesScreen to MEDS data](#63-bind-medicinesscreen-to-meds-data) @2026-06-05 deps:62 assignee:@codex

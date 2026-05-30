@@ -1,7 +1,7 @@
 // UI Kit / Styleguide — broad designer-facing reference.
 const { TOKENS: T9, I: Ic9 } = window;
 
-function UIKitScreen() {
+export function UIKitScreen() {
   return (
     <div className="petsy" data-screen-label="08 · UI Kit" style={{
       width: 1180, padding: 40, background: T9.bg, color: T9.ink, fontFamily: T9.fontBody,

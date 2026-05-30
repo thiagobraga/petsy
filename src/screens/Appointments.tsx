@@ -1,7 +1,7 @@
 // Appointments — Consultas + Exames tabs, mini calendar, next + recent lists.
 const { TOKENS: T6, I: Ic6 } = window;
 
-function AppointmentsScreen() {
+export function AppointmentsScreen() {
   const [tab, setTab] = React.useState('appt');
   const [seg, setSeg] = React.useState('consultas'); // consultas | exames
   const [day, setDay] = React.useState(14);

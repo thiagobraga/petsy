@@ -1,7 +1,7 @@
 // Diary — timeline of pet entries with photos, mood, notes.
 const { TOKENS: T7, I: Ic7 } = window;
 
-function DiaryScreen() {
+export function DiaryScreen() {
   const [tab, setTab] = React.useState('diary');
   const [activePet, setActivePet] = React.useState('all');
   const list = DIARY.filter(d => activePet === 'all' || d.petId === activePet);

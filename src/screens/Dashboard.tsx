@@ -1,7 +1,7 @@
 // Dashboard — pets list + horizontal medicine schedule
 const { TOKENS: T3, I: Ic3 } = window;
 
-function DashboardScreen() {
+export function DashboardScreen() {
   const [tab, setTab] = React.useState('home');
   const [activePet, setActivePet] = React.useState('luna');
 

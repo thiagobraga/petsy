@@ -1,7 +1,7 @@
 // Media — photo grid + album cards
 const { TOKENS: T8, I: Ic8 } = window;
 
-function MediaScreen() {
+export function MediaScreen() {
   const [tab, setTab] = React.useState('media');
   const [view, setView] = React.useState('grid'); // grid | albums
   const [petFilter, setPetFilter] = React.useState('all');

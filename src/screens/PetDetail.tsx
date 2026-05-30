@@ -1,7 +1,7 @@
 // Pet Detail screen — header card + tabs to medicines / appointments / exams
 const { TOKENS: T4, I: Ic4 } = window;
 
-function PetDetailScreen({ petId = 'luna' }) {
+export function PetDetailScreen({ petId = 'luna' }) {
   const pet = petById(petId);
   const [section, setSection] = React.useState('about');
 

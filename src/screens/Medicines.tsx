@@ -1,7 +1,7 @@
 // Medicines page — list for all pets, filter by pet.
 const { TOKENS: T5, I: Ic5 } = window;
 
-function MedicinesScreen({ petFilter = 'all' }) {
+export function MedicinesScreen({ petFilter = 'all' }) {
   const [tab, setTab] = React.useState('meds');
   const [active, setActive] = React.useState(petFilter);
   const [checked, setChecked] = React.useState({ m1: true, m3: false });

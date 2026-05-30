@@ -1,7 +1,7 @@
 // Login screen — matches the reference image.
 const { TOKENS: T2, I: Ic2 } = window;
 
-function LoginScreen() {
+export function LoginScreen() {
   const [email, setEmail] = React.useState('');
   const [pass, setPass] = React.useState('');
   const [showPass, setShowPass] = React.useState(false);

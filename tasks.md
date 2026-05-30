@@ -37,7 +37,7 @@
 - [x] [#22. Create .husky/pre-commit hook](#22-create-husky-pre-commit-hook) @2026-05-31 deps:21 assignee:@codex
 - [x] [#23. Configure lint-staged to run ESLint on staged files](#23-configure-lint-staged-to-run-eslint-on-staged-files) @2026-05-31 deps:22,11 assignee:@codex
 - [x] [#24. Configure lint-staged to run Prettier on staged files](#24-configure-lint-staged-to-run-prettier-on-staged-files) @2026-05-31 deps:22,10 assignee:@codex
-- [ ] [#25. Test pre-commit hooks with a sample commit](#25-test-pre-commit-hooks-with-a-sample-commit) @2026-05-31 deps:24 assignee:@codex
+- [x] [#25. Test pre-commit hooks with a sample commit](#25-test-pre-commit-hooks-with-a-sample-commit) @2026-05-31 deps:24 assignee:@codex
 
 ### Phase 3: Documentation (T26-T30) — @codex
 
@@ -50,23 +50,23 @@
 ### Phase 4: Vite Setup (T31-T40) — @codex
 
 - [x] [#31. Create vite.config.ts with React plugin](#31-create-viteconfigts-with-react-plugin) @2026-06-01 deps:6 assignee:@codex
-- [~] [#32. Set up entry point (src/index.tsx)](#32-set-up-entry-point-srcindextsx) @2026-06-01 deps:31 assignee:@codex
-- [ ] [#33. Configure public assets directory](#33-configure-public-assets-directory) @2026-06-01 deps:31 assignee:@codex
-- [ ] [#34. Create index.html with root div and Vite script](#34-create-indexhtml-with-root-div-and-vite-script) @2026-06-01 deps:32 assignee:@codex
+- [x] [#32. Set up entry point (src/index.tsx)](#32-set-up-entry-point-srcindextsx) @2026-06-01 deps:31 assignee:@codex
+- [x] [#33. Configure public assets directory](#33-configure-public-assets-directory) @2026-06-01 deps:31 assignee:@codex
+- [x] [#34. Create index.html with root div and Vite script](#34-create-indexhtml-with-root-div-and-vite-script) @2026-06-01 deps:32 assignee:@codex
 - [x] [#35. Move tokens.jsx to src/tokens.ts](#35-move-tokensjs-to-srctokensts) @2026-06-01 deps:31 assignee:@codex
 - [x] [#36. Move icons.jsx to src/icons.ts](#36-move-iconsjsx-to-srciconsjs) @2026-06-01 deps:31 assignee:@codex
 - [x] [#37. Move data.jsx to src/data.ts](#37-move-datajsx-to-srcdatats) @2026-06-01 deps:31 assignee:@codex
 - [x] [#38. Move components.jsx to src/components.tsx](#38-move-componentsjsx-to-srccomponentstsx) @2026-06-01 deps:31 assignee:@codex
-- [ ] [#39. Move screens to src/screens/\*.tsx](#39-move-screens-to-srcscreentstsx) @2026-06-01 deps:31 assignee:@codex
-- [ ] [#40. Create src/App.tsx (root component with routing)](#40-create-srcapptsx-root-component-with-routing) @2026-06-02 deps:39 assignee:@codex
+- [x] [#39. Move screens to src/screens/\*.tsx](#39-move-screens-to-srcscreentstsx) @2026-06-01 deps:31 assignee:@codex
+- [x] [#40. Create src/App.tsx (root component with routing)](#40-create-srcapptsx-root-component-with-routing) @2026-06-02 deps:39 assignee:@codex
 
 ### Phase 5: Router Setup (T41-T45) — @codex
 
-- [ ] [#41. Install react-router-dom or wouter](#41-install-react-router-dom-or-wouter) @2026-06-02 deps:6 assignee:@codex
-- [ ] [#42. Create router configuration with all routes](#42-create-router-configuration-with-all-routes) @2026-06-02 deps:41,40 assignee:@codex
-- [ ] [#43. Implement LoginScreen route (/login)](#43-implement-loginscreen-route-login) @2026-06-02 deps:42 assignee:@codex
-- [ ] [#44. Implement DashboardScreen route (/dashboard)](#44-implement-dashboardscreen-route-dashboard) @2026-06-02 deps:42 assignee:@codex
-- [ ] [#45. Implement remaining screen routes](#45-implement-remaining-screen-routes) @2026-06-02 deps:42 assignee:@codex
+- [x] [#41. Install react-router-dom or wouter](#41-install-react-router-dom-or-wouter) @2026-06-02 deps:6 assignee:@codex
+- [x] [#42. Create router configuration with all routes](#42-create-router-configuration-with-all-routes) @2026-06-02 deps:41,40 assignee:@codex
+- [x] [#43. Implement LoginScreen route (/login)](#43-implement-loginscreen-route-login) @2026-06-02 deps:42 assignee:@codex
+- [x] [#44. Implement DashboardScreen route (/dashboard)](#44-implement-dashboardscreen-route-dashboard) @2026-06-02 deps:42 assignee:@codex
+- [x] [#45. Implement remaining screen routes](#45-implement-remaining-screen-routes) @2026-06-02 deps:42 assignee:@codex
 
 ### Phase 6: State Management (T46-T50) — @claude ✅ COMPLETE
 

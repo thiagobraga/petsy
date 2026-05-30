@@ -68,13 +68,13 @@
 - [ ] [#44. Implement DashboardScreen route (/dashboard)](#44-implement-dashboardscreen-route-dashboard) @2026-06-02 deps:42 assignee:@opencode
 - [ ] [#45. Implement remaining screen routes](#45-implement-remaining-screen-routes) @2026-06-02 deps:42 assignee:@opencode
 
-### Phase 6: State Management (T46-T50) — @claude
+### Phase 6: State Management (T46-T50) — @claude ✅ COMPLETE
 
-- [ ] [#46. Install Zustand state management library](#46-install-zustand-state-management-library) @2026-06-03 deps:6 assignee:@claude
-- [ ] [#47. Create auth store (currentUser, isLoggedIn)](#47-create-auth-store-currentuser-isloggedin) @2026-06-03 deps:46 assignee:@claude
-- [ ] [#48. Create pet store (selectedPetId)](#48-create-pet-store-selectedpetid) @2026-06-03 deps:46 assignee:@claude
-- [ ] [#49. Create preferences store (hideCompleted, groupByStatus)](#49-create-preferences-store-hidecompleted-groupbystatus) @2026-06-03 deps:46 assignee:@claude
-- [ ] [#50. Create custom hooks for consuming stores](#50-create-custom-hooks-for-consuming-stores) @2026-06-03 deps:47,48,49 assignee:@claude
+- [x] [#46. Install Zustand state management library](#46-install-zustand-state-management-library) @2026-06-03 deps:6 assignee:@claude
+- [x] [#47. Create auth store (currentUser, isLoggedIn)](#47-create-auth-store-currentuser-isloggedin) @2026-06-03 deps:46 assignee:@claude
+- [x] [#48. Create pet store (selectedPetId)](#48-create-pet-store-selectedpetid) @2026-06-03 deps:46 assignee:@claude
+- [x] [#49. Create preferences store (hideCompleted, groupByStatus)](#49-create-preferences-store-hidecompleted-groupbystatus) @2026-06-03 deps:46 assignee:@claude
+- [x] [#50. Create custom hooks for consuming stores](#50-create-custom-hooks-for-consuming-stores) @2026-06-03 deps:47,48,49 assignee:@claude
 
 ### Phase 7: Docker (T51-T52) — @antigravity
 

@@ -22,8 +22,11 @@ export function AppointmentsScreen() {
   const [day, setDay] = React.useState(14);
 
   const list = seg === 'consultas' ? APPOINTMENTS : EXAMS;
-  const next = list.filter((i) => i.status === 'next');
-  const past = list.filter((i) => i.status === 'past');
+  const selectedList = list.filter(
+    (item) => isCalendarMonthDate(item.date) && dayFromDate(item.date) === day
+  );
+  const next = selectedList.filter((i) => i.status === 'next');
+  const past = selectedList.filter((i) => i.status === 'past');
   const calendarItems = [...APPOINTMENTS, ...EXAMS].filter((item) =>
     isCalendarMonthDate(item.date)
   );

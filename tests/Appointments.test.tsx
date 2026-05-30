@@ -40,4 +40,23 @@ describe('AppointmentsScreen', () => {
     expect(screen.getByText('QUI · 21 MAI')).toBeInTheDocument();
     expect(screen.getByText('1 compromisso')).toBeInTheDocument();
   });
+
+  it('filters appointment and exam lists by the selected date', async () => {
+    const user = userEvent.setup();
+
+    render(<AppointmentsScreen />);
+
+    expect(screen.getByText('Checkup anual')).toBeInTheDocument();
+    expect(screen.queryByText('Consulta dermatológica')).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: /Maio 2026 day 22 marked/ }));
+
+    expect(screen.getByText('Consulta dermatológica')).toBeInTheDocument();
+    expect(screen.queryByText('Checkup anual')).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: /Exames/ }));
+
+    expect(screen.getByText('Raspado de pele')).toBeInTheDocument();
+    expect(screen.queryByText('Hemograma completo')).not.toBeInTheDocument();
+  });
 });

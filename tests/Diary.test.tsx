@@ -14,4 +14,18 @@ describe('DiaryScreen', () => {
       expect(screen.getByText(new RegExp(entry.date.toUpperCase()))).toBeInTheDocument();
     }
   });
+
+  it('renders mood indicators from each diary entry mood', () => {
+    const moodLabels = {
+      feliz: '☺ Feliz',
+      calmo: '😌 Calmo',
+      agitado: '⚡ Agitado',
+    };
+
+    render(<DiaryScreen />);
+
+    for (const entry of DIARY) {
+      expect(screen.getAllByText(moodLabels[entry.mood]).length).toBeGreaterThan(0);
+    }
+  });
 });

@@ -2,15 +2,29 @@ import React from 'react';
 import { IconCircle, PetAvatar, PetsyMark, SectionHeader, TabBar } from '../components.tsx';
 import { MEDS, PETS, petById, type Medicine, type Pet } from '../data';
 import { I as Ic3 } from '../icons';
+import { useAuthStore } from '../stores/auth';
 import { usePetStore } from '../stores/pet';
 import { TOKENS as T3 } from '../tokens';
 
 // Dashboard — pets list + horizontal medicine schedule
 export function DashboardScreen() {
   const [tab, setTab] = React.useState('home');
+  const currentUser = useAuthStore((state) => state.currentUser);
   const selectedPetId = usePetStore((state) => state.selectedPetId);
   const selectPet = usePetStore((state) => state.selectPet);
   const [activePet, setActivePet] = React.useState(selectedPetId ?? 'luna');
+  const selectedPet = PETS.find((pet) => pet.id === activePet);
+  const visibleMeds = MEDS.filter((med) => activePet === 'all' || med.petId === activePet);
+  const nextMed = visibleMeds[0];
+  const nextMedPet = nextMed ? petById(nextMed.petId) : null;
+  const displayName = currentUser?.name || 'Ana Maria';
+  const initials = displayName
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((part) => part[0])
+    .slice(0, 2)
+    .join('')
+    .toUpperCase();
 
   React.useEffect(() => {
     if (selectedPetId) setActivePet(selectedPetId);
@@ -58,12 +72,12 @@ export function DashboardScreen() {
                 fontWeight: 700,
               }}
             >
-              AM
+              {initials || 'AM'}
             </div>
             <div>
               <div style={{ fontSize: 12, color: T3.ink2, fontWeight: 600 }}>Olá,</div>
               <div style={{ fontSize: 17, fontWeight: 700, fontFamily: T3.fontDisplay }}>
-                Ana Maria
+                {displayName}
               </div>
             </div>
           </div>
@@ -119,10 +133,14 @@ export function DashboardScreen() {
           <div
             style={{ fontFamily: T3.fontDisplay, fontSize: 16, fontWeight: 700, lineHeight: 1.25 }}
           >
-            3 pets · 2 lembretes hoje
+            {selectedPet
+              ? `${selectedPet.name} · ${visibleMeds.length} lembretes`
+              : `${PETS.length} pets · ${visibleMeds.length} lembretes`}
           </div>
           <div style={{ fontSize: 12, color: T3.ink2, marginTop: 4, fontWeight: 600 }}>
-            Próximo: Apoquel para Luna às 08:00
+            {nextMed && nextMedPet
+              ? `Próximo: ${nextMed.name} para ${nextMedPet.name} · ${nextMed.next}`
+              : 'Nenhum lembrete pendente'}
           </div>
           <div style={{ position: 'absolute', right: -16, bottom: -16, opacity: 0.35 }}>
             <PetsyMark size={90} />
@@ -194,7 +212,7 @@ export function DashboardScreen() {
             data-scroll
             style={{ display: 'flex', flexDirection: 'column', gap: 10, paddingRight: 18 }}
           >
-            {MEDS.filter((m) => activePet === 'all' || m.petId === activePet).map((m) => (
+            {visibleMeds.map((m) => (
               <MedRow key={m.id} med={m} />
             ))}
           </div>

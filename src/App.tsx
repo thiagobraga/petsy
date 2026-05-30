@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, useRouter, type RouteComponentProps } from 'wouter';
+import { Route, Switch, useLocation, type RouteComponentProps } from 'wouter';
 import { LoginScreen } from './screens/Login';
 import { DashboardScreen } from './screens/Dashboard';
 import { PetDetailScreen } from './screens/PetDetail';
@@ -15,19 +15,18 @@ function PetDetailRoute({ params }: RouteComponentProps<PetDetailParams>) {
   return <PetDetailScreen petId={params.petId} />;
 }
 
-export function App() {
-  const router = useRouter();
-
+function RootRedirect() {
+  const [, setLocation] = useLocation();
   React.useEffect(() => {
-    const path = window.location.pathname;
-    // If on root path, navigate to login
-    if (path === '/' || path === '') {
-      router.push('/login');
-    }
-  }, [router]);
+    setLocation('/login');
+  }, [setLocation]);
+  return null;
+}
 
+export function App() {
   return (
     <Switch>
+      <Route path="/" component={RootRedirect} />
       <Route path="/login" component={LoginScreen} />
       <Route path="/dashboard" component={DashboardScreen} />
       <Route path="/pets/:petId" component={PetDetailRoute} />

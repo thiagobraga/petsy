@@ -113,9 +113,9 @@
 
 ### Phase 10: Testing (T77-T82) — @antigravity
 
-- [~] [#77. Write unit tests for Button component](#77-write-unit-tests-for-button-component) @2026-06-10 deps:13 assignee:@antigravity
-- [~] [#78. Write unit tests for Input component](#78-write-unit-tests-for-input-component) @2026-06-10 deps:13 assignee:@antigravity
-- [~] [#79. Write unit tests for PetAvatar component](#79-write-unit-tests-for-petavatar-component) @2026-06-10 deps:13 assignee:@antigravity
+- [x] [#77. Write unit tests for Button component](#77-write-unit-tests-for-button-component) @2026-06-10 deps:13 assignee:@antigravity
+- [x] [#78. Write unit tests for Input component](#78-write-unit-tests-for-input-component) @2026-06-10 deps:13 assignee:@antigravity
+- [x] [#79. Write unit tests for PetAvatar component](#79-write-unit-tests-for-petavatar-component) @2026-06-10 deps:13 assignee:@antigravity
 - [~] [#80. Write integration tests for LoginScreen](#80-write-integration-tests-for-loginscreen) @2026-06-11 deps:13,54 assignee:@antigravity
 - [~] [#81. Write integration tests for DashboardScreen](#81-write-integration-tests-for-dashboardscreen) @2026-06-11 deps:13,57 assignee:@antigravity
 - [x] [#82. Test Docker build produces working container](#82-test-docker-build-produces-working-container) @2026-06-12 deps:51 assignee:@antigravity

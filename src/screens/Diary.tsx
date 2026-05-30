@@ -8,6 +8,9 @@ import { TOKENS as T7 } from '../tokens';
 export function DiaryScreen() {
   const [tab, setTab] = React.useState('diary');
   const [activePet, setActivePet] = React.useState('all');
+  const [entryBodies, setEntryBodies] = React.useState(() =>
+    Object.fromEntries(DIARY.map((entry) => [entry.id, entry.body]))
+  );
   const list = DIARY.filter((d) => activePet === 'all' || d.petId === activePet);
 
   const moodColor = {
@@ -209,13 +212,30 @@ export function DiaryScreen() {
                         {moodLabel[e.mood]}
                       </span>
                     </div>
-                    <div
-                      style={{ fontSize: 13, color: T7.ink2, lineHeight: 1.5, fontWeight: 500 }}
-                      contentEditable
-                      suppressContentEditableWarning
-                    >
-                      {e.body}
-                    </div>
+                    <textarea
+                      aria-label={`${e.title} diary text`}
+                      value={entryBodies[e.id] || ''}
+                      onChange={(event) =>
+                        setEntryBodies((current) => ({
+                          ...current,
+                          [e.id]: event.target.value,
+                        }))
+                      }
+                      style={{
+                        width: '100%',
+                        minHeight: 72,
+                        fontSize: 13,
+                        color: T7.ink2,
+                        lineHeight: 1.5,
+                        fontWeight: 500,
+                        border: 'none',
+                        background: 'transparent',
+                        resize: 'vertical',
+                        padding: 0,
+                        outline: 'none',
+                        fontFamily: T7.fontBody,
+                      }}
+                    />
                     {e.photos.length > 0 && (
                       <div
                         style={{

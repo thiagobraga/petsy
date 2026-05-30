@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-**Petsy** is a React prototype for a pet care management app, designed as a handoff from Claude Design. It runs in the browser with **no build system** — React and Babel are loaded from CDN, JSX is transpiled live, and all components are exported to the `window` object for easy access in design/prototype environments.
+**Petsy** is a React app for pet care management, built with Vite, React, Zustand, and TypeScript. It features seven main screens (Login, Dashboard, PetDetail, Medicines, Appointments, Diary, Media) with a design system, mock data, and full test/lint infrastructure.
 
-**Key constraint:** This is a prototype, not production code. No tests, no linting, no CI/CD.
+**Technology stack:** React 18 + Vite + TypeScript + Zustand (state) + Wouter (routing) + Vitest (testing) + ESLint + Prettier.
 
 ## Architecture
 
@@ -80,59 +80,74 @@ The design canvas is **read-only in most environments** — it mainly helps visu
 
 ## Development Commands
 
-**There are no build, lint, or test commands.** This is a prototype with no build system.
+**Setup:**
+```bash
+npm install
+```
 
-To develop:
-1. Open `index.html` in a browser (or use in Claude Design/Framer environment)
-2. Edit `.jsx` files
-3. Refresh the browser
-4. Changes appear immediately
-
-No npm, no build step, no commands to run.
+**Core commands:**
+- `npm run dev` — Start Vite dev server (http://localhost:5173)
+- `npm run build` — Build production bundle to `dist/`
+- `npm run preview` — Preview production build locally
+- `npm test` — Run Vitest suite in watch mode
+- `npm run test:ui` — Run tests with browser UI
+- `npm run test:coverage` — Generate coverage report
+- `npm run lint` — Run ESLint on all `.ts` and `.tsx` files
+- `npm run lint:fix` — Auto-fix ESLint issues
+- `npm run format` — Format code with Prettier
+- `npm run format:check` — Check formatting without changes
 
 ## Development Workflow
 
 ### Setup
-1. Files are already in place. No `npm install`, no build step.
-2. Open `index.html` in a browser (or design canvas editor).
-3. Babel transpiles JSX on load; React runs from CDN.
+1. Run `npm install` to install dependencies.
+2. Run `npm run dev` to start the Vite dev server.
+3. Open http://localhost:5173 in a browser.
+4. Hot module reload (HMR) updates the app automatically as you edit.
 
 ### Making Changes
-1. Edit `.jsx` files directly.
-2. Refresh the browser page.
-3. Changes appear immediately (no build step, no cache).
+1. Edit `.ts` or `.tsx` files in `src/`.
+2. Vite HMR instantly reloads the browser.
+3. Changes appear within 100–300ms.
 
 ### Adding a New Component
-1. Add function to `src/components.jsx`
-2. At the bottom, add to `Object.assign(window, { ..., NewComponent })`
-3. Use in any screen: `<NewComponent prop="value"/>`
+1. Create `src/components/NewComponent.tsx` (or add to `src/components.tsx`).
+2. Export it as a named export: `export function NewComponent() { ... }`.
+3. Import and use in screens: `import { NewComponent } from '../components'`.
+4. Write unit tests in `tests/NewComponent.test.tsx`.
 
 ### Adding a New Screen
-1. Create `src/screens/Feature.jsx`
-2. Define screen function, export to window: `window.FeatureScreen = FeatureScreen`
-3. Add `<script>` import in index.html
-4. Add `<DCSection>` and `<DCArtboard>` in the `App()` function in index.html (so it appears in design canvas)
+1. Create `src/screens/NewScreen.tsx`.
+2. Define screen function and export: `export function NewScreen() { ... }`.
+3. Add route in `src/App.tsx` (when routing is set up in Phase 5).
+4. Import in `src/App.tsx` and add to router configuration.
 
 ### Modifying Design System
-1. Edit `src/tokens.jsx` (colors, fonts, shadows, radii)
-2. Refresh. All components automatically pick up new values via `window.TOKENS`
+1. Edit `src/tokens.ts` (colors, fonts, shadows, radii).
+2. All components that reference tokens auto-update on HMR.
+3. No manual refresh needed (Vite handles it).
 
 ### Adding Data
-1. Add array/object to `src/data.jsx`
-2. Export to `window` (e.g., `window.MY_DATA = MY_DATA`)
-3. Screens access it directly: `MY_DATA.map(...)`
+1. Add array/object to `src/data.ts`.
+2. Export as named export (not to `window`).
+3. Screens import and use directly: `import { PETS } from '../data'`.
 
 ## Key Files
 
-- **index.html** — Entry point. Loads all scripts in order, defines `App()` with design canvas layout
-- **src/tokens.jsx** — Design system (colors, typography, shadows, radii, fonts)
-- **src/icons.jsx** — 24px line icons (used throughout)
-- **src/components.jsx** — 12 reusable UI components (Button, Input, Card, PetAvatar, TabBar, etc.)
-- **src/data.jsx** — Mock data fixtures (PETS, MEDS, APPOINTMENTS, EXAMS, DIARY, MEDIA)
-- **src/screens/** — Seven screen implementations
-- **design-canvas.jsx** — Figma-like editor (50KB, self-contained)
-- **ios-frame.jsx** — iOS 26 UI kit (status bar, nav bar, glass pill, keyboard)
-- **image-slot.js** — Custom `<image-slot>` element for photo uploads (persistence via `.image-slots.state.json`)
+- **src/index.tsx** — React root entry point; mounts App to `<div id="root">`
+- **src/App.tsx** — Root component with router and layout (created in Phase 5)
+- **src/tokens.ts** — Design system (colors, typography, shadows, radii, fonts)
+- **src/icons.ts** — 24px line icons (used throughout)
+- **src/components.tsx** — 12+ reusable UI components (Button, Input, Card, PetAvatar, TabBar, etc.)
+- **src/data.ts** — Mock data fixtures (PETS, MEDS, APPOINTMENTS, EXAMS, DIARY, MEDIA)
+- **src/screens/** — Seven screen implementations (Login, Dashboard, PetDetail, etc.)
+- **src/stores/** — Zustand stores (auth, pet, preferences) — created in Phase 6
+- **src/api/** — API client and endpoints — created in Phase 11
+- **tests/** — Unit and integration tests (Vitest)
+- **index.html** — HTML template with `<div id="root">` mount point
+- **vite.config.ts** — Vite build configuration
+- **vitest.config.ts** — Vitest testing configuration
+- **package.json** — Dependencies and npm scripts
 
 ## Style & Language
 
@@ -173,13 +188,13 @@ The `id` is the persistence key. Multiple slots with the same `id` share the sam
 
 ## Constraints & Gotchas
 
-1. **No build system** — If you need a bundler, package.json, or tree-shaking, this isn't it.
-2. **Window exports are mandatory** — If you add a component/screen and don't export it, it won't work.
-3. **State is local** — No Redux, no Context (by design). Props and local state only.
-4. **Portuguese language** — UI text is in Portuguese. Maintain this for consistency.
-5. **Inline styles only** — No CSS files or CSS modules. All styling via `style={}` props.
-6. **Script load order matters** — In index.html, tokens loads first, then icons, then data, then components. If you add new dependencies, ensure they load in the right order.
-7. **Mock data only** — No API calls, no backend. For real features, you'd need to integrate a backend and replace the data fixtures.
+1. **Zustand for state only** — No Redux, no Context. Use Zustand stores (auth, pet, preferences) for global state.
+2. **TypeScript strict mode** — All new code must be TypeScript. Run `npm run lint` to check.
+3. **Portuguese language** — All UI text in screens is in Portuguese (PT-BR). Maintain for consistency.
+4. **Inline styles or CSS Modules** — No styled-components. Use inline React styles or import `.module.css` files.
+5. **Mock data in src/data.ts** — No API calls until Phase 11. Replace PETS, MEDS, etc. with real API calls later.
+6. **Test new features** — Write unit/integration tests in `tests/` using Vitest and @testing-library/react.
+7. **Lint before commit** — Pre-commit hooks run ESLint and Prettier. Fix issues with `npm run lint:fix && npm run format`.
 
 ## Extending the App
 
@@ -200,4 +215,4 @@ Edit `src/tokens.jsx`. Optionally add new token values (e.g., `fontSize: { sm: 1
 
 ---
 
-**Last updated:** 2026-05-29
+**Last updated:** 2026-05-30 (Phase 1 Foundation setup: Vite, Vitest, ESLint, Prettier)

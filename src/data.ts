@@ -1,5 +1,74 @@
 // Petsy — mock data
-const PETS = [
+export interface Pet {
+  id: string;
+  name: string;
+  breed: string;
+  tone: string;
+  dob: string;
+  age: string;
+  sex: string;
+  weight: string;
+  castrated: { value: boolean; date: string | null };
+  color: string;
+  microchip: string;
+  photo: string;
+}
+
+export interface Medicine {
+  id: string;
+  petId: string;
+  name: string;
+  purpose: string;
+  dose: string;
+  frequency: string;
+  when: string[];
+  start: string;
+  end: string;
+  color: string;
+  days: boolean[];
+  next: string;
+}
+
+export interface Appointment {
+  id: string;
+  kind: string;
+  petId: string;
+  title: string;
+  vet: string;
+  date: string;
+  time: string;
+  status: 'next' | 'past';
+  notes: string;
+}
+
+export interface Exam {
+  id: string;
+  petId: string;
+  title: string;
+  date: string;
+  status: 'next' | 'past';
+  lab: string;
+  time: string;
+}
+
+export interface DiaryEntry {
+  id: string;
+  petId: string;
+  date: string;
+  mood: string;
+  title: string;
+  body: string;
+  photos: string[];
+}
+
+export interface MediaItem {
+  id: string;
+  petId: string;
+  date: string;
+  tag: string;
+}
+
+export const PETS: Pet[] = [
   {
     id: 'luna', name: 'Luna', breed: 'Golden Retriever', tone: 'pink',
     dob: '14/03/2022', age: '4 anos · 2 meses', sex: 'Fêmea', weight: '28,4 kg',
@@ -23,8 +92,7 @@ const PETS = [
   },
 ];
 
-// medicines per pet, with dosage schedules
-const MEDS = [
+export const MEDS: Medicine[] = [
   { id: 'm1', petId: 'luna', name: 'Apoquel', purpose: 'Alergia / coceira',
     dose: '16 mg', frequency: '1× ao dia', when: ['08:00'],
     start: '01/04/2026', end: '30/06/2026',
@@ -55,7 +123,7 @@ const MEDS = [
   },
 ];
 
-const APPOINTMENTS = [
+export const APPOINTMENTS: Appointment[] = [
   { id: 'a1', kind: 'consulta', petId: 'luna', title: 'Checkup anual',
     vet: 'Dra. Helena Souza · Clínica VetCare', date: '14/05/2026', time: '15:30',
     status: 'next', notes: 'Levar carteirinha de vacinação' },
@@ -70,14 +138,14 @@ const APPOINTMENTS = [
     status: 'past', notes: 'Reforço anual aplicado' },
 ];
 
-const EXAMS = [
+export const EXAMS: Exam[] = [
   { id: 'e1', petId: 'luna', title: 'Hemograma completo', date: '14/05/2026', status: 'next', lab: 'Lab. VetLab', time: '07:30' },
   { id: 'e2', petId: 'luna', title: 'Ultrassom abdominal', date: '21/05/2026', status: 'next', lab: 'Clínica VetCare', time: '11:00' },
   { id: 'e3', petId: 'biscoito', title: 'Raspado de pele', date: '22/05/2026', status: 'next', lab: 'PetSaúde', time: '10:30' },
   { id: 'e4', petId: 'biscoito', title: 'Painel alérgico', date: '12/04/2026', status: 'past', lab: 'Lab. VetLab', time: '09:00' },
 ];
 
-const DIARY = [
+export const DIARY: DiaryEntry[] = [
   { id: 'd1', petId: 'luna', date: '26 mai', mood: 'feliz',
     title: 'Primeiro banho de mar', body: 'Luna adorou — entrou correndo na água e ficou meia hora tentando pegar as ondinhas. Em casa, dormiu profundamente.',
     photos: ['ph-luna-1', 'ph-luna-2'] },
@@ -92,7 +160,7 @@ const DIARY = [
     photos: ['ph-luna-3'] },
 ];
 
-const MEDIA = [
+export const MEDIA: MediaItem[] = [
   { id: 'p1', petId: 'luna', date: '26 mai', tag: 'praia' },
   { id: 'p2', petId: 'luna', date: '26 mai', tag: 'praia' },
   { id: 'p3', petId: 'biscoito', date: '24 mai', tag: 'casa' },
@@ -104,10 +172,24 @@ const MEDIA = [
   { id: 'p9', petId: 'luna', date: '02 mai', tag: 'casa' },
 ];
 
+export const petById = (id: string) => PETS.find(p => p.id === id);
+
+declare global {
+  interface Window {
+    PETS: typeof PETS;
+    MEDS: typeof MEDS;
+    APPOINTMENTS: typeof APPOINTMENTS;
+    EXAMS: typeof EXAMS;
+    DIARY: typeof DIARY;
+    MEDIA: typeof MEDIA;
+    petById: typeof petById;
+  }
+}
+
 window.PETS = PETS;
 window.MEDS = MEDS;
 window.APPOINTMENTS = APPOINTMENTS;
 window.EXAMS = EXAMS;
 window.DIARY = DIARY;
 window.MEDIA = MEDIA;
-window.petById = (id) => PETS.find(p => p.id === id);
+window.petById = petById;

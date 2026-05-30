@@ -1,5 +1,8 @@
 # Petsy — Pet Care Management App
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fproject%2Fpetsy)
+[![CI/CD](https://github.com/project/petsy/actions/workflows/ci.yml/badge.svg)](https://github.com/project/petsy/actions/workflows/ci.yml)
+
 A mobile-first iOS-style pet care management application built with React. Manage pets, medicines, appointments, exams, diary entries, and media gallery.
 
 ## Features

@@ -26,43 +26,39 @@
 - [x] [#14. Create vitest.config.ts with React preset](#14-create-vitestconfigts-with-react-preset) @2026-05-30 deps:12 assignee:@claude
 - [x] [#15. Create example test file for component testing](#15-create-example-test-file-for-component-testing) @2026-05-30 deps:14 assignee:@claude
 
-
 ### Phase 2: Git & Linting (T16-T25) — @codex
 
-- [ ] [#16. Review and enhance .gitignore](#16-review-and-enhance-gitignore) @2026-05-30 deps:1 assignee:@codex
-- [ ] [#17. Add Node-specific ignores (node_modules, dist, build)](#17-add-node-specific-ignores-node_modules-dist-build) @2026-05-30 deps:16 assignee:@codex
-- [ ] [#18. Add environment file ignores (.env, .env.local)](#18-add-environment-file-ignores-env-envlocal) @2026-05-30 deps:16 assignee:@codex
-- [ ] [#19. Add IDE ignores (.vscode, .idea)](#19-add-ide-ignores-vscode-idea) @2026-05-30 deps:16 assignee:@codex
-- [ ] [#20. Add design tool state file ignores](#20-add-design-tool-state-file-ignores) @2026-05-30 deps:16 assignee:@codex
-- [ ] [#21. Install husky and lint-staged](#21-install-husky-and-lint-staged) @2026-05-31 deps:6 assignee:@codex
-- [ ] [#22. Create .husky/pre-commit hook](#22-create-husky-pre-commit-hook) @2026-05-31 deps:21 assignee:@codex
-- [ ] [#23. Configure lint-staged to run ESLint on staged files](#23-configure-lint-staged-to-run-eslint-on-staged-files) @2026-05-31 deps:22,11 assignee:@codex
-- [ ] [#24. Configure lint-staged to run Prettier on staged files](#24-configure-lint-staged-to-run-prettier-on-staged-files) @2026-05-31 deps:22,10 assignee:@codex
+- [x] [#16. Review and enhance .gitignore](#16-review-and-enhance-gitignore) @2026-05-30 deps:1 assignee:@codex
+- [x] [#17. Add Node-specific ignores (node_modules, dist, build)](#17-add-node-specific-ignores-node_modules-dist-build) @2026-05-30 deps:16 assignee:@codex
+- [x] [#18. Add environment file ignores (.env, .env.local)](#18-add-environment-file-ignores-env-envlocal) @2026-05-30 deps:16 assignee:@codex
+- [x] [#19. Add IDE ignores (.vscode, .idea)](#19-add-ide-ignores-vscode-idea) @2026-05-30 deps:16 assignee:@codex
+- [x] [#20. Add design tool state file ignores](#20-add-design-tool-state-file-ignores) @2026-05-30 deps:16 assignee:@codex
+- [x] [#21. Install husky and lint-staged](#21-install-husky-and-lint-staged) @2026-05-31 deps:6 assignee:@codex
+- [x] [#22. Create .husky/pre-commit hook](#22-create-husky-pre-commit-hook) @2026-05-31 deps:21 assignee:@codex
+- [x] [#23. Configure lint-staged to run ESLint on staged files](#23-configure-lint-staged-to-run-eslint-on-staged-files) @2026-05-31 deps:22,11 assignee:@codex
+- [x] [#24. Configure lint-staged to run Prettier on staged files](#24-configure-lint-staged-to-run-prettier-on-staged-files) @2026-05-31 deps:22,10 assignee:@codex
 - [ ] [#25. Test pre-commit hooks with a sample commit](#25-test-pre-commit-hooks-with-a-sample-commit) @2026-05-31 deps:24 assignee:@codex
-
 
 ### Phase 3: Documentation (T26-T30) — @codex
 
-- [ ] [#26. Create AGENTS.md with mandatory task workflow](#26-create-agentsmd-with-mandatory-task-workflow) @2026-05-31 deps:2 assignee:@codex
-- [ ] [#27. Create GEMINI.md with agent guidance](#27-create-geminmd-with-agent-guidance) @2026-05-31 deps:2 assignee:@codex
-- [ ] [#28. Document commit message conventions](#28-document-commit-message-conventions) @2026-05-31 deps:26 assignee:@codex
-- [ ] [#29. Add test coverage reporting to Vitest config](#29-add-test-coverage-reporting-to-vitest-config) @2026-05-31 deps:14 assignee:@codex
-- [ ] [#30. Create CONTRIBUTING.md with development workflow](#30-create-contributingmd-with-development-workflow) @2026-06-01 deps:25,28 assignee:@codex
-
+- [x] [#26. Create AGENTS.md with mandatory task workflow](#26-create-agentsmd-with-mandatory-task-workflow) @2026-05-31 deps:2 assignee:@codex
+- [x] [#27. Create GEMINI.md with agent guidance](#27-create-geminmd-with-agent-guidance) @2026-05-31 deps:2 assignee:@codex
+- [x] [#28. Document commit message conventions](#28-document-commit-message-conventions) @2026-05-31 deps:26 assignee:@codex
+- [x] [#29. Add test coverage reporting to Vitest config](#29-add-test-coverage-reporting-to-vitest-config) @2026-05-31 deps:14 assignee:@codex
+- [x] [#30. Create CONTRIBUTING.md with development workflow](#30-create-contributingmd-with-development-workflow) @2026-06-01 deps:25,28 assignee:@codex
 
 ### Phase 4: Vite Setup (T31-T40) — @opencode
 
-- [ ] [#31. Create vite.config.ts with React plugin](#31-create-viteconfigts-with-react-plugin) @2026-06-01 deps:6 assignee:@opencode
-- [ ] [#32. Set up entry point (src/index.tsx)](#32-set-up-entry-point-srcindextsx) @2026-06-01 deps:31 assignee:@opencode
+- [x] [#31. Create vite.config.ts with React plugin](#31-create-viteconfigts-with-react-plugin) @2026-06-01 deps:6 assignee:@opencode
+- [~] [#32. Set up entry point (src/index.tsx)](#32-set-up-entry-point-srcindextsx) @2026-06-01 deps:31 assignee:@opencode
 - [ ] [#33. Configure public assets directory](#33-configure-public-assets-directory) @2026-06-01 deps:31 assignee:@opencode
 - [ ] [#34. Create index.html with root div and Vite script](#34-create-indexhtml-with-root-div-and-vite-script) @2026-06-01 deps:32 assignee:@opencode
-- [ ] [#35. Move tokens.jsx to src/tokens.ts](#35-move-tokensjs-to-srctokensts) @2026-06-01 deps:31 assignee:@opencode
-- [ ] [#36. Move icons.jsx to src/icons.ts](#36-move-iconsjsx-to-srciconsjs) @2026-06-01 deps:31 assignee:@opencode
-- [ ] [#37. Move data.jsx to src/data.ts](#37-move-datajsx-to-srcdatats) @2026-06-01 deps:31 assignee:@opencode
-- [ ] [#38. Move components.jsx to src/components.tsx](#38-move-componentsjsx-to-srccomponentstsx) @2026-06-01 deps:31 assignee:@opencode
+- [x] [#35. Move tokens.jsx to src/tokens.ts](#35-move-tokensjs-to-srctokensts) @2026-06-01 deps:31 assignee:@opencode
+- [x] [#36. Move icons.jsx to src/icons.ts](#36-move-iconsjsx-to-srciconsjs) @2026-06-01 deps:31 assignee:@opencode
+- [x] [#37. Move data.jsx to src/data.ts](#37-move-datajsx-to-srcdatats) @2026-06-01 deps:31 assignee:@opencode
+- [x] [#38. Move components.jsx to src/components.tsx](#38-move-componentsjsx-to-srccomponentstsx) @2026-06-01 deps:31 assignee:@opencode
 - [ ] [#39. Move screens to src/screens/\*.tsx](#39-move-screens-to-srcscreentstsx) @2026-06-01 deps:31 assignee:@opencode
 - [ ] [#40. Create src/App.tsx (root component with routing)](#40-create-srcapptsx-root-component-with-routing) @2026-06-02 deps:39 assignee:@opencode
-
 
 ### Phase 5: Router Setup (T41-T45) — @opencode
 
@@ -72,7 +68,6 @@
 - [ ] [#44. Implement DashboardScreen route (/dashboard)](#44-implement-dashboardscreen-route-dashboard) @2026-06-02 deps:42 assignee:@opencode
 - [ ] [#45. Implement remaining screen routes](#45-implement-remaining-screen-routes) @2026-06-02 deps:42 assignee:@opencode
 
-
 ### Phase 6: State Management (T46-T50) — @claude
 
 - [ ] [#46. Install Zustand state management library](#46-install-zustand-state-management-library) @2026-06-03 deps:6 assignee:@claude
@@ -81,12 +76,10 @@
 - [ ] [#49. Create preferences store (hideCompleted, groupByStatus)](#49-create-preferences-store-hidecompleted-groupbystatus) @2026-06-03 deps:46 assignee:@claude
 - [ ] [#50. Create custom hooks for consuming stores](#50-create-custom-hooks-for-consuming-stores) @2026-06-03 deps:47,48,49 assignee:@claude
 
-
 ### Phase 7: Docker (T51-T52) — @antigravity
 
-- [ ] [#51. Update .docker/app.Dockerfile for Vite build](#51-update-dockerapp-dockerfile-for-vite-build) @2026-06-03 deps:40 assignee:@antigravity
-- [ ] [#52. Update compose.yml for production build output](#52-update-composeyml-for-production-build-output) @2026-06-03 deps:51 assignee:@antigravity
-
+- [x] [#51. Update .docker/app.Dockerfile for Vite build](#51-update-dockerapp-dockerfile-for-vite-build) @2026-06-03 deps:40 assignee:@antigravity
+- [x] [#52. Update compose.yml for production build output](#52-update-composeyml-for-production-build-output) @2026-06-03 deps:51 assignee:@antigravity
 
 ### Phase 8: Screen Implementation (T53-T72) — @codex
 
@@ -111,7 +104,6 @@
 - [ ] [#71. Implement MediaScreen album view toggle](#71-implement-mediascreen-album-view-toggle) @2026-06-07 deps:70 assignee:@codex
 - [ ] [#72. Implement MediaScreen pet filter](#72-implement-mediascreen-pet-filter) @2026-06-07 deps:70 assignee:@codex
 
-
 ### Phase 9: Persistence (T73-T76) — @claude
 
 - [ ] [#73. Create localStorage utility (save/load functions)](#73-create-localstorage-utility-saveload-functions) @2026-06-08 deps:50 assignee:@claude
@@ -119,16 +111,14 @@
 - [ ] [#75. Implement localStorage-based image persistence](#75-implement-localstorage-based-image-persistence) @2026-06-08 deps:73 assignee:@claude
 - [ ] [#76. Load persisted state on app startup](#76-load-persisted-state-on-app-startup) @2026-06-08 deps:74 assignee:@claude
 
-
 ### Phase 10: Testing (T77-T82) — @antigravity
 
-- [ ] [#77. Write unit tests for Button component](#77-write-unit-tests-for-button-component) @2026-06-10 deps:13 assignee:@antigravity
-- [ ] [#78. Write unit tests for Input component](#78-write-unit-tests-for-input-component) @2026-06-10 deps:13 assignee:@antigravity
-- [ ] [#79. Write unit tests for PetAvatar component](#79-write-unit-tests-for-petavatar-component) @2026-06-10 deps:13 assignee:@antigravity
-- [ ] [#80. Write integration tests for LoginScreen](#80-write-integration-tests-for-loginscreen) @2026-06-11 deps:13,54 assignee:@antigravity
-- [ ] [#81. Write integration tests for DashboardScreen](#81-write-integration-tests-for-dashboardscreen) @2026-06-11 deps:13,57 assignee:@antigravity
-- [ ] [#82. Test Docker build produces working container](#82-test-docker-build-produces-working-container) @2026-06-12 deps:51 assignee:@antigravity
-
+- [~] [#77. Write unit tests for Button component](#77-write-unit-tests-for-button-component) @2026-06-10 deps:13 assignee:@antigravity
+- [~] [#78. Write unit tests for Input component](#78-write-unit-tests-for-input-component) @2026-06-10 deps:13 assignee:@antigravity
+- [~] [#79. Write unit tests for PetAvatar component](#79-write-unit-tests-for-petavatar-component) @2026-06-10 deps:13 assignee:@antigravity
+- [~] [#80. Write integration tests for LoginScreen](#80-write-integration-tests-for-loginscreen) @2026-06-11 deps:13,54 assignee:@antigravity
+- [~] [#81. Write integration tests for DashboardScreen](#81-write-integration-tests-for-dashboardscreen) @2026-06-11 deps:13,57 assignee:@antigravity
+- [x] [#82. Test Docker build produces working container](#82-test-docker-build-produces-working-container) @2026-06-12 deps:51 assignee:@antigravity
 
 ### Phase 11: API Layer (T83-T88) — @claude
 
@@ -139,28 +129,24 @@
 - [ ] [#87. Create src/api/diary.ts diary endpoints](#87-create-srcapidia.ts-diary-endpoints) @2026-06-13 deps:83 assignee:@claude
 - [ ] [#88. Create src/api/media.ts media endpoints](#88-create-srcapimediajs-media-endpoints) @2026-06-13 deps:83 assignee:@claude
 
-
 ### Phase 12: API Documentation (T89-T91) — @antigravity
 
-- [ ] [#89. Document API endpoints and schemas](#89-document-api-endpoints-and-schemas) @2026-06-14 deps:88 assignee:@antigravity
-- [ ] [#90. Document authentication method in API](#90-document-authentication-method-in-api) @2026-06-14 deps:89 assignee:@antigravity
-- [ ] [#91. Create OpenAPI/Swagger spec](#91-create-openapiswagger-spec) @2026-06-14 deps:89 assignee:@antigravity
-
+- [~] [#89. Document API endpoints and schemas](#89-document-api-endpoints-and-schemas) @2026-06-14 deps:88 assignee:@antigravity
+- [~] [#90. Document authentication method in API](#90-document-authentication-method-in-api) @2026-06-14 deps:89 assignee:@antigravity
+- [~] [#91. Create OpenAPI/Swagger spec](#91-create-openapiswagger-spec) @2026-06-14 deps:89 assignee:@antigravity
 
 ### Phase 13: CI/CD (T92-T95) — @antigravity
 
-- [ ] [#92. Create .github/workflows/ci.yml](#92-create-githubworkflowsciyml) @2026-06-15 deps:25,30 assignee:@antigravity
-- [ ] [#93. Add test running to CI pipeline](#93-add-test-running-to-ci-pipeline) @2026-06-15 deps:92,82 assignee:@antigravity
-- [ ] [#94. Add linting to CI pipeline](#94-add-linting-to-ci-pipeline) @2026-06-15 deps:92,11 assignee:@antigravity
-- [ ] [#95. Add Docker build to CI pipeline](#95-add-docker-build-to-ci-pipeline) @2026-06-15 deps:92,82 assignee:@antigravity
-
+- [x] [#92. Create .github/workflows/ci.yml](#92-create-githubworkflowsciyml) @2026-06-15 deps:25,30 assignee:@antigravity
+- [x] [#93. Add test running to CI pipeline](#93-add-test-running-to-ci-pipeline) @2026-06-15 deps:92,82 assignee:@antigravity
+- [x] [#94. Add linting to CI pipeline](#94-add-linting-to-ci-pipeline) @2026-06-15 deps:92,11 assignee:@antigravity
+- [x] [#95. Add Docker build to CI pipeline](#95-add-docker-build-to-ci-pipeline) @2026-06-15 deps:92,82 assignee:@antigravity
 
 ### Phase 14: Deployment (T96-T98) — @antigravity
 
-- [ ] [#96. Create Vercel/Railway deployment configuration](#96-create-vercelrailway-deployment-configuration) @2026-06-16 deps:95 assignee:@antigravity
-- [ ] [#97. Create DEPLOYMENT.md with deployment instructions](#97-create-deploymentmd-with-deployment-instructions) @2026-06-16 deps:96 assignee:@antigravity
-- [ ] [#98. Update README with deployment and status badges](#98-update-readme-with-deployment-and-status-badges) @2026-06-16 deps:97 assignee:@antigravity
-
+- [x] [#96. Create Vercel/Railway deployment configuration](#96-create-vercelrailway-deployment-configuration) @2026-06-16 deps:95 assignee:@antigravity
+- [x] [#97. Create DEPLOYMENT.md with deployment instructions](#97-create-deploymentmd-with-deployment-instructions) @2026-06-16 deps:96 assignee:@antigravity
+- [x] [#98. Update README with deployment and status badges](#98-update-readme-with-deployment-and-status-badges) @2026-06-16 deps:97 assignee:@antigravity
 
 ## Details
 

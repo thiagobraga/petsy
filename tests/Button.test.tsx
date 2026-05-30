@@ -1,17 +1,28 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeAll } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import React from 'react';
 
-// Example test for Button component
-// This demonstrates the testing pattern for Petsy components
+// Setup mock window objects required by components.jsx
+beforeAll(() => {
+  (window as any).TOKENS = {
+    pink: '#ED8FAA',
+    pinkHover: '#E57395',
+    pinkSoft: '#F8D8E1',
+    pinkPale: '#FCEEF2',
+    ink: '#3A2620',
+    rPill: 999,
+  };
+  (window as any).I = {};
+});
+
+// Import the file so it attaches components to window
+import '../src/components.jsx';
+
+const Button = (window as any).Button;
 
 describe('Button', () => {
   it('renders with text', () => {
-    // Note: Update import path when Button component is moved to src/components.tsx
-    const Button = ({ children }: { children: React.ReactNode }) => (
-      <button>{children}</button>
-    );
-
     render(<Button>Click me</Button>);
     expect(screen.getByText('Click me')).toBeInTheDocument();
   });
@@ -20,29 +31,15 @@ describe('Button', () => {
     const user = userEvent.setup();
     const handleClick = vi.fn();
 
-    const Button = ({
-      children,
-      onClick,
-    }: {
-      children: React.ReactNode;
-      onClick: () => void;
-    }) => <button onClick={onClick}>{children}</button>;
-
     render(<Button onClick={handleClick}>Click me</Button>);
 
     await user.click(screen.getByText('Click me'));
-    expect(handleClick).toHaveBeenCalled();
+    expect(handleClick).toHaveBeenCalledOnce();
   });
 
-  it('respects disabled state', () => {
-    const Button = ({ disabled }: { disabled?: boolean; children: React.ReactNode }) => (
-      <button disabled={disabled}>Click me</button>
-    );
-
-    const { rerender } = render(<Button disabled={false}>Click me</Button>);
-    expect(screen.getByRole('button')).not.toBeDisabled();
-
-    rerender(<Button disabled={true}>Click me</Button>);
-    expect(screen.getByRole('button')).toBeDisabled();
+  it('renders icons', () => {
+    render(<Button icon={<span>LeftIcon</span>} iconRight={<span>RightIcon</span>}>Click me</Button>);
+    expect(screen.getByText('LeftIcon')).toBeInTheDocument();
+    expect(screen.getByText('RightIcon')).toBeInTheDocument();
   });
 });

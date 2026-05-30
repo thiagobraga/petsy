@@ -1,7 +1,7 @@
 // Petsy — design tokens & primitive helpers
 // Colors anchored on warm cream/beige + rose pink + cocoa brown.
 
-const TOKENS = {
+export const TOKENS = {
   // surfaces
   bg:        '#FBF1DE',  // primary cream
   bgDeep:    '#F4E3C6',  // section bg / chips
@@ -44,8 +44,10 @@ const TOKENS = {
   fontMono:    '"JetBrains Mono", ui-monospace, monospace',
 };
 
+export type TokenKey = keyof typeof TOKENS;
+
 // Inject Google Fonts + base reset
-const PetsyFonts = () => {
+export const PetsyFonts = () => {
   React.useEffect(() => {
     if (document.getElementById('petsy-fonts')) return;
     const l1 = document.createElement('link');
@@ -75,6 +77,13 @@ const PetsyFonts = () => {
   }, []);
   return null;
 };
+
+declare global {
+  interface Window {
+    TOKENS: typeof TOKENS;
+    PetsyFonts: typeof PetsyFonts;
+  }
+}
 
 window.TOKENS = TOKENS;
 window.PetsyFonts = PetsyFonts;

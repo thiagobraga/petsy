@@ -12,8 +12,11 @@ interface PetDetailScreenProps {
 // Pet Detail screen — header card + tabs to medicines / appointments / exams
 export function PetDetailScreen({ petId }: PetDetailScreenProps) {
   const selectedPetId = usePetStore((state) => state.selectedPetId);
+  const petNotes = usePetStore((state) => state.petNotes);
+  const setPetNote = usePetStore((state) => state.setPetNote);
   const resolvedPetId = petId || selectedPetId || 'luna';
   const pet = petById(resolvedPetId) || PETS[0];
+  const note = petNotes[pet.id] || '';
   const [section, setSection] = React.useState('about');
 
   return (
@@ -282,23 +285,27 @@ export function PetDetailScreen({ petId }: PetDetailScreenProps) {
 
         {section === 'notes' && (
           <div data-fade style={{ padding: '14px 18px 0' }}>
-            <div
+            <textarea
+              aria-label={`${pet.name} notes`}
+              value={note}
+              onChange={(event) => setPetNote(pet.id, event.target.value)}
               style={{
+                width: '100%',
+                minHeight: 128,
                 background: T4.surface,
                 borderRadius: 22,
                 padding: 16,
+                border: 'none',
                 boxShadow: T4.shadowSm,
                 fontSize: 13,
                 color: T4.ink2,
                 lineHeight: 1.5,
                 fontWeight: 500,
+                fontFamily: T4.fontBody,
+                resize: 'vertical',
+                outline: 'none',
               }}
-              contentEditable
-              suppressContentEditableWarning
-            >
-              Luna tem alergia leve a poeira e ácaros. Apoquel funciona bem. Não come ração com
-              frango. Adora água — leva muito bem ao mar e à banheira.
-            </div>
+            />
           </div>
         )}
       </div>

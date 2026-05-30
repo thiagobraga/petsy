@@ -3,11 +3,11 @@ import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { PetDetailScreen } from '../src/screens/PetDetail';
-import { usePetStore } from '../src/stores/pet';
+import { DEFAULT_PET_NOTES, usePetStore } from '../src/stores/pet';
 
 describe('PetDetailScreen', () => {
   beforeEach(() => {
-    usePetStore.setState({ selectedPetId: null });
+    usePetStore.setState({ selectedPetId: null, petNotes: DEFAULT_PET_NOTES });
   });
 
   it('loads pet data from the route petId prop', () => {
@@ -41,12 +41,32 @@ describe('PetDetailScreen', () => {
 
     await user.click(screen.getByRole('button', { name: 'Notas' }));
 
-    expect(screen.getByText(/Luna tem alergia leve/)).toBeInTheDocument();
+    expect(screen.getByDisplayValue(/Luna tem alergia leve/)).toBeInTheDocument();
     expect(screen.queryByText('Vermifugação')).not.toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'Sobre' }));
 
     expect(screen.getByText('Data de nascimento')).toBeInTheDocument();
-    expect(screen.queryByText(/Luna tem alergia leve/)).not.toBeInTheDocument();
+    expect(screen.queryByRole('textbox', { name: 'Luna notes' })).not.toBeInTheDocument();
+  });
+
+  it('saves edited notes for the current pet', async () => {
+    const user = userEvent.setup();
+    const newNote = 'Evitar praia em dias muito quentes.';
+
+    render(<PetDetailScreen petId="biscoito" />);
+
+    await user.click(screen.getByRole('button', { name: 'Notas' }));
+    const notes = screen.getByRole('textbox', { name: 'Biscoito notes' });
+
+    await user.clear(notes);
+    await user.type(notes, newNote);
+
+    expect(usePetStore.getState().petNotes.biscoito).toBe(newNote);
+
+    await user.click(screen.getByRole('button', { name: 'Saúde' }));
+    await user.click(screen.getByRole('button', { name: 'Notas' }));
+
+    expect(screen.getByRole('textbox', { name: 'Biscoito notes' })).toHaveValue(newNote);
   });
 });

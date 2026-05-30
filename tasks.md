@@ -76,17 +76,17 @@
 - [x] [#49. Create preferences store (hideCompleted, groupByStatus)](#49-create-preferences-store-hidecompleted-groupbystatus) @2026-06-03 deps:46 assignee:@claude
 - [x] [#50. Create custom hooks for consuming stores](#50-create-custom-hooks-for-consuming-stores) @2026-06-03 deps:47,48,49 assignee:@claude
 
-### Phase 7: Docker (T51-T52) — @antigravity
+### Phase 7: Docker (T51-T52) — @claude
 
-- [x] [#51. Update .docker/app.Dockerfile for Vite build](#51-update-dockerapp-dockerfile-for-vite-build) @2026-06-03 deps:40 assignee:@antigravity
-- [x] [#52. Update compose.yml for production build output](#52-update-composeyml-for-production-build-output) @2026-06-03 deps:51 assignee:@antigravity
+- [x] [#51. Update .docker/app.Dockerfile for Vite build](#51-update-dockerapp-dockerfile-for-vite-build) @2026-06-03 deps:40 assignee:@claude
+- [x] [#52. Update compose.yml for production build output](#52-update-composeyml-for-production-build-output) @2026-06-03 deps:51 assignee:@claude
 
 ### Phase 8: Screen Implementation (T53-T72) — @codex
 
 - [x] [#53. Implement LoginScreen form validation](#53-implement-loginscreen-form-validation) @2026-06-04 deps:50 assignee:@codex
 - [x] [#54. Implement LoginScreen mock authentication](#54-implement-loginscreen-mock-authentication) @2026-06-04 deps:47,53 assignee:@codex
 - [x] [#55. Implement LoginScreen error messages](#55-implement-loginscreen-error-messages) @2026-06-04 deps:53 assignee:@codex
-- [ ] [#56. Implement DashboardScreen pet selection](#56-implement-dashboardscreen-pet-selection) @2026-06-04 deps:48,50 assignee:@codex
+- [x] [#56. Implement DashboardScreen pet selection](#56-implement-dashboardscreen-pet-selection) @2026-06-04 deps:48,50 assignee:@codex
 - [ ] [#57. Bind DashboardScreen to PETS and MEDS data](#57-bind-dashboardscreen-to-pets-and-meds-data) @2026-06-04 deps:56 assignee:@codex
 - [ ] [#58. Bind DashboardScreen greeting card to user/pet](#58-bind-dashboardscreen-greeting-card-to-userpet) @2026-06-04 deps:57 assignee:@codex
 - [ ] [#59. Implement PetDetailScreen dynamic pet data loading](#59-implement-petdetailscreen-dynamic-pet-data-loading) @2026-06-05 deps:50 assignee:@codex
@@ -111,14 +111,14 @@
 - [x] [#75. Implement localStorage-based image persistence](#75-implement-localstorage-based-image-persistence) @2026-06-08 deps:73 assignee:@claude
 - [x] [#76. Load persisted state on app startup](#76-load-persisted-state-on-app-startup) @2026-06-08 deps:74 assignee:@claude
 
-### Phase 10: Testing (T77-T82) — @antigravity
+### Phase 10: Testing (T77-T82) — @claude
 
-- [x] [#77. Write unit tests for Button component](#77-write-unit-tests-for-button-component) @2026-06-10 deps:13 assignee:@antigravity
-- [x] [#78. Write unit tests for Input component](#78-write-unit-tests-for-input-component) @2026-06-10 deps:13 assignee:@antigravity
-- [x] [#79. Write unit tests for PetAvatar component](#79-write-unit-tests-for-petavatar-component) @2026-06-10 deps:13 assignee:@antigravity
-- [~] [#80. Write integration tests for LoginScreen](#80-write-integration-tests-for-loginscreen) @2026-06-11 deps:13,54 assignee:@antigravity
-- [~] [#81. Write integration tests for DashboardScreen](#81-write-integration-tests-for-dashboardscreen) @2026-06-11 deps:13,57 assignee:@antigravity
-- [x] [#82. Test Docker build produces working container](#82-test-docker-build-produces-working-container) @2026-06-12 deps:51 assignee:@antigravity
+- [x] [#77. Write unit tests for Button component](#77-write-unit-tests-for-button-component) @2026-06-10 deps:13 assignee:@claude
+- [x] [#78. Write unit tests for Input component](#78-write-unit-tests-for-input-component) @2026-06-10 deps:13 assignee:@claude
+- [x] [#79. Write unit tests for PetAvatar component](#79-write-unit-tests-for-petavatar-component) @2026-06-10 deps:13 assignee:@claude
+- [~] [#80. Write integration tests for LoginScreen](#80-write-integration-tests-for-loginscreen) @2026-06-11 deps:13,54 assignee:@claude
+- [~] [#81. Write integration tests for DashboardScreen](#81-write-integration-tests-for-dashboardscreen) @2026-06-11 deps:13,57 assignee:@claude
+- [x] [#82. Test Docker build produces working container](#82-test-docker-build-produces-working-container) @2026-06-12 deps:51 assignee:@claude
 
 ### Phase 11: API Layer (T83-T88) — @claude ✅ COMPLETE
 
@@ -129,24 +129,24 @@
 - [x] [#87. Create src/api/diary.ts diary endpoints](#87-create-srcapidia.ts-diary-endpoints) @2026-06-13 deps:83 assignee:@claude
 - [x] [#88. Create src/api/media.ts media endpoints](#88-create-srcapimediajs-media-endpoints) @2026-06-13 deps:83 assignee:@claude
 
-### Phase 12: API Documentation (T89-T91) — @antigravity
+### Phase 12: API Documentation (T89-T91) — @claude
 
-- [~] [#89. Document API endpoints and schemas](#89-document-api-endpoints-and-schemas) @2026-06-14 deps:88 assignee:@antigravity
-- [~] [#90. Document authentication method in API](#90-document-authentication-method-in-api) @2026-06-14 deps:89 assignee:@antigravity
-- [~] [#91. Create OpenAPI/Swagger spec](#91-create-openapiswagger-spec) @2026-06-14 deps:89 assignee:@antigravity
+- [~] [#89. Document API endpoints and schemas](#89-document-api-endpoints-and-schemas) @2026-06-14 deps:88 assignee:@claude
+- [~] [#90. Document authentication method in API](#90-document-authentication-method-in-api) @2026-06-14 deps:89 assignee:@claude
+- [~] [#91. Create OpenAPI/Swagger spec](#91-create-openapiswagger-spec) @2026-06-14 deps:89 assignee:@claude
 
-### Phase 13: CI/CD (T92-T95) — @antigravity
+### Phase 13: CI/CD (T92-T95) — @claude
 
-- [x] [#92. Create .github/workflows/ci.yml](#92-create-githubworkflowsciyml) @2026-06-15 deps:25,30 assignee:@antigravity
-- [x] [#93. Add test running to CI pipeline](#93-add-test-running-to-ci-pipeline) @2026-06-15 deps:92,82 assignee:@antigravity
-- [x] [#94. Add linting to CI pipeline](#94-add-linting-to-ci-pipeline) @2026-06-15 deps:92,11 assignee:@antigravity
-- [x] [#95. Add Docker build to CI pipeline](#95-add-docker-build-to-ci-pipeline) @2026-06-15 deps:92,82 assignee:@antigravity
+- [x] [#92. Create .github/workflows/ci.yml](#92-create-githubworkflowsciyml) @2026-06-15 deps:25,30 assignee:@claude
+- [x] [#93. Add test running to CI pipeline](#93-add-test-running-to-ci-pipeline) @2026-06-15 deps:92,82 assignee:@claude
+- [x] [#94. Add linting to CI pipeline](#94-add-linting-to-ci-pipeline) @2026-06-15 deps:92,11 assignee:@claude
+- [x] [#95. Add Docker build to CI pipeline](#95-add-docker-build-to-ci-pipeline) @2026-06-15 deps:92,82 assignee:@claude
 
-### Phase 14: Deployment (T96-T98) — @antigravity
+### Phase 14: Deployment (T96-T98) — @claude
 
-- [x] [#96. Create Vercel/Railway deployment configuration](#96-create-vercelrailway-deployment-configuration) @2026-06-16 deps:95 assignee:@antigravity
-- [x] [#97. Create DEPLOYMENT.md with deployment instructions](#97-create-deploymentmd-with-deployment-instructions) @2026-06-16 deps:96 assignee:@antigravity
-- [x] [#98. Update README with deployment and status badges](#98-update-readme-with-deployment-and-status-badges) @2026-06-16 deps:97 assignee:@antigravity
+- [x] [#96. Create Vercel/Railway deployment configuration](#96-create-vercelrailway-deployment-configuration) @2026-06-16 deps:95 assignee:@claude
+- [x] [#97. Create DEPLOYMENT.md with deployment instructions](#97-create-deploymentmd-with-deployment-instructions) @2026-06-16 deps:96 assignee:@claude
+- [x] [#98. Update README with deployment and status badges](#98-update-readme-with-deployment-and-status-badges) @2026-06-16 deps:97 assignee:@claude
 
 ## Details
 

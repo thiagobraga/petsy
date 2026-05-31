@@ -70,11 +70,11 @@ export interface MediaItem {
 
 export const PETS: Pet[] = [
   {
-    id: 'luna', name: 'Luna', breed: 'Golden Retriever', tone: 'pink',
+    id: 'meg', name: 'Meg', breed: 'SRD', tone: 'pink',
     dob: '14/03/2022', age: '4 anos · 2 meses', sex: 'Fêmea', weight: '28,4 kg',
     castrated: { value: true, date: '08/11/2023' },
-    color: 'Dourado', microchip: '900 215 444 887 213',
-    photo: 'pet-luna',
+    color: 'Marrom', microchip: '900 215 444 887 213',
+    photo: 'pet-meg',
   },
   {
     id: 'biscoito', name: 'Biscoito', breed: 'Shih Tzu', tone: 'cream',
@@ -93,14 +93,14 @@ export const PETS: Pet[] = [
 ];
 
 export const MEDS: Medicine[] = [
-  { id: 'm1', petId: 'luna', name: 'Apoquel', purpose: 'Alergia / coceira',
+  { id: 'm1', petId: 'Meg', name: 'Apoquel', purpose: 'Alergia / coceira',
     dose: '16 mg', frequency: '1× ao dia', when: ['08:00'],
     start: '01/04/2026', end: '30/06/2026',
     color: 'pink',
     days: [true, true, true, false, true, true, false],
     next: 'Hoje, 08:00',
   },
-  { id: 'm2', petId: 'luna', name: 'Bravecto', purpose: 'Antipulgas',
+  { id: 'm2', petId: 'Meg', name: 'Bravecto', purpose: 'Antipulgas',
     dose: '1000 mg', frequency: 'a cada 12 sem.', when: ['Domingo'],
     start: '14/03/2026', end: '06/06/2026',
     color: 'rose',
@@ -124,7 +124,7 @@ export const MEDS: Medicine[] = [
 ];
 
 export const APPOINTMENTS: Appointment[] = [
-  { id: 'a1', kind: 'consulta', petId: 'luna', title: 'Checkup anual',
+  { id: 'a1', kind: 'consulta', petId: 'Meg', title: 'Checkup anual',
     vet: 'Dra. Helena Souza · Clínica VetCare', date: '14/05/2026', time: '15:30',
     status: 'next', notes: 'Levar carteirinha de vacinação' },
   { id: 'a2', kind: 'consulta', petId: 'biscoito', title: 'Consulta dermatológica',
@@ -133,48 +133,49 @@ export const APPOINTMENTS: Appointment[] = [
   { id: 'a3', kind: 'consulta', petId: 'mel', title: 'Castração',
     vet: 'Dra. Helena Souza · Clínica VetCare', date: '03/06/2026', time: '09:00',
     status: 'next', notes: 'Jejum de 12h antes' },
-  { id: 'a4', kind: 'consulta', petId: 'luna', title: 'Vacinação V10',
+  { id: 'a4', kind: 'consulta', petId: 'Meg', title: 'Vacinação V10',
     vet: 'Clínica VetCare', date: '28/02/2026', time: '14:00',
     status: 'past', notes: 'Reforço anual aplicado' },
 ];
 
 export const EXAMS: Exam[] = [
-  { id: 'e1', petId: 'luna', title: 'Hemograma completo', date: '14/05/2026', status: 'next', lab: 'Lab. VetLab', time: '07:30' },
-  { id: 'e2', petId: 'luna', title: 'Ultrassom abdominal', date: '21/05/2026', status: 'next', lab: 'Clínica VetCare', time: '11:00' },
+  { id: 'e1', petId: 'Meg', title: 'Hemograma completo', date: '14/05/2026', status: 'next', lab: 'Lab. VetLab', time: '07:30' },
+  { id: 'e2', petId: 'Meg', title: 'Ultrassom abdominal', date: '21/05/2026', status: 'next', lab: 'Clínica VetCare', time: '11:00' },
   { id: 'e3', petId: 'biscoito', title: 'Raspado de pele', date: '22/05/2026', status: 'next', lab: 'PetSaúde', time: '10:30' },
   { id: 'e4', petId: 'biscoito', title: 'Painel alérgico', date: '12/04/2026', status: 'past', lab: 'Lab. VetLab', time: '09:00' },
 ];
 
 export const DIARY: DiaryEntry[] = [
-  { id: 'd1', petId: 'luna', date: '26 mai', mood: 'feliz',
-    title: 'Primeiro banho de mar', body: 'Luna adorou — entrou correndo na água e ficou meia hora tentando pegar as ondinhas. Em casa, dormiu profundamente.',
-    photos: ['ph-luna-1', 'ph-luna-2'] },
+  { id: 'd1', petId: 'Meg', date: '26 mai', mood: 'feliz',
+    title: 'Primeiro banho de mar', body: 'Meg adorou — entrou correndo na água e ficou meia hora tentando pegar as ondinhas. Em casa, dormiu profundamente.',
+    photos: ['ph-Meg-1', 'ph-Meg-2'] },
   { id: 'd2', petId: 'biscoito', date: '24 mai', mood: 'calmo',
     title: 'Dia tranquilo no escritório', body: 'Ficou no colchãozinho a tarde toda. Comeu bem, urinou normal, sem coceira.',
     photos: [] },
   { id: 'd3', petId: 'mel', date: '22 mai', mood: 'agitado',
     title: 'Reagiu mal ao novo vermífugo', body: 'Ficou sem apetite por 4h após a dose. Vou conversar com a Dra. Helena na próxima consulta.',
     photos: ['ph-mel-1'] },
-  { id: 'd4', petId: 'luna', date: '19 mai', mood: 'feliz',
+  { id: 'd4', petId: 'Meg', date: '19 mai', mood: 'feliz',
     title: 'Tosa de verão', body: 'Pelos bem mais curtos. Está se coçando menos com o calor.',
-    photos: ['ph-luna-3'] },
+    photos: ['ph-Meg-3'] },
 ];
 
 export const MEDIA: MediaItem[] = [
-  { id: 'p1', petId: 'luna', date: '26 mai', tag: 'praia' },
-  { id: 'p2', petId: 'luna', date: '26 mai', tag: 'praia' },
+  { id: 'p1', petId: 'Meg', date: '26 mai', tag: 'praia' },
+  { id: 'p2', petId: 'Meg', date: '26 mai', tag: 'praia' },
   { id: 'p3', petId: 'biscoito', date: '24 mai', tag: 'casa' },
   { id: 'p4', petId: 'mel', date: '22 mai', tag: 'parque' },
-  { id: 'p5', petId: 'luna', date: '19 mai', tag: 'tosa' },
-  { id: 'p6', petId: 'luna', date: '12 mai', tag: 'passeio' },
+  { id: 'p5', petId: 'Meg', date: '19 mai', tag: 'tosa' },
+  { id: 'p6', petId: 'Meg', date: '12 mai', tag: 'passeio' },
   { id: 'p7', petId: 'biscoito', date: '10 mai', tag: 'soneca' },
   { id: 'p8', petId: 'mel', date: '08 mai', tag: 'parque' },
-  { id: 'p9', petId: 'luna', date: '02 mai', tag: 'casa' },
+  { id: 'p9', petId: 'Meg', date: '02 mai', tag: 'casa' },
 ];
 
 export const petById = (id: string) => PETS.find(p => p.id === id);
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Window {
     PETS: typeof PETS;
     MEDS: typeof MEDS;

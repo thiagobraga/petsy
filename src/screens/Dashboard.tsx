@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconCircle, PetAvatar, PetsyMark, SectionHeader, TabBar } from '../components.tsx';
+import { IconCircle, PetAvatar, PetsyMark, SectionHeader } from '../components.tsx';
 import { MEDS, PETS, petById, type Medicine, type Pet } from '../data';
 import { I as Ic3 } from '../icons';
 import { useAuthStore } from '../stores/auth';
@@ -8,7 +8,7 @@ import { TOKENS as T3 } from '../tokens';
 
 // Dashboard — pets list + horizontal medicine schedule
 export function DashboardScreen() {
-  const [tab, setTab] = React.useState('home');
+  const [menuOpen, setMenuOpen] = React.useState(false);
   const currentUser = useAuthStore((state) => state.currentUser);
   const selectedPetId = usePetStore((state) => state.selectedPetId);
   const selectPet = usePetStore((state) => state.selectPet);
@@ -17,7 +17,7 @@ export function DashboardScreen() {
   const visibleMeds = MEDS.filter((med) => activePet === 'all' || med.petId === activePet);
   const nextMed = visibleMeds[0];
   const nextMedPet = nextMed ? petById(nextMed.petId) : null;
-  const displayName = currentUser?.name || 'Thiago Braaga';
+  const displayName = currentUser?.name || 'Thiago Braga';
   const initials = displayName
     .split(/\s+/)
     .filter(Boolean)
@@ -33,6 +33,7 @@ export function DashboardScreen() {
   const handlePetSelect = (petId: string) => {
     setActivePet(petId);
     selectPet(petId);
+    setMenuOpen(false);
   };
 
   return (
@@ -47,14 +48,19 @@ export function DashboardScreen() {
         overflow: 'hidden',
       }}
     >
-      <div data-scroll style={{ height: '100%', overflowY: 'auto', paddingBottom: 120 }}>
+      <div data-scroll style={{ height: '100%', overflowY: 'auto', paddingBottom: 24 }}>
         {/* top bar */}
         <div
           style={{
+            position: 'sticky',
+            top: 0,
+            background: T3.bg,
+            zIndex: 10,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            padding: '0 22px 4px',
+            padding: '20px 20px 16px',
+            borderBottom: `1px solid ${T3.borderSoft}`,
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -81,25 +87,50 @@ export function DashboardScreen() {
               </div>
             </div>
           </div>
-          <div style={{ display: 'flex', gap: 8 }}>
-            <button style={iconBtn(T3)}>
-              <Ic3.search size={20} color={T3.ink} />
+          <div style={{ position: 'relative' }}>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              style={{
+                ...iconBtn(T3),
+                background: menuOpen ? T3.bgDeep : 'transparent',
+              }}
+            >
+              <Ic3.menu size={20} color={T3.ink} />
             </button>
-            <button style={{ ...iconBtn(T3), position: 'relative' }}>
-              <Ic3.bell size={20} color={T3.ink} />
-              <span
+            {menuOpen && (
+              <div
                 style={{
                   position: 'absolute',
-                  top: 8,
-                  right: 9,
-                  width: 8,
-                  height: 8,
-                  borderRadius: 999,
-                  background: T3.pink,
-                  border: '2px solid #fff',
+                  top: 50,
+                  right: 0,
+                  background: T3.surface,
+                  borderRadius: T3.r2,
+                  boxShadow: T3.shadow,
+                  minWidth: 180,
+                  zIndex: 100,
                 }}
-              />
-            </button>
+              >
+                {PETS.map((pet) => (
+                  <button
+                    key={pet.id}
+                    onClick={() => handlePetSelect(pet.id)}
+                    style={{
+                      width: '100%',
+                      padding: '12px 16px',
+                      textAlign: 'left',
+                      borderBottom: `1px solid ${T3.borderSoft}`,
+                      fontSize: 14,
+                      fontWeight: activePet === pet.id ? 700 : 500,
+                      color: activePet === pet.id ? T3.pink : T3.ink,
+                      background: activePet === pet.id ? T3.pinkPale : 'transparent',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    {pet.name}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
@@ -148,12 +179,12 @@ export function DashboardScreen() {
         </div>
 
         {/* My Pets */}
-        <div style={{ padding: '0 18px' }}>
-          <SectionHeader title="Meus petssssssssss" action="Ver todos" />
+        <div style={{ padding: '28px 20px 12px' }}>
+          <SectionHeader title="Meus pets" action="Ver todos" />
         </div>
         <div
           data-scroll
-          style={{ display: 'flex', gap: 12, padding: '12px 18px 6px', overflowX: 'auto' }}
+          style={{ display: 'flex', gap: 12, padding: '8px 20px 16px', overflowX: 'auto' }}
         >
           {PETS.map((p) => (
             <PetCard
@@ -167,7 +198,7 @@ export function DashboardScreen() {
         </div>
 
         {/* Medicine management */}
-        <div style={{ padding: '18px 18px 0' }}>
+        <div style={{ padding: '28px 20px 12px' }}>
           <SectionHeader title="Medicações de hoje" action="Ver agenda" />
         </div>
 
@@ -219,15 +250,15 @@ export function DashboardScreen() {
         </div>
 
         {/* Quick actions */}
-        <div style={{ padding: '20px 18px 0' }}>
+        <div style={{ padding: '28px 20px 12px' }}>
           <SectionHeader title="Acesso rápido" />
         </div>
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4,1fr)',
-            gap: 10,
-            padding: '12px 18px',
+            gap: 12,
+            padding: '8px 20px 28px',
           }}
         >
           {[
@@ -256,8 +287,6 @@ export function DashboardScreen() {
           ))}
         </div>
       </div>
-
-      <TabBar active={tab} onChange={setTab} />
     </div>
   );
 }

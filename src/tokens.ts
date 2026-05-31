@@ -70,8 +70,12 @@ export const PetsyFonts = () => {
       .petsy input,.petsy textarea { font-family: inherit; color: ${TOKENS.ink}; }
       .petsy input:focus,.petsy textarea:focus { outline: none; }
       .petsy ::placeholder { color: ${TOKENS.ink3}; }
-      .petsy [data-scroll]::-webkit-scrollbar { display: none; }
-      .petsy [data-scroll] { scrollbar-width: none; }
+      /* Styled scrollbars */
+      .petsy [data-scroll]::-webkit-scrollbar { width: 8px; }
+      .petsy [data-scroll]::-webkit-scrollbar-track { background: transparent; }
+      .petsy [data-scroll]::-webkit-scrollbar-thumb { background: ${TOKENS.ink3}; border-radius: 4px; }
+      .petsy [data-scroll]::-webkit-scrollbar-thumb:hover { background: ${TOKENS.ink2}; }
+      .petsy [data-scroll] { scrollbar-width: thin; scrollbar-color: ${TOKENS.ink3} transparent; }
       @keyframes petsy-fade-in { from { opacity:0; transform: translateY(4px) } to { opacity:1; transform:none } }
       .petsy [data-fade] { animation: petsy-fade-in .35s ease both; }
     `;
@@ -80,14 +84,13 @@ export const PetsyFonts = () => {
   return null;
 };
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Window {
     TOKENS: typeof TOKENS;
     PetsyFonts: typeof PetsyFonts;
   }
 }
-/* eslint-enable @typescript-eslint/no-unused-vars */
 
 window.TOKENS = TOKENS;
 window.PetsyFonts = PetsyFonts;

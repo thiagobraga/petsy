@@ -1,0 +1,370 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-31T00:00:00Z",
+  "title": "Design System: Petsy",
+  "extensions": {
+    "colorMeta": {
+      "primary-pink": {
+        "role": "primary",
+        "displayName": "Rose Pink",
+        "canonical": "oklch(67% 0.18 20)",
+        "tonalRamp": [
+          "oklch(20% 0.18 20)",
+          "oklch(30% 0.18 20)",
+          "oklch(40% 0.18 20)",
+          "oklch(50% 0.18 20)",
+          "oklch(67% 0.18 20)",
+          "oklch(80% 0.18 20)",
+          "oklch(90% 0.18 20)",
+          "oklch(97% 0.08 20)"
+        ]
+      },
+      "primary-pink-soft": {
+        "role": "secondary-bg",
+        "displayName": "Rose Pink Soft",
+        "canonical": "oklch(88% 0.08 20)",
+        "tonalRamp": [
+          "oklch(60% 0.08 20)",
+          "oklch(70% 0.08 20)",
+          "oklch(80% 0.08 20)",
+          "oklch(88% 0.08 20)",
+          "oklch(92% 0.06 20)",
+          "oklch(96% 0.04 20)",
+          "oklch(98% 0.02 20)",
+          "oklch(99% 0 20)"
+        ]
+      },
+      "secondary-rose": {
+        "role": "secondary",
+        "displayName": "Rose",
+        "canonical": "oklch(72% 0.15 25)",
+        "tonalRamp": [
+          "oklch(25% 0.15 25)",
+          "oklch(35% 0.15 25)",
+          "oklch(45% 0.15 25)",
+          "oklch(55% 0.15 25)",
+          "oklch(72% 0.15 25)",
+          "oklch(85% 0.10 25)",
+          "oklch(92% 0.06 25)",
+          "oklch(98% 0.02 25)"
+        ]
+      },
+      "neutral-cream": {
+        "role": "neutral-bg",
+        "displayName": "Cream",
+        "canonical": "oklch(96% 0.04 70)",
+        "tonalRamp": [
+          "oklch(40% 0.04 70)",
+          "oklch(55% 0.04 70)",
+          "oklch(70% 0.04 70)",
+          "oklch(85% 0.04 70)",
+          "oklch(96% 0.04 70)",
+          "oklch(98% 0.02 70)",
+          "oklch(99% 0.01 70)",
+          "oklch(100% 0 0)"
+        ]
+      },
+      "neutral-cream-deep": {
+        "role": "neutral-secondary-bg",
+        "displayName": "Cream Deep",
+        "canonical": "oklch(92% 0.05 70)",
+        "tonalRamp": [
+          "oklch(35% 0.05 70)",
+          "oklch(50% 0.05 70)",
+          "oklch(65% 0.05 70)",
+          "oklch(80% 0.05 70)",
+          "oklch(92% 0.05 70)",
+          "oklch(96% 0.03 70)",
+          "oklch(98% 0.01 70)",
+          "oklch(100% 0 0)"
+        ]
+      },
+      "neutral-surface": {
+        "role": "neutral-surface",
+        "displayName": "White",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(30% 0 0)",
+          "oklch(45% 0 0)",
+          "oklch(60% 0 0)",
+          "oklch(75% 0 0)",
+          "oklch(90% 0 0)",
+          "oklch(95% 0 0)",
+          "oklch(99% 0 0)",
+          "oklch(100% 0 0)"
+        ]
+      },
+      "ink-primary": {
+        "role": "text",
+        "displayName": "Cocoa Brown",
+        "canonical": "oklch(25% 0.04 40)",
+        "tonalRamp": [
+          "oklch(15% 0.04 40)",
+          "oklch(20% 0.04 40)",
+          "oklch(25% 0.04 40)",
+          "oklch(40% 0.04 40)",
+          "oklch(60% 0.04 40)",
+          "oklch(75% 0.04 40)",
+          "oklch(85% 0.04 40)",
+          "oklch(95% 0.02 40)"
+        ]
+      },
+      "semantic-ok": {
+        "role": "success",
+        "displayName": "Sage Green",
+        "canonical": "oklch(60% 0.10 130)",
+        "tonalRamp": [
+          "oklch(20% 0.10 130)",
+          "oklch(35% 0.10 130)",
+          "oklch(50% 0.10 130)",
+          "oklch(60% 0.10 130)",
+          "oklch(75% 0.06 130)",
+          "oklch(85% 0.04 130)",
+          "oklch(92% 0.02 130)",
+          "oklch(98% 0.01 130)"
+        ]
+      },
+      "semantic-warn": {
+        "role": "warning",
+        "displayName": "Warm Amber",
+        "canonical": "oklch(65% 0.12 60)",
+        "tonalRamp": [
+          "oklch(25% 0.12 60)",
+          "oklch(40% 0.12 60)",
+          "oklch(55% 0.12 60)",
+          "oklch(65% 0.12 60)",
+          "oklch(80% 0.08 60)",
+          "oklch(88% 0.05 60)",
+          "oklch(94% 0.02 60)",
+          "oklch(99% 0.01 60)"
+        ]
+      },
+      "semantic-danger": {
+        "role": "error",
+        "displayName": "Soft Rose Red",
+        "canonical": "oklch(58% 0.14 18)",
+        "tonalRamp": [
+          "oklch(20% 0.14 18)",
+          "oklch(35% 0.14 18)",
+          "oklch(48% 0.14 18)",
+          "oklch(58% 0.14 18)",
+          "oklch(72% 0.08 18)",
+          "oklch(82% 0.05 18)",
+          "oklch(90% 0.03 18)",
+          "oklch(97% 0.01 18)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headlines, screen titles. Rare—only the top of a flow."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headers, card titles. Used frequently for visual breaks."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Main content, descriptions. Keep to 65–75ch line length."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Button text, input labels, metadata. Slightly heavier to differentiate."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Timestamps, dosages, coded data. Preserve scan-ability."
+      }
+    },
+    "shadows": [
+      {
+        "name": "ambient-soft",
+        "value": "0 1px 2px rgba(58,38,32,0.05), 0 2px 6px rgba(58,38,32,0.04)",
+        "purpose": "Very subtle. Cards at rest, inactive tabs."
+      },
+      {
+        "name": "lift-medium",
+        "value": "0 4px 14px rgba(58,38,32,0.07), 0 8px 28px rgba(58,38,32,0.05)",
+        "purpose": "Hover states, modal backdrops, floating elements."
+      },
+      {
+        "name": "lift-deep",
+        "value": "0 16px 40px rgba(58,38,32,0.12)",
+        "purpose": "Toasts, critical modals. Used sparingly."
+      }
+    ],
+    "motion": [
+      {
+        "name": "transition-standard",
+        "value": "all 150ms ease-out",
+        "purpose": "Default easing for state transitions (hover, focus)."
+      },
+      {
+        "name": "transition-fast",
+        "value": "150ms ease-out",
+        "purpose": "Quick feedback (button press, checkbox toggle)."
+      },
+      {
+        "name": "ease-out-curve",
+        "value": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        "purpose": "Standard easing curve for smooth, natural motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "320px",
+        "purpose": "Base mobile breakpoint."
+      },
+      {
+        "name": "tablet",
+        "value": "768px",
+        "purpose": "Tablet and larger."
+      },
+      {
+        "name": "desktop",
+        "value": "1024px",
+        "purpose": "Desktop and larger."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "High-intent action button. Rose Pink, 8px radius, white text, soft shadows on hover.",
+      "html": "<button class=\"ds-btn-primary\">Add Medicine</button>",
+      "css": ".ds-btn-primary { background: #ED8FAA; color: #ffffff; padding: 12px 24px; font-family: '\"Nunito\"', system-ui; font-size: 15px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; transition: all 150ms ease-out; box-shadow: none; } .ds-btn-primary:hover { background: #D97694; box-shadow: 0 4px 14px rgba(58,38,32,0.07), 0 8px 28px rgba(58,38,32,0.05); transform: translateY(-1px); } .ds-btn-primary:focus-visible { outline: 2px solid #ED8FAA; outline-offset: 2px; } .ds-btn-primary:active { transform: translateY(0); } .ds-btn-primary:disabled { background: #CCB5A6; color: rgba(255,255,255,0.5); cursor: not-allowed; box-shadow: none; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Softer action button. Rose Pink Soft background, ink text, no shadow at rest.",
+      "html": "<button class=\"ds-btn-secondary\">Cancel</button>",
+      "css": ".ds-btn-secondary { background: #FBD7E0; color: #3A2620; padding: 12px 24px; font-family: '\"Nunito\"', system-ui; font-size: 15px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; transition: all 150ms ease-out; } .ds-btn-secondary:hover { background: #F7C6D2; box-shadow: 0 4px 14px rgba(58,38,32,0.07), 0 8px 28px rgba(58,38,32,0.05); } .ds-btn-secondary:focus-visible { outline: 2px solid #ED8FAA; outline-offset: 2px; } .ds-btn-secondary:disabled { background: #F4E3C6; color: #CCB5A6; cursor: not-allowed; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Form input. White background, soft border, rose pink on focus. 8px radius, 12px padding.",
+      "html": "<label class=\"ds-input-wrapper\"><input class=\"ds-input\" type=\"text\" placeholder=\"Medicine name\" /></label>",
+      "css": ".ds-input-wrapper { display: flex; align-items: center; padding: 0; background: #FFFFFF; border: 1.5px solid rgba(61,38,32,0.10); border-radius: 8px; transition: border-color 150ms ease-out, background-color 150ms ease-out; } .ds-input { flex: 1; padding: 12px 18px; border: none; background: transparent; font-family: '\"Nunito\"', system-ui; font-size: 15px; font-weight: 400; color: #3A2620; } .ds-input::placeholder { color: #A4877A; } .ds-input:focus { outline: none; } .ds-input-wrapper:has(.ds-input:focus) { border-color: #ED8FAA; background-color: #FFF9EE; box-shadow: 0 0 0 3px rgba(237,143,170,0.1); } .ds-input:disabled { background: #F4E3C6; color: #CCB5A6; } .ds-input-wrapper:has(.ds-input:disabled) { border-color: rgba(61,38,32,0.06); cursor: not-allowed; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Container with soft shadow and 20px radius. White background, subtle depth.",
+      "html": "<div class=\"ds-card\"><h3>Luna's Medicine</h3><p>Amoxicillin 250mg</p></div>",
+      "css": ".ds-card { background: #FFFFFF; border-radius: 20px; padding: 16px; box-shadow: 0 1px 2px rgba(58,38,32,0.05), 0 2px 6px rgba(58,38,32,0.04); transition: box-shadow 150ms ease-out; } .ds-card:hover { box-shadow: 0 4px 14px rgba(58,38,32,0.07), 0 8px 28px rgba(58,38,32,0.05); } .ds-card h3 { margin: 0 0 8px; font-family: '\"Fredoka\"', system-ui; font-size: 18px; font-weight: 700; color: #3A2620; } .ds-card p { margin: 0; font-family: '\"Nunito\"', system-ui; font-size: 15px; font-weight: 400; color: #6B4E45; }"
+    },
+    {
+      "name": "Tag / Chip",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Small label or badge. Rose Pink Pale background, rose pink text, 8px radius.",
+      "html": "<span class=\"ds-tag\">Pending</span>",
+      "css": ".ds-tag { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; background: #FDEDF1; color: #ED8FAA; font-family: '\"Nunito\"', system-ui; font-size: 12px; font-weight: 700; letter-spacing: 0.2px; border-radius: 8px; white-space: nowrap; } .ds-tag.selected { background: #ED8FAA; color: #FFFFFF; }"
+    },
+    {
+      "name": "Tab Navigation (Mobile)",
+      "kind": "nav",
+      "refersTo": "tab-bar",
+      "description": "Bottom iOS-style tab bar. White surface, active tab in Rose Pink Soft, icons + optional labels.",
+      "html": "<nav class=\"ds-tabbar\"><button class=\"ds-tab active\"><svg class=\"ds-tab-icon\" viewBox=\"0 0 24 24\"><path d=\"M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z\" fill=\"currentColor\"></path></svg></button><button class=\"ds-tab\"><svg class=\"ds-tab-icon\" viewBox=\"0 0 24 24\"><path d=\"M12 3v10H2V5h10m0-2H2c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z\" fill=\"currentColor\"></path></svg></button></nav>",
+      "css": ".ds-tabbar { position: fixed; bottom: 0; left: 0; right: 0; height: 68px; background: #FFFFFF; border-radius: 24px 24px 0 0; display: flex; align-items: center; justify-content: space-around; padding: 0; box-shadow: 0 -4px 14px rgba(58,38,32,0.07); z-index: 30; } .ds-tab { display: flex; flex-direction: column; align-items: center; gap: 2px; width: 100%; padding: 6px 0; background: transparent; border: none; cursor: pointer; color: #A4877A; transition: color 150ms ease-out, background 150ms ease-out; border-radius: 12px; font-size: 10px; font-weight: 700; } .ds-tab.active { color: #ED8FAA; } .ds-tab.active .ds-tab-icon-bg { background: #FDEDF1; } .ds-tab:hover { background: rgba(237,143,170,0.05); } .ds-tab-icon { width: 24px; height: 24px; } .ds-tab-icon-bg { width: 36px; height: 36px; border-radius: 50%; background: transparent; display: flex; align-items: center; justify-content: center; transition: background 150ms ease-out; }"
+    },
+    {
+      "name": "Pet Avatar",
+      "kind": "custom",
+      "refersTo": "avatar",
+      "description": "Circular avatar with pet initials or photo. 2px border, tone-matched ring color.",
+      "html": "<div class=\"ds-avatar ds-avatar-pink\"><span class=\"ds-avatar-text\">LU</span></div>",
+      "css": ".ds-avatar { width: 56px; height: 56px; border-radius: 50%; overflow: hidden; border: 2px solid; display: flex; align-items: center; justify-content: center; flex-shrink: 0; } .ds-avatar-pink { border-color: #ED8FAA; background: linear-gradient(135deg, #FBD7E0 0%, #FBD7E0 60%, rgba(0,0,0,0.04) 100%); } .ds-avatar-text { font-family: '\"Fredoka\"', system-ui; font-size: 20px; font-weight: 700; color: #ED8FAA; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Nest",
+    "overview": "Petsy is a calm refuge for pet owners who want to care thoughtfully. The visual system wraps users in warmth without overwhelming them—like a nest, it's safe, enveloping, and home. Every interaction reassures rather than alarms. The design removes friction from health tracking and celebrates pet memories with gentle, delicate beauty.\n\nPetsy rejects clinical coldness (no sterile medical aesthetics), cartoonish casualness (which undermines trust), corporate flatness (which feels impersonal), and visual noise (which exhausts pet owners). Instead, it breathes calm through soft curves, warm muted tones, and subtle personality.",
+    "keyCharacteristics": [
+      "Warm, supportive, trustworthy without being corporate",
+      "Subtly curved, never rigid or angular",
+      "Soft visual weight; generous whitespace",
+      "Playful only at moments, not by default",
+      "Typography that feels approachable, not display-heavy"
+    ],
+    "rules": [
+      {
+        "name": "The Palette Depth Rule",
+        "body": "Colors are never at full saturation. Warmth is carried through saturation reduction (muted rose, not hot pink) and hue shift toward earth tones. If a color looks 'bright' or 'candy-like,' it's the wrong value.",
+        "section": "colors"
+      },
+      {
+        "name": "The Accent Scarcity Rule",
+        "body": "Rose Pink is used on ≤10% of any screen. Its rarity makes it land. Secondary and tertiary colors fill the gaps, not the primary.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Display Rule",
+        "body": "Display sizing is reserved for hero moments. Section headers use Headline; body headings stay in Title or Label. Overusing Display creates noise.",
+        "section": "typography"
+      },
+      {
+        "name": "The Weight Contrast Rule",
+        "body": "Hierarchy is built on weight and size together, not size alone. A 18px / 700 weight Headline is distinct from 15px / 400 weight Body because both properties shift.",
+        "section": "typography"
+      },
+      {
+        "name": "The Subtle Depth Rule",
+        "body": "Shadows are barely visible at arm's length. If you notice the shadow before the content, it's too dark or too sharp. Warmth (brown tint) keeps shadows feeling friendly, not ominous.",
+        "section": "elevation"
+      },
+      {
+        "name": "The No-Stacked-Shadows Rule",
+        "body": "One shadow per element. Nested cards are forbidden. If you need two layers, use tonal background shifts instead.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Gentle Affordance Rule",
+        "body": "Every button, input, and interactive component uses 8–12px radius. Pill shapes (radius: 999) are forbidden in the new design; they read as decorative, not functional. Squared corners (radius: 0) are also forbidden unless explicitly part of a data table.",
+        "section": "components"
+      },
+      {
+        "name": "The Consistent State Vocabulary Rule",
+        "body": "Every interactive component has default → hover → focus → active → disabled states. No component ships half-built.",
+        "section": "components"
+      },
+      {
+        "name": "The Border Lightness Rule",
+        "body": "Borders are soft (Border Soft: rgba with 6–10% opacity) unless they're focus indicators. Hard-stroke borders (1.5–2px in dark colors) are only used for focus outlines, never at rest.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do use Rose Pink sparingly (≤10% of screen). Its rarity makes it effective.",
+      "Do use Cream Deep as a visual separator and visual-rest surface. It's your 'secondary background.'",
+      "Do pair 8–12px radius on buttons and inputs. Gentle curves feel warm and approachable.",
+      "Do use soft shadows (medium lift on hover). Interaction should feel light, not heavy.",
+      "Do maintain 65–75ch line length for body text. Long text is harder to read on mobile.",
+      "Do use Fredoka for headlines only. Body must be Nunito for legibility.",
+      "Do respect reduced motion (all transitions should have @media (prefers-reduced-motion: reduce) fallback to instant state change).",
+      "Do build empty states and error states upfront. These are part of the complete component."
+    ],
+    "donts": [
+      "Don't use pill-shaped buttons, inputs, or containers. PETSY IS ABANDONING PILLS. Radius ≥ 20px is now forbidden.",
+      "Don't use hard-stroke borders (1.5px+ dark strokes) on cards or sections at rest. Borders are for focus rings only. Use background tint instead.",
+      "Don't use clinical or sterile aesthetics (white-only, high-contrast, hospital-grade). This is a pet care companion, not a medical device.",
+      "Don't use cartoonish or bubbly styles that undermine trust in health tracking. No gradients, no neon, no emoji-heavy layouts.",
+      "Don't overuse color. Grays and blacks are fine for secondary text; keep the palette muted.",
+      "Don't use Display typography for labels or buttons. Display is for hero moments only.",
+      "Don't ship components without all states (default, hover, focus, disabled). Half-built components feel incomplete.",
+      "Don't add decorative motion. Motion conveys state only: hover, focus, loading, transitions. No choreographed page-load sequences.",
+      "Don't use margin-only spacing. Mix margin and padding for rhythm and breathing room.",
+      "Don't nest cards. Nested cards are visual clutter. Use tonal layering instead."
+    ]
+  }
+}

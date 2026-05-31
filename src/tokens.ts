@@ -1,6 +1,8 @@
 // Petsy — design tokens & primitive helpers
 // Colors anchored on warm cream/beige + rose pink + cocoa brown.
 
+import React from 'react';
+
 export const TOKENS = {
   // surfaces
   bg:        '#FBF1DE',  // primary cream
@@ -30,8 +32,8 @@ export const TOKENS = {
   border:    'rgba(61,38,32,0.10)',
   borderSoft:'rgba(61,38,32,0.06)',
 
-  // radii
-  r1: 8, r2: 14, r3: 20, r4: 28, rPill: 999,
+  // radii — gentle curves (8-12px for interactive, 20px for cards)
+  r1: 4, r2: 8, r3: 12, r4: 20, rPill: 999, // rPill deprecated; use r4 instead
 
   // shadows
   shadowSm: '0 1px 2px rgba(58,38,32,0.05), 0 2px 6px rgba(58,38,32,0.04)',
@@ -78,12 +80,14 @@ export const PetsyFonts = () => {
   return null;
 };
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 declare global {
   interface Window {
     TOKENS: typeof TOKENS;
     PetsyFonts: typeof PetsyFonts;
   }
 }
+/* eslint-enable @typescript-eslint/no-unused-vars */
 
 window.TOKENS = TOKENS;
 window.PetsyFonts = PetsyFonts;

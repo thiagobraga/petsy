@@ -151,7 +151,7 @@ export function Button({
         padding: `0 ${sz.px}px`,
         fontSize: sz.fs,
         fontWeight: 700,
-        borderRadius: T.rPill,
+        borderRadius: T.r2,
         background: hover ? variants.bgH : variants.bg,
         color: variants.c,
         border: `1.5px solid ${variants.border === 'transparent' ? 'transparent' : variants.border}`,
@@ -191,7 +191,7 @@ export function Input({
         height: 54,
         padding: '0 18px',
         background: T.surface,
-        borderRadius: T.rPill,
+        borderRadius: T.r2,
         border: `1.5px solid ${focus ? T.pink : T.border}`,
         transition: 'border-color .15s',
         ...style,
@@ -234,7 +234,7 @@ export function Checkbox({ checked, onChange, size = 22, label }: CheckboxProps)
         style={{
           width: size,
           height: size,
-          borderRadius: 7,
+          borderRadius: T.r1,
           background: checked ? T.pink : '#fff',
           border: `1.8px solid ${checked ? T.pink : T.ink3}`,
           display: 'flex',
@@ -268,7 +268,7 @@ export function Tag({ children, tone = 'pink', size = 'md' }: TagProps) {
         alignItems: 'center',
         gap: 4,
         padding: `${sz.py}px ${sz.px}px`,
-        borderRadius: T.rPill,
+        borderRadius: T.r2,
         background: tones.bg,
         color: tones.c,
         fontSize: sz.fs,
@@ -288,7 +288,7 @@ export function Card({ children, padding = 16, style, onClick }: CardProps) {
       onClick={onClick}
       style={{
         background: T.surface,
-        borderRadius: T.r3,
+        borderRadius: T.r4,
         padding,
         boxShadow: T.shadowSm,
         cursor: onClick ? 'pointer' : 'default',
@@ -509,7 +509,7 @@ export function TabBar({ active, onChange }: TabBarProps) {
               alignItems: 'center',
               gap: 2,
               padding: '6px 10px',
-              borderRadius: 16,
+              borderRadius: T.r3,
               color: isActive ? T.pink : T.ink3,
             }}
           >
@@ -605,7 +605,7 @@ export function MiniCalendar({
           style={{
             width: 28,
             height: 28,
-            borderRadius: 999,
+            borderRadius: T.r2,
             background: T.bgDeep,
             display: 'flex',
             alignItems: 'center',
@@ -619,7 +619,7 @@ export function MiniCalendar({
           style={{
             width: 28,
             height: 28,
-            borderRadius: 999,
+            borderRadius: T.r2,
             background: T.bgDeep,
             display: 'flex',
             alignItems: 'center',

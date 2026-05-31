@@ -17,7 +17,7 @@ export function DashboardScreen() {
   const visibleMeds = MEDS.filter((med) => activePet === 'all' || med.petId === activePet);
   const nextMed = visibleMeds[0];
   const nextMedPet = nextMed ? petById(nextMed.petId) : null;
-  const displayName = currentUser?.name || 'Ana Maria';
+  const displayName = currentUser?.name || 'Thiago Braaga';
   const initials = displayName
     .split(/\s+/)
     .filter(Boolean)
@@ -149,7 +149,7 @@ export function DashboardScreen() {
 
         {/* My Pets */}
         <div style={{ padding: '0 18px' }}>
-          <SectionHeader title="Meus pets" action="Ver todos" />
+          <SectionHeader title="Meus petssssssssss" action="Ver todos" />
         </div>
         <div
           data-scroll

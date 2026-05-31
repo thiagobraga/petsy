@@ -23,9 +23,14 @@ import React from 'react';
   fontDisplay: 'Fredoka, sans-serif',
 };
 
-(window as any).I = {
-  check: () => <svg data-testid="icon-check" />,
-};
+// Auto-stub any icon name used by screens; keep `check` with its testid.
+(window as any).I = new Proxy(
+  { check: () => <svg data-testid="icon-check" /> },
+  {
+    get: (target: any, prop: string) =>
+      prop in target ? target[prop] : () => <svg data-testid={`icon-${String(prop)}`} />,
+  }
+);
 
 // Mock custom element
 if (!customElements.get('image-slot')) {

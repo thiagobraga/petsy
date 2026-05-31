@@ -147,6 +147,7 @@
 - [x] [#96. Create Vercel/Railway deployment configuration](#96-create-vercelrailway-deployment-configuration) @2026-06-16 deps:95 assignee:@claude
 - [x] [#97. Create DEPLOYMENT.md with deployment instructions](#97-create-deploymentmd-with-deployment-instructions) @2026-06-16 deps:96 assignee:@claude
 - [x] [#98. Update README with deployment and status badges](#98-update-readme-with-deployment-and-status-badges) @2026-06-16 deps:97 assignee:@claude
+- [x] [#99. Fix Vite dev server live reloading](#99-fix-vite-dev-server-live-reloading) @2026-05-31 deps:31 assignee:@codex
 
 ## Details
 

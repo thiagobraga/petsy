@@ -6,6 +6,14 @@ export default defineConfig({
   base: '/',
   server: {
     port: 5173,
+    host: true,
+    watch: {
+      usePolling: true,
+    },
+    hmr: {
+      host: 'localhost',
+      port: 5173,
+    },
   },
   build: {
     outDir: 'dist',

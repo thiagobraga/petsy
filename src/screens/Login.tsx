@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'wouter';
 import { Button, Checkbox, Input, PetsyMark } from '../components';
 import { useAuthStore } from '../stores/auth';
+import dogImage from '../assets/petsy-dog.png';
 
 // Login screen — matches the reference image.
 const { TOKENS: T2, I: Ic2 } = window;
@@ -122,7 +123,7 @@ export function LoginScreen() {
         </p>
       </div>
 
-      {/* hero illustration placeholder */}
+      {/* hero illustration */}
       <div
         style={{
           flex: 1,
@@ -131,26 +132,32 @@ export function LoginScreen() {
           alignItems: 'flex-end',
           justifyContent: 'center',
           marginTop: 12,
+          minHeight: 200,
         }}
       >
         <div
           style={{
-            width: 200,
-            height: 160,
+            width: 220,
+            height: 180,
             borderRadius: '50% 50% 12px 12px',
             background: `radial-gradient(circle at 50% 30%, ${T2.pinkSoft} 0%, ${T2.pinkPale} 100%)`,
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'flex-end',
             justifyContent: 'center',
             position: 'relative',
+            overflow: 'hidden',
           }}
         >
-          <image-slot
-            id="login-pet"
-            style={{ width: '160px', height: '160px', position: 'absolute', bottom: 0 }}
-            shape="circle"
-            placeholder="pet hero"
-          ></image-slot>
+          <img
+            src={dogImage}
+            alt="Happy pet"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              objectPosition: 'bottom center',
+            }}
+          />
           {/* paw confetti */}
           <div style={{ position: 'absolute', top: 16, left: -12, opacity: 0.5 }}>
             <PetsyMark size={20} color={T2.rose} />

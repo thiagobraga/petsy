@@ -1,0 +1,47 @@
+- generic [ref=e3]:
+  - img [ref=e5]
+  - img [ref=e13]
+  - img [ref=e21]
+  - generic [ref=e28]:
+    - img [ref=e30]
+    - heading "PETSY" [level=1] [ref=e37]:
+      - img [ref=e38]
+      - text: PETSY
+    - heading "Welcome back!" [level=2] [ref=e40]
+    - paragraph [ref=e41]:
+      - text: Log in to continue caring
+      - text: for your furry friends ♥
+  - generic [ref=e43]:
+    - img "Happy pet" [ref=e44]
+    - img [ref=e46]
+    - img [ref=e54]
+  - generic [ref=e62]:
+    - generic [ref=e63]:
+      - img [ref=e65]
+      - textbox [ref=e68]:
+        - /placeholder: Email address
+        - text: test@example.com
+    - generic [ref=e69]:
+      - img [ref=e71]
+      - textbox [ref=e74]:
+        - /placeholder: Password
+        - text: password
+      - button [ref=e76]:
+        - img [ref=e77]
+    - generic [ref=e80]:
+      - generic [ref=e81] [cursor=pointer]:
+        - img [ref=e83]
+        - generic [ref=e85]: Remember me
+      - generic [ref=e86] [cursor=pointer]: Forgot password?
+    - button "Log In" [ref=e87]:
+      - generic [ref=e88]: Log In
+      - img [ref=e90]
+    - generic [ref=e98]: or continue with
+    - generic [ref=e100]:
+      - button [ref=e101]:
+        - img [ref=e102]
+      - button [ref=e107]:
+        - img [ref=e108]
+      - button [ref=e110]:
+        - img [ref=e111]
+    - generic [ref=e113]: New here? Create account

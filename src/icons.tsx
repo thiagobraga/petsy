@@ -1,3 +1,5 @@
+/* @refresh skip */
+
 // Petsy — line icons (24x24, stroke 1.8, rounded)
 // All accept `size` and `color` props.
 
@@ -161,11 +163,19 @@ export const I = {
       <circle cx="12" cy="12" r="2.5"/>
     </Icon>
   ),
+  menu: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M3 6h18"/>
+      <path d="M3 12h18"/>
+      <path d="M3 18h18"/>
+    </Icon>
+  ),
 };
 
 export type IconKey = keyof typeof I;
 
 declare global {
+  // @ts-ignore
   interface Window {
     I: typeof I;
     Icon: typeof Icon;

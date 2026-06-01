@@ -1,8 +1,9 @@
 import React from 'react';
 import { useLocation } from 'wouter';
-import { Button, Checkbox, Input, PetsyMark } from '../components';
+import { Button, Checkbox, Input } from '../components';
 import { useAuthStore } from '../stores/auth';
 import dogImage from '../assets/petsy-dog.png';
+import logoImage from '../assets/petsy-logo-transparent.png';
 
 // Login screen — matches the reference image.
 const { TOKENS: T2, I: Ic2 } = window;
@@ -84,19 +85,16 @@ export function LoginScreen() {
 
       {/* logo + headline */}
       <div style={{ padding: '24px 32px 0', textAlign: 'center' }}>
-        <PetsyMark size={48} color={T2.ink2} style={{ marginBottom: 8 }} />
-        <h1
+        <img
+          src={logoImage}
+          alt="Petsy"
           style={{
-            fontSize: 32,
-            marginTop: 0,
-            letterSpacing: 0,
-            fontWeight: 700,
-            color: T2.ink2,
+            height: 80,
+            marginBottom: 12,
+            objectFit: 'contain',
           }}
-        >
-          PETSY
-        </h1>
-        <h2 style={{ fontSize: 20, marginTop: 8, fontWeight: 600, color: T2.ink2 }}>Welcome back!</h2>
+        />
+        <h2 style={{ fontSize: 20, marginTop: 0, fontWeight: 600, color: T2.ink2 }}>Welcome back!</h2>
         <p
           style={{ fontSize: 14, color: T2.ink3, marginTop: 6, lineHeight: 1.4, fontWeight: 500 }}
         >

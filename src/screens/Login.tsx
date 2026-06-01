@@ -84,26 +84,23 @@ export function LoginScreen() {
 
       {/* logo + headline */}
       <div style={{ padding: '24px 32px 0', textAlign: 'center' }}>
-        <div style={{ marginBottom: 16 }}>
-          <PetsyMark size={48} color={T2.pink} />
+        <div style={{ marginBottom: 12 }}>
+          <PetsyMark size={44} color={T2.ink2} />
         </div>
         <h1
           style={{
-            fontSize: 40,
+            fontSize: 32,
             marginTop: 0,
-            letterSpacing: -0.5,
-            fontWeight: 800,
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 8,
+            letterSpacing: 0,
+            fontWeight: 700,
+            color: T2.ink2,
           }}
         >
-          <Ic2.heart size={16} color={T2.pink} />
           PETSY
         </h1>
-        <h2 style={{ fontSize: 28, marginTop: 14, fontWeight: 700 }}>Welcome back!</h2>
+        <h2 style={{ fontSize: 20, marginTop: 8, fontWeight: 600, color: T2.ink2 }}>Welcome back!</h2>
         <p
-          style={{ fontSize: 15, color: T2.ink2, marginTop: 8, lineHeight: 1.45, fontWeight: 500 }}
+          style={{ fontSize: 14, color: T2.ink3, marginTop: 6, lineHeight: 1.4, fontWeight: 500 }}
         >
           Log in to continue caring
           <br />

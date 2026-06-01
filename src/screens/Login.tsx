@@ -84,9 +84,7 @@ export function LoginScreen() {
 
       {/* logo + headline */}
       <div style={{ padding: '24px 32px 0', textAlign: 'center' }}>
-        <div style={{ marginBottom: 12 }}>
-          <PetsyMark size={44} color={T2.ink2} />
-        </div>
+        <PetsyMark size={48} color={T2.ink2} style={{ marginBottom: 8 }} />
         <h1
           style={{
             fontSize: 32,

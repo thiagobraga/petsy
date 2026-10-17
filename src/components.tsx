@@ -213,8 +213,10 @@ export function Input({
           flex: 1,
           border: 0,
           background: 'transparent',
+          fontFamily: T.fontBody,
           fontSize: 15,
           fontWeight: 500,
+          color: T.ink,
           minWidth: 0,
         }}
       />

@@ -4,6 +4,7 @@ import { Button, Checkbox, Input } from '../components';
 import { useAuthStore } from '../stores/auth';
 import dogImage from '../assets/petsy-dog.png';
 import logoImage from '../assets/petsy-logo-transparent.png';
+import iconImage from '../assets/petsy-icon-transparent.png';
 
 // Login screen — matches the reference image.
 const { TOKENS: T2, I: Ic2 } = window;
@@ -62,105 +63,55 @@ export function LoginScreen() {
 
   return (
     <div
-      className="petsy"
+      className="petsy flex h-full w-full flex-col bg-gradient-to-b from-bg to-bg-deep"
       data-screen-label="01 · Login"
-      style={{
-        height: '100%',
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        background: `linear-gradient(180deg, ${T2.bg} 0%, ${T2.bgDeep} 100%)`,
-      }}
     >
       {/* paw print decorations */}
-      <div style={{ position: 'absolute', top: 90, left: 24, opacity: 0.18 }}>
+      <div className="absolute left-6 top-[90px] opacity-[0.18]">
         <PetsyMark size={26} color={T2.pink} />
       </div>
-      <div style={{ position: 'absolute', top: 180, right: 30, opacity: 0.12 }}>
+      <div className="absolute right-[30px] top-[180px] opacity-[0.12]">
         <PetsyMark size={32} color={T2.pink} />
       </div>
-      <div style={{ position: 'absolute', top: 60, right: 70, opacity: 0.18 }}>
+      <div className="absolute right-[70px] top-[60px] opacity-[0.18]">
         <PetsyMark size={18} color={T2.pink} />
       </div>
 
       {/* logo + headline */}
-      <div style={{ padding: '24px 32px 0', textAlign: 'center' }}>
+      <div className="px-8 pt-7 text-center">
         <img
-          src={logoImage}
-          alt="Petsy"
-          style={{
-            height: 80,
-            marginBottom: 12,
-            objectFit: 'contain',
-          }}
+          src={iconImage}
+          alt=""
+          className="mx-auto mb-4 block h-[54px] w-[54px] object-contain"
         />
-        <h2 style={{ fontSize: 20, marginTop: 0, fontWeight: 600, color: T2.ink2 }}>Welcome back!</h2>
-        <p
-          style={{ fontSize: 14, color: T2.ink3, marginTop: 6, lineHeight: 1.4, fontWeight: 500 }}
-        >
+        <img src={logoImage} alt="Petsy" className="mx-auto block h-[34px] object-contain" />
+        <h2 className="mb-[5px] mt-3.5 font-display text-[26px] font-semibold tracking-[-0.2px] text-[#56524e]">
+          Welcome back!
+        </h2>
+        <p className="mt-1 font-body text-[13px] font-medium leading-[1.5] text-ink2">
           Log in to continue caring
           <br />
-          for your furry friends <span style={{ color: T2.pink }}>♥</span>
+          for your furry friends <span className="text-pink">♥</span>
         </p>
       </div>
 
       {/* hero illustration */}
-      <div
-        style={{
-          flex: 1,
-          position: 'relative',
-          display: 'flex',
-          alignItems: 'flex-end',
-          justifyContent: 'center',
-          marginTop: 12,
-          minHeight: 200,
-        }}
-      >
-        <div
-          style={{
-            width: 220,
-            height: 180,
-            borderRadius: '50% 50% 12px 12px',
-            background: `radial-gradient(circle at 50% 30%, ${T2.pinkSoft} 0%, ${T2.pinkPale} 100%)`,
-            display: 'flex',
-            alignItems: 'flex-end',
-            justifyContent: 'center',
-            position: 'relative',
-            overflow: 'hidden',
-          }}
-        >
+      <div className="relative mb-[-20px] mt-3 flex min-h-[200px] flex-1 items-end justify-center">
+        <div className="relative flex h-[180px] w-[220px] items-end justify-center overflow-hidden">
           <img
             src={dogImage}
             alt="Happy pet"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'contain',
-              objectPosition: 'bottom center',
-            }}
+            className="h-full w-full object-contain object-bottom"
           />
-          {/* paw confetti */}
-          <div style={{ position: 'absolute', top: 16, left: -12, opacity: 0.5 }}>
-            <PetsyMark size={20} color={T2.rose} />
-          </div>
-          <div style={{ position: 'absolute', top: 60, right: -16, opacity: 0.5 }}>
-            <PetsyMark size={16} color={T2.rose} />
-          </div>
         </div>
       </div>
 
       {/* form sheet */}
       <form
         onSubmit={handleSubmit}
-        style={{
-          background: T2.surface,
-          borderTopLeftRadius: 36,
-          borderTopRightRadius: 36,
-          padding: '24px 22px 28px',
-          boxShadow: '0 -10px 30px rgba(58,38,32,0.06)',
-        }}
+        className="rounded-t-[36px] bg-surface px-[22px] pb-7 pt-6 shadow-sheet"
       >
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div className="flex flex-col gap-3">
           <Input
             icon={<Ic2.mail />}
             placeholder="Email address"
@@ -174,9 +125,7 @@ export function LoginScreen() {
             style={emailError ? { borderColor: '#D1556E' } : undefined}
           />
           {emailError ? (
-            <div style={{ marginTop: -6, fontSize: 12, color: T2.danger, fontWeight: 600 }}>
-              {emailError}
-            </div>
+            <div className="-mt-1.5 text-xs font-semibold text-danger">{emailError}</div>
           ) : null}
 
           <Input
@@ -194,7 +143,7 @@ export function LoginScreen() {
               <button
                 type="button"
                 onClick={() => setShowPass((s) => !s)}
-                style={{ color: T2.ink3, display: 'flex' }}
+                className="flex text-ink3"
               >
                 {showPass ? <Ic2.eyeOff /> : <Ic2.eye />}
               </button>
@@ -202,28 +151,16 @@ export function LoginScreen() {
             style={passwordError ? { borderColor: '#D1556E' } : undefined}
           />
           {passwordError ? (
-            <div style={{ marginTop: -6, fontSize: 12, color: T2.danger, fontWeight: 600 }}>
-              {passwordError}
-            </div>
+            <div className="-mt-1.5 text-xs font-semibold text-danger">{passwordError}</div>
           ) : null}
 
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginTop: 4,
-              padding: '0 4px',
-            }}
-          >
+          <div className="mt-1 flex items-center justify-between px-1">
             <Checkbox checked={remember} onChange={setRemember} label="Remember me" />
-            <span style={{ fontSize: 13, color: T2.pink, fontWeight: 700, cursor: 'pointer' }}>
-              Forgot password?
-            </span>
+            <span className="cursor-pointer text-[13px] font-bold text-pink">Forgot password?</span>
           </div>
 
           {submitError ? (
-            <div style={{ fontSize: 12, color: T2.danger, fontWeight: 600 }}>{submitError}</div>
+            <div className="text-xs font-semibold text-danger">{submitError}</div>
           ) : null}
 
           <Button
@@ -237,90 +174,23 @@ export function LoginScreen() {
           </Button>
 
           {/* divider */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, margin: '10px 0 2px' }}>
-            <div style={{ flex: 1, height: 1, background: T2.border }} />
-            <span style={{ fontSize: 12, color: T2.ink3, fontWeight: 600 }}>or continue with</span>
-            <div style={{ flex: 1, height: 1, background: T2.border }} />
+          <div className="mb-1 mt-3 flex items-center gap-3">
+            <div className="h-px flex-1 bg-line" />
+            <span className="text-xs font-semibold text-ink3">or</span>
+            <div className="h-px flex-1 bg-line" />
           </div>
 
-          {/* social */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}>
-            <SocialButton kind="google" />
-            <SocialButton kind="apple" />
-            <SocialButton kind="facebook" />
-          </div>
-
-          <div
-            style={{
-              textAlign: 'center',
-              marginTop: 8,
-              fontSize: 13,
-              color: T2.ink2,
-              fontWeight: 500,
-            }}
+          {/* create account */}
+          <button
+            type="button"
+            className="flex h-[54px] w-full cursor-pointer items-center justify-center gap-2 rounded-2xl border-[1.5px] border-line bg-surface text-[15px] font-bold text-ink2"
           >
-            New here?{' '}
-            <span style={{ color: T2.pink, fontWeight: 700, cursor: 'pointer' }}>
-              Create account
-            </span>
-          </div>
+            <Ic2.user size={18} color={T2.pink} />
+            Create account
+          </button>
         </div>
       </form>
     </div>
-  );
-}
-
-function SocialButton({ kind }) {
-  const logo = {
-    google: (
-      <svg width="20" height="20" viewBox="0 0 20 20">
-        <path
-          d="M19.6 10.2c0-.7-.1-1.3-.2-2H10v3.8h5.4c-.2 1.2-.9 2.3-2 3l3.2 2.5c1.9-1.7 3-4.3 3-7.3z"
-          fill="#4285F4"
-        />
-        <path
-          d="M10 20c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 .9-3.4.9-2.6 0-4.8-1.8-5.6-4.1L1.1 14.3C2.7 17.7 6.1 20 10 20z"
-          fill="#34A853"
-        />
-        <path
-          d="M4.4 11.9C4.2 11.3 4.1 10.7 4.1 10s.1-1.3.3-1.9L1.1 5.7C.4 7 0 8.5 0 10s.4 3 1.1 4.3l3.3-2.4z"
-          fill="#FBBC04"
-        />
-        <path
-          d="M10 4c1.5 0 2.8.5 3.8 1.5l2.9-2.9C15 1 12.7 0 10 0 6.1 0 2.7 2.3 1.1 5.7l3.3 2.4C5.2 5.8 7.4 4 10 4z"
-          fill="#EA4335"
-        />
-      </svg>
-    ),
-    apple: (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="#1A1A1A">
-        <path d="M13.8 10.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.9-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2-1.1 2.8-2.3.9-1.3 1.2-2.6 1.2-2.7 0 0-2.4-.9-2.4-3.6zM11.5 3.6c.6-.8 1.1-1.9.9-3-1 0-2.2.6-2.8 1.4-.5.7-1.1 1.8-1 2.9 1.1.1 2.3-.6 2.9-1.3z" />
-      </svg>
-    ),
-    facebook: (
-      <svg width="20" height="20" viewBox="0 0 20 20">
-        <path
-          d="M20 10C20 4.5 15.5 0 10 0S0 4.5 0 10c0 5 3.7 9.1 8.4 9.9V13H5.9v-3h2.5V7.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V10h2.8l-.4 3h-2.3v6.9C16.3 19.1 20 15 20 10z"
-          fill="#1877F2"
-        />
-      </svg>
-    ),
-  }[kind];
-  return (
-    <button
-      type="button"
-      style={{
-        height: 52,
-        borderRadius: 16,
-        background: T2.surface,
-        border: `1.5px solid ${T2.border}`,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      {logo}
-    </button>
   );
 }
 

@@ -65,6 +65,5 @@ export const appointmentsApi = {
   /**
    * Get past appointments for pet
    */
-  getPast: (petId: string) =>
-    apiClient.get<Appointment[]>(`/pets/${petId}/appointments/past`),
+  getPast: (petId: string) => apiClient.get<Appointment[]>(`/pets/${petId}/appointments/past`),
 };

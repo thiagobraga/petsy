@@ -56,9 +56,7 @@ export const diaryApi = {
    * Get diary entries for specific date range
    */
   getByDateRange: (petId: string, startDate: string, endDate: string) =>
-    apiClient.get<DiaryEntry[]>(
-      `/pets/${petId}/diary?startDate=${startDate}&endDate=${endDate}`
-    ),
+    apiClient.get<DiaryEntry[]>(`/pets/${petId}/diary?startDate=${startDate}&endDate=${endDate}`),
 
   /**
    * Add photo to diary entry

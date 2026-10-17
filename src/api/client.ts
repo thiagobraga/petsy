@@ -20,7 +20,10 @@ export class ApiClient {
   baseUrl: string;
   timeout: number;
 
-  constructor(baseUrl: string = process.env.REACT_APP_API_URL || 'http://localhost:3001/api', timeout = 30000) {
+  constructor(
+    baseUrl: string = process.env.REACT_APP_API_URL || 'http://localhost:3001/api',
+    timeout = 30000
+  ) {
     this.baseUrl = baseUrl;
     this.timeout = timeout;
   }
@@ -61,10 +64,7 @@ export class ApiClient {
   /**
    * Make HTTP request with timeout
    */
-  async request<T = any>(
-    endpoint: string,
-    config: ApiRequestConfig = {}
-  ): Promise<ApiResponse<T>> {
+  async request<T = any>(endpoint: string, config: ApiRequestConfig = {}): Promise<ApiResponse<T>> {
     const url = `${this.baseUrl}${endpoint}`;
     const method = config.method || 'GET';
 

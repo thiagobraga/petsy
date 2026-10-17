@@ -5,7 +5,21 @@ import './index.css';
 import { TOKENS } from './tokens';
 import { I } from './icons';
 import { PETS, MEDS, APPOINTMENTS, EXAMS, DIARY, MEDIA, petById } from './data';
-import { Button, Input, Checkbox, Tag, Card, PetAvatar, PetsyMark, PlaceholderImage, IconCircle, SectionHeader, TabBar, StatusBar, MiniCalendar } from './components';
+import {
+  Button,
+  Input,
+  Checkbox,
+  Tag,
+  Card,
+  PetAvatar,
+  PetsyMark,
+  PlaceholderImage,
+  IconCircle,
+  SectionHeader,
+  TabBar,
+  StatusBar,
+  MiniCalendar,
+} from './components';
 import { LoginScreen } from './screens/Login';
 import { DashboardScreen } from './screens/Dashboard';
 import { PetDetailScreen } from './screens/PetDetail';

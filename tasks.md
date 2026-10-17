@@ -152,7 +152,7 @@
 
 ### Phase 15: Dashboard Redesign (T100) — @codex
 
-- [~] [#100. Redesign responsive dashboard with dog profiles and working navigation](#100-redesign-responsive-dashboard-with-dog-profiles-and-working-navigation) @2026-10-17 deps:44,56,57,81 assignee:@codex
+- [x] [#100. Redesign responsive dashboard with dog profiles and working navigation](#100-redesign-responsive-dashboard-with-dog-profiles-and-working-navigation) @2026-10-17 deps:44,56,57,81 assignee:@claude
 
 ## Details
 

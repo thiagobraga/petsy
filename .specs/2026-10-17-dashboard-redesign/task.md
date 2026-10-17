@@ -32,10 +32,10 @@
 
 ## 5. Verificar e fechar
 
-- [ ] Reexecutar primeiro `docker compose exec -T app npm test -- --run tests/Dashboard.test.tsx tests/PetDetail.test.tsx`; então executar suíte completa, `npm run lint`, TypeScript disponível no projeto, `npm run build` e `npm run format:check`.
-- [ ] Abrir `/dashboard` em navegador e inspecionar 390px, 768px e 1440px; exercitar menu e navegação, conferir console, imagens, overflow, texto, foco e intensidade das sombras.
-- [ ] Aplicar uma rodada conjunta de ajustes visuais e reinspecionar os mesmos viewports. Rodar detector Impeccable uma vez nos arquivos alterados.
-- [ ] Marcar tarefas desta spec como `[x]` e atualizar a tarefa #100 em `tasks.md` para concluída somente depois que todas as verificações passarem.
+- [x] Reexecutar primeiro `docker compose exec -T app npm test -- --run tests/Dashboard.test.tsx tests/PetDetail.test.tsx`; então executar suíte completa, `npm run lint`, TypeScript disponível no projeto, `npm run build` e `npm run format:check`.
+- [x] Abrir `/dashboard` em navegador e inspecionar 390px, 768px e 1440px; exercitar menu e navegação, conferir console, imagens, overflow, texto, foco e intensidade das sombras.
+- [x] Aplicar uma rodada conjunta de ajustes visuais e reinspecionar os mesmos viewports. Rodar detector Impeccable uma vez nos arquivos alterados.
+- [x] Marcar tarefas desta spec como `[x]` e atualizar a tarefa #100 em `tasks.md` para concluída somente depois que todas as verificações passarem.
 
 ## Decisões fixas
 

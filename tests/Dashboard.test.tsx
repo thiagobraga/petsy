@@ -1,52 +1,66 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
-import { beforeEach, describe, expect, it } from 'vitest';
-import { MEDS, PETS } from '../src/data';
+import { describe, expect, it } from 'vitest';
 import { DashboardScreen } from '../src/screens/Dashboard';
-import { useAuthStore } from '../src/stores/auth';
-import { usePetStore } from '../src/stores/pet';
 
 describe('DashboardScreen', () => {
-  beforeEach(() => {
-    useAuthStore.setState({ currentUser: null, isLoggedIn: false });
-    usePetStore.setState({ selectedPetId: null });
+  it('renders the greeting and quick actions', () => {
+    render(<DashboardScreen />);
+
+    expect(screen.getByRole('heading', { name: 'Olá!' })).toBeInTheDocument();
+    expect(screen.getByText('Vamos cuidar dos seus pets hoje')).toBeInTheDocument();
+
+    for (const label of ['Novo Pet', 'Medicação', 'Calendário', 'Histórico']) {
+      expect(screen.getByText(label)).toBeInTheDocument();
+    }
   });
 
-  it('stores the selected pet when a pet card is clicked', async () => {
+  it("renders today's medications including the overdue warning", () => {
+    render(<DashboardScreen />);
+
+    expect(screen.getByText('Medicações de Hoje')).toBeInTheDocument();
+    for (const name of ['Carprofeno', 'Antibiótico', 'Ômega 3', 'Colírio']) {
+      expect(screen.getByText(name)).toBeInTheDocument();
+    }
+    expect(screen.getByText('1h em atraso')).toBeInTheDocument();
+  });
+
+  it('renders pets, upcoming events and reminders', () => {
+    render(<DashboardScreen />);
+
+    for (const pet of ['Mel', 'Thor', 'Nina', 'Luna']) {
+      expect(screen.getAllByText(pet).length).toBeGreaterThan(0);
+    }
+    expect(screen.getByText('Aniversário da Nina')).toBeInTheDocument();
+    expect(screen.getByText('Alerta de castração da Luna')).toBeInTheDocument();
+    expect(screen.getByText('1 medicação em atraso')).toBeInTheDocument();
+  });
+
+  it('toggles a medication as taken', async () => {
     const user = userEvent.setup();
-
     render(<DashboardScreen />);
 
-    await user.click(screen.getAllByRole('button', { name: /Biscoito/i })[0]);
+    const toggle = screen.getByRole('button', { name: /marcar ômega 3 como tomada/i });
+    expect(toggle).toHaveAttribute('aria-pressed', 'false');
 
-    expect(usePetStore.getState().selectedPetId).toBe('biscoito');
+    await user.click(toggle);
+    expect(toggle).toHaveAttribute('aria-pressed', 'true');
   });
 
-  it('renders pets and medicines from shared data fixtures', () => {
+  it('opens and closes the sidebar overlay', async () => {
+    const user = userEvent.setup();
     render(<DashboardScreen />);
 
-    for (const pet of PETS) {
-      expect(screen.getAllByText(pet.name).length).toBeGreaterThan(0);
-    }
+    // closed → drawer hidden from the a11y tree
+    expect(screen.queryByRole('dialog')).toBeNull();
 
-    for (const med of MEDS.filter((item) => item.petId === 'luna')) {
-      expect(screen.getByText(med.name)).toBeInTheDocument();
-    }
-  });
+    await user.click(screen.getByRole('button', { name: /abrir menu/i }));
+    expect(screen.getByRole('dialog', { name: /menu/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /configurações/i })).toBeInTheDocument();
 
-  it('binds the greeting card to the current user and selected pet', () => {
-    useAuthStore.setState({
-      currentUser: { id: 'user-1', email: 'maria@example.com', name: 'Maria Souza' },
-      isLoggedIn: true,
-    });
-    usePetStore.setState({ selectedPetId: 'biscoito' });
-
-    render(<DashboardScreen />);
-
-    expect(screen.getByText('Maria Souza')).toBeInTheDocument();
-    expect(screen.getByText('MS')).toBeInTheDocument();
-    expect(screen.getByText('Biscoito · 1 lembretes')).toBeInTheDocument();
-    expect(screen.getByText(/Próximo: Carprofeno para Biscoito/)).toBeInTheDocument();
+    // backdrop + X both expose "Fechar menu"; clicking either closes
+    await user.click(screen.getAllByRole('button', { name: /fechar menu/i })[0]);
+    expect(screen.queryByRole('dialog')).toBeNull();
   });
 });

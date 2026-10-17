@@ -3,6 +3,7 @@
 - [Tasks](#tasks)
 - [Details](#details)
 - [Plan](#plan)
+- [P15. Dashboard Redesign](#p15-dashboard-redesign)
 - [Assignees](#assignees)
 - [Settings](#settings)
 
@@ -148,6 +149,10 @@
 - [x] [#97. Create DEPLOYMENT.md with deployment instructions](#97-create-deploymentmd-with-deployment-instructions) @2026-06-16 deps:96 assignee:@claude
 - [x] [#98. Update README with deployment and status badges](#98-update-readme-with-deployment-and-status-badges) @2026-06-16 deps:97 assignee:@claude
 - [x] [#99. Fix Vite dev server live reloading](#99-fix-vite-dev-server-live-reloading) @2026-05-31 deps:31 assignee:@codex
+
+### Phase 15: Dashboard Redesign (T100) — @codex
+
+- [~] [#100. Redesign responsive dashboard with dog profiles and working navigation](#100-redesign-responsive-dashboard-with-dog-profiles-and-working-navigation) @2026-10-17 deps:44,56,57,81 assignee:@codex
 
 ## Details
 
@@ -739,6 +744,12 @@ Document deployment steps, environment setup, troubleshooting.
 
 Add deployment button links and build/coverage badges to README.
 
+### 100. Redesign responsive dashboard with dog profiles and working navigation
+
+**Plan**: [P15. Dashboard Redesign](#p15-dashboard-redesign)
+
+Refine the dashboard against the supplied concept, make it responsive, show the six named dogs with supplied profile photos, and connect available actions to existing screens.
+
 ## Plan
 
 ### P1. Foundation
@@ -796,6 +807,10 @@ Automate testing and building on every commit.
 ### P14. Deployment
 
 Prepare for cloud deployment and document process.
+
+### P15. Dashboard Redesign
+
+Refine dashboard layout, components, dog profiles, navigation, and medication interactions using TDD and rendered visual review.
 
 ## Assignees
 

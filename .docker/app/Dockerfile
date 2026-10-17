@@ -1,18 +1,31 @@
-FROM node:20-alpine AS base
-
+FROM node:26.10.0-alpine3.24 AS build
 WORKDIR /app
+# Lockfile first so the npm ci layer survives source-only changes.
+COPY --chown=node:node package.json package-lock.json ./
+RUN npm ci
+COPY --chown=node:node . ./
+RUN npm run build && npm cache clean --force
 
-FROM base AS dev
-COPY package*.json ./
-RUN npm install
-COPY . .
+FROM node:26.10.0-alpine3.24 AS development
+WORKDIR /app
+RUN apk upgrade --no-cache && apk add --no-cache git
+COPY --chown=node:node --chmod=755 .docker/app/entrypoint.sh /entrypoint.sh
+COPY --chown=node:node . ./
 EXPOSE 5173
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["npm", "run", "dev"]
 
-FROM base AS prod
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
-EXPOSE 8080
-CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0", "--port", "8080"]
+FROM nginx:1.31-alpine AS production
+# CI passes a fresh value per run so this layer is never served from the
+# buildx cache - otherwise the image keeps whatever Alpine patches existed
+# when the layer was first cached.
+ARG APK_REFRESH
+RUN apk upgrade --no-cache
+COPY --from=build /app/dist /usr/share/nginx/html
+COPY .docker/app/nginx.conf /etc/nginx/conf.d/default.conf
+RUN mkdir -p /var/run/nginx && chown -R nginx:nginx /var/cache/nginx /var/run/nginx /etc/nginx/conf.d
+USER nginx
+EXPOSE 80
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+  CMD wget -qO- http://localhost:80/ || exit 1
+CMD ["nginx", "-g", "daemon off;"]

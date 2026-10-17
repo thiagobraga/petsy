@@ -1,13 +1,34 @@
+name: petsy
+
 services:
   app:
     build:
       context: .
       dockerfile: .docker/app/Dockerfile
-      target: dev
-    ports:
-      - '5173:5173'
+      target: development
+    container_name: ${COMPOSE_PROJECT_NAME:-petsy}-app
+    networks: [default, proxy]
+    volumes: [.:/app]
+    # /app is bind-mounted, so anything the container writes there (Vite's
+    # dep cache, node_modules) lands on the host owned by whoever the container
+    # runs as. Without this the dev server runs as root and leaves files the
+    # host user cannot delete.
+    user: "${DOCKER_USER:-1000:1000}"
     environment:
-      - NODE_ENV=development
-    volumes:
-      - ./src:/app/src
-      - ./index.html:/app/index.html
+      NODE_ENV: development
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:5173/"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+      start_period: 60s
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:-petsy}-app-router.rule=Host(`${APP_SUBDOMAIN:-petsy}.local`)"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:-petsy}-app-router.entrypoints=websecure"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:-petsy}-app-router.tls=true"
+      - "traefik.http.services.${COMPOSE_PROJECT_NAME:-petsy}-app-service.loadbalancer.server.port=5173"
+
+networks:
+  proxy:
+    external: true

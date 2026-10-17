@@ -1,16 +1,107 @@
-.git
-.vscode
-.idea
-.DS_Store
+# Dependencies
+# ------------------------------------------
+.next/
+build/
+dist/
+node_modules/
+out/
+
+# Environment variables
+# ------------------------------------------
 .env
 .env.*
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
-node_modules
-dist
-build
-coverage
+.env.*.local
+
+# Secrets
+secrets/
+deploy/00-upstreams.conf
+deploy/.active-color
+deploy/.active-image
+deploy/.previous-image
+deploy/.deploy.lock
+
+# Backups
+# ------------------------------------------
+*.dump
+*.sql
+!api/src/db/migrations/*.sql
+*.sql.gz
+backups/
+
+# Artifacts
+# ------------------------------------------
+*.gz
+*.tgz
+*.zip
+performance-*.trace*
 .image-slots.state.json
 .design-canvas.state.json
+
+# Database
+# ------------------------------------------
+postgres_data/
+redis_data/
+
+# Logs
+# ------------------------------------------
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Coverage & Test Output
+# ------------------------------------------
+api/coverage/
+api/vitest-coverage/
+app/coverage-e2e/
+app/coverage-reports/
+app/coverage/
+app/e2e/test-results/
+app/test-results/
+app/vitest-coverage/
+coverage/
+html/
+test-results/
+vitest-coverage/
+
+# Cache
+# ------------------------------------------
+.pnpm-store/
+.turbo/
+.eslintcache
+*.tsbuildinfo
+
+# IDE
+# ------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+# ------------------------------------------
+Thumbs.db
+
+# Local worktree dev-stack overrides (ports, alt project)
+# ------------------------------------------
+compose.override.yml
+
+# AI
+# ------------------------------------------
+.agents/
+.antigravitycli/
+.codegraph/
+.codex/
+.impeccable/
+.omx/
+.playwright-mcp/
+.remember/
+.superpowers/
+.vibeyardignore
+app/e2e/playwright-report/
+app/e2e/storageState.json
+app/playwright-report/
+playwright-report/

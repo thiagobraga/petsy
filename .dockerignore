@@ -1,9 +1,28 @@
-.git
-.vscode
-.gitignore
-README.md
-CLAUDE.md
+# Folders
+.git/
+.playwright-mcp/
+.vscode/
+docs/
+node_modules/
+temp/
+uploads/
+
+# Files
 .DS_Store
 .env
 .env.*
-node_modules
+.gitignore
+.pnpmrc
+.prettier*
+AGENTS.md
+CLAUDE.md
+compose.yml
+CONTRIBUTING.md
+DEPLOYMENT.md
+DESIGN.md
+GEMINI.md
+PRODUCT.md
+README.md
+skills-lock.json
+tasks.md
+vercel.json

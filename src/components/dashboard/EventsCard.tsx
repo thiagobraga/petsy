@@ -1,51 +1,69 @@
-// EventsCard — "Próximos Eventos". Items under 3 days get pink urgency emphasis.
+// EventsCard — "Próximos Eventos". Events under 3 days get pink urgency emphasis.
 
 import React from 'react';
 import { Glyph } from './icons';
-import { SectionCard, CardHeader } from './primitives';
-import type { DashEvent } from './data';
+import { FOCUS, PetPortrait, SectionCard, CardHeader } from './primitives';
+import { petById, type DashEvent } from './data';
 
-function EventRow({ ev }: { ev: DashEvent }) {
+function EventRow({ ev, first, onOpen }: { ev: DashEvent; first: boolean; onOpen?: () => void }) {
   const urgent = ev.days < 3;
+  const pet = petById(ev.petId);
   return (
     <li>
       <button
         type="button"
-        className="flex w-full items-center gap-3 rounded-2xl px-1.5 py-2 text-left transition hover:bg-blush-soft/40"
+        onClick={onOpen}
+        className={`group flex w-full items-stretch gap-3 rounded-2xl text-left transition-colors duration-150 hover:bg-petal ${FOCUS}`}
       >
-        <span
-          className={`grid h-9 w-9 shrink-0 place-items-center rounded-full ${
-            urgent ? 'bg-overdue-bg text-overdue' : 'bg-blush-soft text-coral'
-          }`}
-        >
-          <Glyph name={ev.icon} size={17} />
+        <span className="grid w-9 shrink-0 place-items-center">
+          <Glyph name={ev.icon} size={26} stroke={1.7} className="text-coral" />
         </span>
-        <div className="min-w-0 flex-1">
-          <p className="truncate text-[13px] font-bold leading-tight text-charcoal">{ev.title}</p>
-          {ev.date && <p className="mt-0.5 text-[11px] font-semibold text-slate">{ev.date}</p>}
-        </div>
         <span
-          className={`shrink-0 rounded-full px-2 py-1 text-[10px] font-extrabold ${
-            urgent ? 'bg-overdue-bg text-overdue' : 'bg-upcoming-bg text-slate'
-          }`}
+          className={`flex min-w-0 flex-1 items-center gap-3 py-2.5 ${first ? '' : 'border-t border-hairline'}`}
         >
-          {ev.when}
-        </span>
-        <span className="shrink-0 text-mist">
-          <Glyph name="chevronR" size={15} />
+          {pet && <PetPortrait pet={pet} size={38} decorative />}
+          <span className="min-w-0 flex-1">
+            <span className="block truncate text-[15.5px] font-bold leading-tight text-charcoal">
+              {ev.title}
+            </span>
+            {ev.date && <span className="mt-0.5 block text-[13px] text-slate">{ev.date}</span>}
+          </span>
+          <span
+            className={`shrink-0 whitespace-nowrap rounded-lg px-2.5 py-1.5 text-[13.5px] font-semibold ${
+              urgent ? 'bg-overdue-bg text-overdue-ink' : 'bg-upcoming-bg text-upcoming-ink'
+            }`}
+          >
+            {ev.when}
+          </span>
         </span>
       </button>
     </li>
   );
 }
 
-export function EventsCard({ events }: { events: DashEvent[] }) {
+export function EventsCard({
+  events,
+  onOpen,
+  onSeeAll,
+  className,
+}: {
+  events: DashEvent[];
+  onOpen?: (id: string) => void;
+  onSeeAll?: () => void;
+  className?: string;
+}) {
   return (
-    <SectionCard>
-      <CardHeader icon="calendar" title="Próximos Eventos" action="Ver todos" />
-      <ul className="mt-2 flex flex-col gap-0.5">
-        {events.map((ev) => (
-          <EventRow key={ev.id} ev={ev} />
+    <SectionCard titleId="dash-events-title" className={className}>
+      <CardHeader
+        icon="calendar"
+        title="Próximos Eventos"
+        titleId="dash-events-title"
+        action="Ver todos"
+        onAction={onSeeAll}
+      />
+      <ul className="mt-1 pb-1.5">
+        {events.map((ev, i) => (
+          <EventRow key={ev.id} ev={ev} first={i === 0} onOpen={() => onOpen?.(ev.id)} />
         ))}
       </ul>
     </SectionCard>

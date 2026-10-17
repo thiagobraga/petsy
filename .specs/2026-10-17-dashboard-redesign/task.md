@@ -4,7 +4,7 @@
 
 - [x] Criar esta especificação sob `.specs/2026-10-17-dashboard-redesign/`.
 - [x] Registrar tarefa #100 como em andamento em `tasks.md`, preservando IDs e tarefas existentes.
-- [ ] Conferir os arquivos fornecidos pelo usuário em `uploads/pets/`: `meg`, `snoopy`, `lucy`, `kali`, `lila`, `luke` (`jpg`, `png` ou `webp`). Se ainda não existirem, manter os placeholders identificados e completar a integração das imagens assim que forem adicionadas.
+- [x] Conferir os arquivos fornecidos pelo usuário em `uploads/pets/`: `meg`, `snoopy`, `lucy`, `kali`, `lila`, `luke` (`jpg`, `png` ou `webp`). Se ainda não existirem, manter os placeholders identificados e completar a integração das imagens assim que forem adicionadas.
 - [x] Antes de editar componentes, ler o `craft-floor.md` do Impeccable, carregar o contexto Impeccable para o dashboard e usar Impeccable com o plugin Taste Design no modo de produto / operar. Usar a referência como autoridade visual e conservar a personalidade Petsy documentada em `DESIGN.md`.
 
 ## 2. Escrever testes que exponham as lacunas
@@ -17,11 +17,11 @@
 ## 3. Implementar dados e navegação
 
 - [x] Em `src/data.ts` e `src/stores/pet.ts`, acrescentar os seis cães ao catálogo compartilhado com IDs estáveis, sem remover os registros existentes ou alterar notas de pets anteriores. Deixar dados não fornecidos como “Não informado”.
-- [ ] Em `src/components/dashboard/data.ts`, associar pets, eventos e linhas do painel aos mesmos IDs; distinguir conteúdo demonstrativo de dados de saúde reais.
-- [ ] Conectar cards de pets a `/pets/:petId`, medicações a `/medicines`, calendário e eventos a `/appointments`, usando `useLocation` do Wouter ou a abstração já presente.
-- [ ] Desabilitar ações sem rota disponível e mostrar “Em breve”. Remover ação “Ver todos” redundante quando toda a lista já estiver exposta.
-- [ ] Corrigir a precedência do estado de medicação em `MedicationCard.tsx` para que toggles reflitam sempre o estado local e atualizem avisos de atraso.
-- [ ] Integrar fotos fornecidas em `uploads/pets/` ao Vite. Preservar os originais; disponibilizar cópias em `public/images/pets/` se esse for o caminho necessário para servir imagens. Incluir placeholder e texto alternativo pelo nome do pet para cada perfil sem foto.
+- [x] Em `src/components/dashboard/data.ts`, associar pets, eventos e linhas do painel aos mesmos IDs; distinguir conteúdo demonstrativo de dados de saúde reais.
+- [x] Conectar cards de pets a `/pets/:petId`, medicações a `/medicines`, calendário e eventos a `/appointments`, usando `useLocation` do Wouter ou a abstração já presente.
+- [x] Desabilitar ações sem rota disponível e mostrar “Em breve”. Remover ação “Ver todos” redundante quando toda a lista já estiver exposta.
+- [x] Corrigir a precedência do estado de medicação em `MedicationCard.tsx` para que toggles reflitam sempre o estado local e atualizem avisos de atraso.
+- [x] Integrar fotos fornecidas em `uploads/pets/` ao Vite. Preservar os originais; disponibilizar cópias em `public/images/pets/` se esse for o caminho necessário para servir imagens. Incluir placeholder e texto alternativo pelo nome do pet para cada perfil sem foto.
 
 ## 4. Refinar componentes e layouts
 

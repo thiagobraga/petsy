@@ -8,5 +8,6 @@ export { PetTile } from './PetTile';
 export { EventsCard } from './EventsCard';
 export { ReminderCard } from './ReminderCard';
 export { SidebarOverlay } from './SidebarOverlay';
-export { SectionCard, CardHeader, PetThumb } from './primitives';
+export { SectionCard, CardHeader, PetPortrait, photoFor } from './primitives';
+export type { DashReminder } from './ReminderCard';
 export * from './data';

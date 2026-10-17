@@ -11,7 +11,7 @@ interface AuthState {
 export const useAuthStore = create<AuthState>((set) => ({
   currentUser: null,
   isLoggedIn: false,
-  login: (email: string, password: string) => {
+  login: (email: string, _password: string) => {
     // Mock authentication: accept any email/password
     const user = {
       id: `user_${Date.now()}`,

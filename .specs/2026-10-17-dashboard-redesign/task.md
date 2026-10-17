@@ -5,14 +5,14 @@
 - [x] Criar esta especificação sob `.specs/2026-10-17-dashboard-redesign/`.
 - [x] Registrar tarefa #100 como em andamento em `tasks.md`, preservando IDs e tarefas existentes.
 - [ ] Conferir os arquivos fornecidos pelo usuário em `uploads/pets/`: `meg`, `snoopy`, `lucy`, `kali`, `lila`, `luke` (`jpg`, `png` ou `webp`). Se ainda não existirem, manter os placeholders identificados e completar a integração das imagens assim que forem adicionadas.
-- [ ] Antes de editar componentes, ler o `craft-floor.md` do Impeccable, carregar o contexto Impeccable para o dashboard e usar Impeccable com o plugin Taste Design no modo de produto / operar. Usar a referência como autoridade visual e conservar a personalidade Petsy documentada em `DESIGN.md`.
+- [x] Antes de editar componentes, ler o `craft-floor.md` do Impeccable, carregar o contexto Impeccable para o dashboard e usar Impeccable com o plugin Taste Design no modo de produto / operar. Usar a referência como autoridade visual e conservar a personalidade Petsy documentada em `DESIGN.md`.
 
 ## 2. Escrever testes que exponham as lacunas
 
-- [ ] Em `tests/Dashboard.test.tsx`, cobrir navegação para perfis existentes, medicações e eventos; ações indisponíveis desabilitadas; seis nomes; retratos com alt text apropriado; estado e aviso de medicação.
-- [ ] Cobrir desmarcação de medicação inicialmente concluída e conclusão de uma dose atrasada; validar `aria-pressed` e texto de atraso.
-- [ ] Em `tests/PetDetail.test.tsx`, cobrir os seis IDs e garantir que selecionar um pet pelo dashboard abre o mesmo perfil, sem transferir notas entre IDs.
-- [ ] Executar os testes direcionados para confirmar que os casos novos falham pelo comportamento esperado.
+- [x] Em `tests/Dashboard.test.tsx`, cobrir navegação para perfis existentes, medicações e eventos; ações indisponíveis desabilitadas; seis nomes; retratos com alt text apropriado; estado e aviso de medicação.
+- [x] Cobrir desmarcação de medicação inicialmente concluída e conclusão de uma dose atrasada; validar `aria-pressed` e texto de atraso.
+- [x] Em `tests/PetDetail.test.tsx`, cobrir os seis IDs e garantir que selecionar um pet pelo dashboard abre o mesmo perfil, sem transferir notas entre IDs.
+- [x] Executar os testes direcionados para confirmar que os casos novos falham pelo comportamento esperado.
 
 ## 3. Implementar dados e navegação
 

@@ -61,32 +61,32 @@ export function MedicationRow({
   return (
     <li className="flex items-stretch">
       {/* 44px hit area around the 22px box */}
-      <div className="flex w-10 shrink-0 items-center sm:w-12">
+      <div className="flex w-9 shrink-0 items-center sm:w-11">
         <button
           type="button"
           onClick={onToggle}
           aria-pressed={done}
           aria-label={`Marcar ${med.name} como tomada`}
-          className={`-ml-[11px] grid h-11 w-11 shrink-0 place-items-center rounded-xl ${FOCUS}`}
+          className={`-ml-3 grid h-11 w-11 shrink-0 place-items-center rounded-xl ${FOCUS}`}
         >
           <span
-            className={`grid h-[22px] w-[22px] place-items-center rounded-[6px] border-2 transition-colors duration-150 ${c.box}`}
+            className={`grid h-5 w-5 place-items-center rounded-[5px] border-2 transition-colors duration-150 ${c.box}`}
           >
-            {done && <Glyph name="check" size={14} stroke={3} />}
+            {done && <Glyph name="check" size={13} stroke={3} />}
           </span>
         </button>
       </div>
 
       <div
-        className={`flex min-w-0 flex-1 items-center gap-2.5 py-3 sm:gap-3.5 ${first ? '' : 'border-t border-hairline'}`}
+        className={`flex min-w-0 flex-1 items-center gap-2.5 py-2.5 sm:gap-3 ${first ? '' : 'border-t border-hairline'}`}
       >
         <span className={`w-[3px] self-stretch rounded-full ${c.bar}`} aria-hidden="true" />
 
         <div className="min-w-0 flex-1">
-          <p className={`truncate text-[15.5px] leading-tight ${c.name}`}>{med.name}</p>
+          <p className={`truncate text-[14.5px] leading-tight ${c.name}`}>{med.name}</p>
           {status === 'overdue' && med.lateBy && (
-            <p className="mt-1 flex items-center gap-1 text-[13px] font-semibold text-overdue-ink">
-              <Glyph name="alert" size={15} stroke={2.2} className="text-overdue" />
+            <p className="mt-0.5 flex items-center gap-1 whitespace-nowrap text-[12px] font-semibold text-overdue-ink">
+              <Glyph name="alert" size={14} stroke={2.2} className="text-overdue" />
               {med.lateBy}
             </p>
           )}
@@ -94,19 +94,19 @@ export function MedicationRow({
 
         {pet && (
           <span className="flex shrink-0 items-center gap-2">
-            <PetPortrait pet={pet} size={30} decorative />
-            <span className="w-14 truncate text-[14.5px] font-semibold text-charcoal @max-[25rem]:sr-only">
+            <PetPortrait pet={pet} size={26} decorative />
+            <span className="w-[3.25rem] truncate text-[13.5px] text-charcoal @max-[22.5rem]:sr-only">
               {pet.name}
             </span>
           </span>
         )}
 
-        <span className={`w-11 shrink-0 text-right text-[14.5px] tabular-nums ${c.time}`}>
+        <span className={`w-10 shrink-0 text-right text-[13.5px] tabular-nums ${c.time}`}>
           {med.time}
         </span>
 
         <span
-          className={`shrink-0 whitespace-nowrap rounded-lg px-2 py-1 text-[12.5px] font-semibold ${c.pill}`}
+          className={`shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 text-[12px] font-semibold ${c.pill}`}
         >
           {med.frequency}
         </span>

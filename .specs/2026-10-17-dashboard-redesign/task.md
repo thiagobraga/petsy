@@ -25,10 +25,10 @@
 
 ## 4. Refinar componentes e layouts
 
-- [ ] Em `src/components/dashboard/Dashboard.tsx`, criar container fluido com largura máxima adequada: coluna no celular e grade em duas colunas no desktop, mantendo a ordem da referência.
-- [ ] Em `primitives.tsx`, `QuickAction.tsx`, `MedicationRow.tsx`, `MedicationCard.tsx`, `PetsCard.tsx`, `PetTile.tsx`, `EventsCard.tsx`, `ReminderCard.tsx` e `SidebarOverlay.tsx`, refinar espaçamento, tipografia, imagens e hierarquia para acompanhar a referência e suportar as ações acordadas.
-- [ ] Reduzir sombras e brilhos em superfícies paradas; usar contraste por cor e espaçamento. Confirmar foco, alvo de toque, contraste e `prefers-reduced-motion`.
-- [ ] Preservar os exports `window.DashboardScreen`, dos componentes já exportados e o contrato de acesso do design canvas.
+- [x] Em `src/components/dashboard/Dashboard.tsx`, criar container fluido com largura máxima adequada: coluna no celular e grade em duas colunas no desktop, mantendo a ordem da referência.
+- [x] Em `primitives.tsx`, `QuickAction.tsx`, `MedicationRow.tsx`, `MedicationCard.tsx`, `PetsCard.tsx`, `PetTile.tsx`, `EventsCard.tsx`, `ReminderCard.tsx` e `SidebarOverlay.tsx`, refinar espaçamento, tipografia, imagens e hierarquia para acompanhar a referência e suportar as ações acordadas.
+- [x] Reduzir sombras e brilhos em superfícies paradas; usar contraste por cor e espaçamento. Confirmar foco, alvo de toque, contraste e `prefers-reduced-motion`.
+- [x] Preservar os exports `window.DashboardScreen`, dos componentes já exportados e o contrato de acesso do design canvas.
 
 ## 5. Verificar e fechar
 

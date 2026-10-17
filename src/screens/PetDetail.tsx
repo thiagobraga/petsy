@@ -3,6 +3,7 @@ import { IconCircle, PetAvatar, PetsyMark, Tag } from '../components.tsx';
 import { APPOINTMENTS, EXAMS, MEDS, NOT_INFORMED, PETS, petById } from '../data';
 import { I as Ic4 } from '../icons';
 import { usePetStore } from '../stores/pet';
+import { photoFor } from '../components/dashboard/primitives';
 import { TOKENS as T4 } from '../tokens';
 
 interface PetDetailScreenProps {
@@ -17,6 +18,7 @@ export function PetDetailScreen({ petId }: PetDetailScreenProps) {
   const resolvedPetId = petId || selectedPetId || 'meg';
   const pet = petById(resolvedPetId) || PETS[0];
   const note = petNotes[pet.id] || '';
+  const photo = photoFor(pet.id);
   const [section, setSection] = React.useState('about');
 
   return (
@@ -81,12 +83,22 @@ export function PetDetailScreen({ petId }: PetDetailScreenProps) {
                 boxShadow: T4.shadow,
               }}
             >
-              <PetAvatar
-                name={pet.name}
-                tone={pet.tone as 'pink' | 'cream' | 'cocoa' | 'sage' | 'rose'}
-                size={132}
-                slot={pet.photo}
-              />
+              {photo ? (
+                <img
+                  src={photo}
+                  alt={pet.name}
+                  width={132}
+                  height={132}
+                  style={{ width: 132, height: 132, borderRadius: '50%', objectFit: 'cover' }}
+                />
+              ) : (
+                <PetAvatar
+                  name={pet.name}
+                  tone={pet.tone as 'pink' | 'cream' | 'cocoa' | 'sage' | 'rose'}
+                  size={132}
+                  slot={pet.photo}
+                />
+              )}
             </div>
             <h1 style={{ fontSize: 32, marginTop: 14, fontWeight: 700 }}>{pet.name}</h1>
             <div style={{ fontSize: 13, color: T4.ink2, fontWeight: 600, marginTop: 2 }}>

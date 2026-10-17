@@ -101,6 +101,16 @@ export function Dashboard() {
     navigate(`/pets/${id}`);
   };
 
+  // The page scrolls on the document, so overscroll shows the body: match it.
+  React.useLayoutEffect(() => {
+    const { body, documentElement: html } = document;
+    const prev = [body.style.background, html.style.background];
+    body.style.background = html.style.background = 'var(--color-canvas)';
+    return () => {
+      [body.style.background, html.style.background] = prev;
+    };
+  }, []);
+
   const closeMenu = React.useCallback(() => setMenuOpen(false), []);
 
   const onMenu = (item: MenuItem) => {
@@ -125,13 +135,13 @@ export function Dashboard() {
     >
       <DecorativeBackground />
 
-      <div className="relative mx-auto w-full max-w-[34rem] px-[clamp(1rem,5.6vw,2rem)] pb-12 pt-[clamp(2.5rem,11vw,3.5rem)] md:max-w-[46rem] lg:max-w-[76rem] lg:px-10 lg:pt-14">
+      <div className="relative mx-auto w-full max-w-[34rem] px-[clamp(1rem,6.4vw,2rem)] pb-12 pt-[clamp(2.5rem,11vw,3.5rem)] md:max-w-[46rem] lg:max-w-[76rem] lg:px-10 lg:pt-14">
         <header className="flex items-start justify-between gap-4">
           <div className="min-w-0 pt-1">
-            <h1 className="text-[clamp(2.375rem,10.4vw,2.875rem)] font-black leading-none tracking-[-0.025em] text-charcoal">
+            <h1 className="text-[clamp(2.125rem,8.8vw,2.625rem)] font-extrabold leading-none tracking-[-0.025em] text-charcoal">
               Olá!
             </h1>
-            <p className="mt-2 text-[clamp(1rem,4.3vw,1.1875rem)] text-slate">
+            <p className="mt-1.5 text-[clamp(0.9375rem,3.7vw,1.0625rem)] text-slate">
               Vamos cuidar dos seus pets hoje
             </p>
           </div>
@@ -141,15 +151,15 @@ export function Dashboard() {
             aria-label="Abrir menu"
             aria-haspopup="dialog"
             aria-expanded={menuOpen}
-            className={`-mt-4 grid h-[52px] w-[52px] shrink-0 place-items-center rounded-[16px] border border-hairline bg-surface shadow-tile transition duration-150 hover:border-blush active:scale-95 motion-reduce:transform-none ${FOCUS}`}
+            className={`-mt-3 grid h-12 w-12 shrink-0 place-items-center rounded-[14px] border border-hairline bg-surface shadow-tile transition duration-150 hover:border-blush active:scale-95 motion-reduce:transform-none ${FOCUS}`}
           >
-            <img src={iconImage} alt="" className="w-[34px] object-contain" />
+            <img src={iconImage} alt="" className="w-8 object-contain" />
           </button>
         </header>
 
         <nav
           aria-label="Ações rápidas"
-          className="mt-6 grid grid-cols-4 gap-[clamp(0.5rem,2.3vw,0.75rem)] lg:mt-8 lg:max-w-[38rem]"
+          className="mt-5 grid grid-cols-4 gap-[clamp(0.5rem,2.3vw,0.75rem)] lg:mt-8 lg:max-w-[38rem]"
         >
           {QUICK_ACTIONS.map((q) => (
             <QuickAction
@@ -161,7 +171,7 @@ export function Dashboard() {
           ))}
         </nav>
 
-        <main className="mt-5 grid gap-5 lg:mt-6 lg:grid-cols-[minmax(0,1.06fr)_minmax(0,1fr)] lg:gap-6">
+        <main className="mt-4 grid grid-cols-[minmax(0,1fr)] gap-4 lg:mt-6 lg:grid-cols-[minmax(0,1.06fr)_minmax(0,1fr)] lg:gap-6">
           <MedicationCard
             meds={MEDS}
             doneIds={doneIds}

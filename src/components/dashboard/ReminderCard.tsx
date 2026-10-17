@@ -33,17 +33,17 @@ export function ReminderCard({
               className={`group flex w-full items-stretch gap-3 rounded-2xl text-left transition-colors duration-150 hover:bg-petal ${FOCUS}`}
             >
               <span className="grid w-9 shrink-0 place-items-center">
-                <Glyph name={r.icon} size={26} stroke={1.7} className="text-coral" />
+                <Glyph name={r.icon} size={24} stroke={1.7} className="text-coral" />
               </span>
               <span
-                className={`flex min-h-[52px] min-w-0 flex-1 items-center gap-3 py-2.5 ${i === 0 ? '' : 'border-t border-hairline'}`}
+                className={`flex min-h-12 min-w-0 flex-1 items-center gap-3 py-2 ${i === 0 ? '' : 'border-t border-hairline'}`}
               >
-                <span className="min-w-0 flex-1 text-[15px] leading-snug text-charcoal">
+                <span className="min-w-0 flex-1 text-[14px] leading-snug text-charcoal">
                   {r.text}
                 </span>
                 <Glyph
                   name="chevronR"
-                  size={18}
+                  size={16}
                   stroke={2.2}
                   className="shrink-0 text-coral transition-transform duration-150 group-hover:translate-x-0.5 motion-reduce:transform-none"
                 />

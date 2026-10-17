@@ -32,9 +32,13 @@ export function SidebarOverlay({
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
+    const html = document.documentElement;
+    const prevOverflow = html.style.overflow;
+    html.style.overflow = 'hidden'; // keep the page still behind the drawer
     document.addEventListener('keydown', onKey);
     closeRef.current?.focus();
     return () => {
+      html.style.overflow = prevOverflow;
       document.removeEventListener('keydown', onKey);
       previous?.focus?.();
     };

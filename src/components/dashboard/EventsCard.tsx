@@ -16,20 +16,20 @@ function EventRow({ ev, first, onOpen }: { ev: DashEvent; first: boolean; onOpen
         className={`group flex w-full items-stretch gap-3 rounded-2xl text-left transition-colors duration-150 hover:bg-petal ${FOCUS}`}
       >
         <span className="grid w-9 shrink-0 place-items-center">
-          <Glyph name={ev.icon} size={26} stroke={1.7} className="text-coral" />
+          <Glyph name={ev.icon} size={24} stroke={1.7} className="text-coral" />
         </span>
         <span
-          className={`flex min-w-0 flex-1 items-center gap-3 py-2.5 ${first ? '' : 'border-t border-hairline'}`}
+          className={`flex min-w-0 flex-1 items-center gap-3 py-2 ${first ? '' : 'border-t border-hairline'}`}
         >
-          {pet && <PetPortrait pet={pet} size={38} decorative />}
+          {pet && <PetPortrait pet={pet} size={32} decorative />}
           <span className="min-w-0 flex-1">
-            <span className="block truncate text-[15.5px] font-bold leading-tight text-charcoal">
+            <span className="block line-clamp-2 text-[14px] font-bold leading-tight text-charcoal">
               {ev.title}
             </span>
-            {ev.date && <span className="mt-0.5 block text-[13px] text-slate">{ev.date}</span>}
+            {ev.date && <span className="mt-0.5 block text-[12px] text-slate">{ev.date}</span>}
           </span>
           <span
-            className={`shrink-0 whitespace-nowrap rounded-lg px-2.5 py-1.5 text-[13.5px] font-semibold ${
+            className={`shrink-0 whitespace-nowrap rounded-md px-2 py-1 text-[12.5px] font-semibold ${
               urgent ? 'bg-overdue-bg text-overdue-ink' : 'bg-upcoming-bg text-upcoming-ink'
             }`}
           >

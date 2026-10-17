@@ -22,9 +22,9 @@ export function PetsCard({
       className={`@container pb-4! ${className ?? ''}`}
     >
       <CardHeader icon="paw" title="Meus Pets" titleId="dash-pets-title" />
-      <ul className="mt-2 grid grid-cols-1 gap-2.5 @[20rem]:grid-cols-2 @[40rem]:grid-cols-3">
+      <ul className="mt-2 grid grid-cols-1 gap-2.5 @[18rem]:grid-cols-2 @[40rem]:grid-cols-3">
         {pets.map((pet) => (
-          <li key={pet.id} className="grid">
+          <li key={pet.id} className="@container flex min-w-0">
             <PetTile pet={pet} onClick={() => onSelect?.(pet.id)} />
           </li>
         ))}

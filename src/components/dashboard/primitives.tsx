@@ -45,7 +45,7 @@ export function SectionCard({
     <section
       id={id}
       aria-labelledby={titleId}
-      className={`scroll-mt-6 rounded-[22px] border border-hairline bg-surface px-4 pb-2 pt-4 shadow-card sm:px-5 ${className}`}
+      className={`scroll-mt-6 rounded-[18px] border border-hairline bg-surface px-4 pb-1.5 pt-3 shadow-card sm:px-5 ${className}`}
     >
       {children}
     </section>
@@ -70,13 +70,13 @@ export function CardHeader({
 }) {
   return (
     <div
-      className={`flex min-h-11 items-center justify-between gap-3 ${divider ? 'border-b border-hairline pb-3' : ''}`}
+      className={`flex min-h-11 items-center justify-between gap-3 ${divider ? 'border-b border-hairline pb-2' : ''}`}
     >
       <div className="flex min-w-0 items-center gap-3">
-        <Glyph name={icon} size={24} className="shrink-0 text-coral" />
+        <Glyph name={icon} size={22} className="shrink-0 text-coral" />
         <h2
           id={titleId}
-          className="truncate text-[18px] font-extrabold tracking-[-0.01em] text-charcoal"
+          className="truncate text-[16.5px] font-extrabold tracking-[-0.01em] text-charcoal"
         >
           {title}
         </h2>
@@ -85,7 +85,7 @@ export function CardHeader({
         <button
           type="button"
           onClick={onAction}
-          className={`-mr-2 flex min-h-11 shrink-0 items-center gap-1 rounded-full px-2 text-[15px] font-semibold text-coral-ink transition-colors duration-150 hover:bg-blush-soft ${FOCUS}`}
+          className={`-mr-2 flex min-h-11 shrink-0 items-center gap-0.5 rounded-full px-2 text-[14px] font-semibold text-coral-ink transition-colors duration-150 hover:bg-blush-soft ${FOCUS}`}
         >
           {action}
           <Glyph name="chevronR" size={16} />
@@ -106,26 +106,31 @@ export function PetPortrait({
   className = '',
 }: {
   pet: Pick<DashPet, 'id' | 'name' | 'tone'>;
-  size: number;
+  /** Pixel size; omit it to size via a `[--pp:..]` class instead. */
+  size?: number;
   shape?: 'circle' | 'rounded';
   decorative?: boolean;
   className?: string;
 }) {
   const src = photoFor(pet.id);
-  const radius = shape === 'circle' ? '9999px' : `${Math.round(size * 0.24)}px`;
-  const box: React.CSSProperties = { width: size, height: size, borderRadius: radius };
+  // Size travels as a CSS variable so containers can shrink it (e.g. `[--pp:40px]`).
+  const vars = {
+    ...(size ? { '--pp': `${size}px` } : null),
+    background: pet.tone.bg,
+  } as React.CSSProperties;
+  const box = `size-(--pp) shrink-0 ${shape === 'circle' ? 'rounded-full' : 'rounded-[calc(var(--pp)*0.24)]'}`;
 
   if (src) {
     return (
       <img
         src={src}
         alt={decorative ? '' : pet.name}
-        width={size}
-        height={size}
+        width={size ?? 64}
+        height={size ?? 64}
         loading="lazy"
         decoding="async"
-        className={`shrink-0 object-cover ${className}`}
-        style={{ ...box, background: pet.tone.bg }}
+        className={`${box} object-cover ${className}`}
+        style={vars}
       />
     );
   }
@@ -136,18 +141,14 @@ export function PetPortrait({
       aria-label={decorative ? undefined : `${pet.name} (foto pendente)`}
       aria-hidden={decorative || undefined}
       title={decorative ? undefined : 'Foto pendente'}
-      className={`relative grid shrink-0 place-items-center overflow-hidden select-none ${className}`}
-      style={{ ...box, background: pet.tone.bg, color: pet.tone.fg }}
+      className={`${box} relative grid place-items-center overflow-hidden select-none ${className}`}
+      style={{ ...vars, color: pet.tone.fg }}
     >
       <Glyph
         name="paw"
-        size={Math.round(size * 0.62)}
-        className="absolute -bottom-[12%] -right-[10%] opacity-[0.13]"
+        className="absolute -bottom-[12%] -right-[10%] size-[calc(var(--pp)*0.62)] opacity-[0.13] [&_svg]:size-full"
       />
-      <span
-        className="relative font-extrabold leading-none"
-        style={{ fontSize: Math.round(size * 0.42) }}
-      >
+      <span className="relative text-[calc(var(--pp)*0.42)] font-extrabold leading-none">
         {pet.name.charAt(0)}
       </span>
     </span>

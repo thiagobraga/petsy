@@ -39,23 +39,32 @@
 
   /* ─── Dashboard palette (cool rose) — mirrors uploads/petsy-dashboard.png.
      Additive: does not touch the warm tokens the other screens rely on. */
-  --color-canvas: #faf5f0; /* app background */
-  --color-coral: #ff5a7e; /* primary pink — links, accents, active */
-  --color-coral-deep: #e8476c; /* coral hover */
-  --color-blush: #ffb3c1; /* pastel pink */
-  --color-blush-soft: #ffe3ea; /* pale pink — soft fills, active menu bg */
-  --color-petal: #fff5f7; /* sidebar pale background */
+  --color-canvas: #fef6f2; /* app background */
+  --color-coral: #f24d70; /* primary pink — icons, bars, active (graphics only) */
+  --color-coral-ink: #c42a52; /* pink text: links, warnings (≥4.5:1 on white) */
+  --color-blush: #ffb3c1; /* pastel pink — background marks */
+  --color-blush-soft: #ffe8ed; /* pale pink — soft fills, active menu bg */
+  --color-petal: #fff6f7; /* sidebar pale background */
   --color-charcoal: #2d3436; /* dark text */
-  --color-slate: #6b7280; /* secondary text */
-  --color-mist: #9aa3ad; /* tertiary text / chevrons */
+  --color-slate: #636a75; /* secondary text */
+  --color-mist: #c4c8ce; /* disabled strokes / inactive marks */
+  --color-hairline: #f1e9ea; /* dividers + card borders */
 
-  /* medication status */
-  --color-done: #27ae7a;
-  --color-done-bg: #e7f7ef;
-  --color-due: #e8a13c;
-  --color-due-bg: #fdf1de;
-  --color-upcoming: #9aa3ad;
-  --color-upcoming-bg: #f0f1f3;
-  --color-overdue: #ff4d6d;
-  --color-overdue-bg: #ffe9ee;
+  /* medication status — base for marks/bars, -bg for pills, -ink for pill text */
+  --color-done: #55bf3b;
+  --color-done-bg: #e3f3dc;
+  --color-done-ink: #2e7322;
+  --color-due: #f4b52c;
+  --color-due-bg: #fdf2d3;
+  --color-due-ink: #85590a;
+  --color-upcoming: #d4d4d8;
+  --color-upcoming-bg: #f3f2f4;
+  --color-upcoming-ink: #4b5563;
+  --color-overdue: #f24d70;
+  --color-overdue-bg: #ffe7ec;
+  --color-overdue-ink: #c42a52;
+
+  /* surfaces */
+  --shadow-card: 0 1px 2px rgba(120, 60, 70, 0.04), 0 8px 24px -14px rgba(120, 60, 70, 0.16);
+  --shadow-tile: 0 1px 2px rgba(120, 60, 70, 0.04), 0 4px 14px -10px rgba(120, 60, 70, 0.14);
 }

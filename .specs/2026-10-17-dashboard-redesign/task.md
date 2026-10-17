@@ -16,7 +16,7 @@
 
 ## 3. Implementar dados e navegação
 
-- [ ] Em `src/data.ts` e `src/stores/pet.ts`, acrescentar os seis cães ao catálogo compartilhado com IDs estáveis, sem remover os registros existentes ou alterar notas de pets anteriores. Deixar dados não fornecidos como “Não informado”.
+- [x] Em `src/data.ts` e `src/stores/pet.ts`, acrescentar os seis cães ao catálogo compartilhado com IDs estáveis, sem remover os registros existentes ou alterar notas de pets anteriores. Deixar dados não fornecidos como “Não informado”.
 - [ ] Em `src/components/dashboard/data.ts`, associar pets, eventos e linhas do painel aos mesmos IDs; distinguir conteúdo demonstrativo de dados de saúde reais.
 - [ ] Conectar cards de pets a `/pets/:petId`, medicações a `/medicines`, calendário e eventos a `/appointments`, usando `useLocation` do Wouter ou a abstração já presente.
 - [ ] Desabilitar ações sem rota disponível e mostrar “Em breve”. Remover ação “Ver todos” redundante quando toda a lista já estiver exposta.

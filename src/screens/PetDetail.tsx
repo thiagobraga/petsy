@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconCircle, PetAvatar, PetsyMark, Tag } from '../components.tsx';
-import { APPOINTMENTS, EXAMS, MEDS, PETS, petById } from '../data';
+import { APPOINTMENTS, EXAMS, MEDS, NOT_INFORMED, PETS, petById } from '../data';
 import { I as Ic4 } from '../icons';
 import { usePetStore } from '../stores/pet';
 import { TOKENS as T4 } from '../tokens';
@@ -14,7 +14,7 @@ export function PetDetailScreen({ petId }: PetDetailScreenProps) {
   const selectedPetId = usePetStore((state) => state.selectedPetId);
   const petNotes = usePetStore((state) => state.petNotes);
   const setPetNote = usePetStore((state) => state.setPetNote);
-  const resolvedPetId = petId || selectedPetId || 'luna';
+  const resolvedPetId = petId || selectedPetId || 'meg';
   const pet = petById(resolvedPetId) || PETS[0];
   const note = petNotes[pet.id] || '';
   const [section, setSection] = React.useState('about');
@@ -99,9 +99,11 @@ export function PetDetailScreen({ petId }: PetDetailScreenProps) {
               <Tag tone="beige" size="md">
                 {pet.age}
               </Tag>
-              <Tag tone={pet.castrated.value ? 'ok' : 'warn'} size="md">
-                {pet.castrated.value ? 'Castrado' : 'Não castrado'}
-              </Tag>
+              {pet.castrated.value !== null && (
+                <Tag tone={pet.castrated.value ? 'ok' : 'warn'} size="md">
+                  {pet.castrated.value ? 'Castrado' : 'Não castrado'}
+                </Tag>
+              )}
             </div>
           </div>
         </div>
@@ -232,7 +234,12 @@ export function PetDetailScreen({ petId }: PetDetailScreenProps) {
                 { label: 'Cor', value: pet.color },
                 {
                   label: 'Castrado',
-                  value: pet.castrated.value ? `Sim · ${pet.castrated.date}` : 'Não',
+                  value:
+                    pet.castrated.value === null
+                      ? NOT_INFORMED
+                      : pet.castrated.value
+                        ? `Sim · ${pet.castrated.date}`
+                        : 'Não',
                 },
                 { label: 'Microchip', value: pet.microchip, mono: true },
               ]}

@@ -82,3 +82,19 @@ A mobile-first iOS-style pet care management application built with React. Manag
 ---
 
 _This is a handoff from Claude Design. See design-canvas.jsx for Figma-like editor capabilities._
+
+## Stack
+
+| Resource | Status |
+|----------|--------|
+| [React](https://react.dev) | `^18.3.1` |
+| [TypeScript](https://www.typescriptlang.org) | `^5.3.3` |
+| [Vite](https://vite.dev) | `^8.0.16` |
+| [Vitest](https://vitest.dev) | `^4.1.8` |
+| [Tailwind CSS](https://tailwindcss.com) | `^4.3.0` |
+| [Zustand](https://zustand.docs.pmnd.rs) | `^4.5.0` |
+| [Docker](https://www.docker.com) | Yes |
+| [Docker Compose](https://docs.docker.com/compose/) | Yes |
+| Entrypoint | Yes |
+| Image | `node:20-slim` |
+| AI Agents | `AGENTS`, `CLAUDE`, `GEMINI` |

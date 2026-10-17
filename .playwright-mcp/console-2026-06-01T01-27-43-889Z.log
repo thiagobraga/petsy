@@ -28,3 +28,82 @@
 [  119837ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) @ http://localhost:5173/login:0
 [  128741ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:21548
 [  128868ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) @ http://localhost:5173/login:0
+[  137712ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:21548
+[  137843ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) @ http://localhost:5173/login:0
+[  318491ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:21548
+[  318617ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) @ http://localhost:5173/login:0
+[ 2712013ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:21548
+[ 2712130ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) @ http://localhost:5173/login:0
+[ 2755004ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:21548
+[ 2755131ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) @ http://localhost:5173/login:0
+[ 2768567ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:21548
+[ 2768685ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) @ http://localhost:5173/login:0
+[ 2778391ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:21548
+[ 2778511ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) @ http://localhost:5173/login:0
+[ 2801454ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:21548
+[ 2801588ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) @ http://localhost:5173/login:0
+[ 2811452ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:21548
+[ 2811575ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) @ http://localhost:5173/login:0
+[ 2824145ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:21548
+[ 2824176ms] ReferenceError: logoImage is not defined
+    at LoginScreen (http://localhost:5173/src/screens/Login.tsx?t=1780280087841:110:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:11546:26)
+    at mountIndeterminateComponent (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:14924:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:3697:24)
+    at invokeGuardedCallback (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:3731:39)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:19763:15)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:19135:13)
+[ 2824176ms] ReferenceError: logoImage is not defined
+    at LoginScreen (http://localhost:5173/src/screens/Login.tsx?t=1780280087841:110:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:11546:26)
+    at mountIndeterminateComponent (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:14924:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:3697:24)
+    at invokeGuardedCallback (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:3731:39)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:19763:15)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:19135:13)
+[ 2824164ms] [ERROR] The above error occurred in the <LoginScreen> component:
+
+    at LoginScreen (http://localhost:5173/src/screens/Login.tsx?t=1780280087841:31:27)
+    at Route (http://localhost:5173/node_modules/.vite/deps/wouter.js?v=9c43747e:227:16)
+    at Switch (http://localhost:5173/node_modules/.vite/deps/wouter.js?v=9c43747e:284:17)
+    at App
+    at Router (http://localhost:5173/node_modules/.vite/deps/wouter.js?v=9c43747e:178:17)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:14029
+[ 2824186ms] ReferenceError: logoImage is not defined
+    at LoginScreen (http://localhost:5173/src/screens/Login.tsx?t=1780280087841:110:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:11546:26)
+    at mountIndeterminateComponent (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:14924:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:15912:22)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:19751:22)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:19135:13)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:19114:15)
+    at recoverFromConcurrentError (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:18734:28)
+    at performConcurrentWorkOnRoot (http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:18682:30)
+[ 2830244ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-XPR23Y44.js?v=9f84252d:21548
+[ 2830376ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) @ http://localhost:5173/login:0
+[ 2854411ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5173/@vite/client:559
+[ 2854416ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ http://localhost:5173/:0
+[ 2855421ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:5173/:0
+[ 2856422ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:5173/:0
+[ 2857424ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:5173/:0
+[ 2859061ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/src/tokens.ts:0
+[ 2859061ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/src/icons.tsx:0
+[ 2859061ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/src/data.ts:0
+[ 2859061ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/src/components.tsx:0
+[ 2859061ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/src/screens/Dashboard.tsx:0
+[ 2859061ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/src/screens/PetDetail.tsx:0
+[ 2859061ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/src/screens/Medicines.tsx:0
+[ 2859061ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/src/screens/Appointments.tsx:0
+[ 2859061ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/src/screens/Diary.tsx:0
+[ 2859062ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/src/screens/Media.tsx:0
+[ 2859062ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/src/screens/UIKit.tsx:0
+[ 2859062ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/node_modules/vite/dist/client/env.mjs:0

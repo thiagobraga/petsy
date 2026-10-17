@@ -1,18 +1,21 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   base: '/',
   server: {
+    allowedHosts: true,
+    host: '0.0.0.0',
     port: 5173,
-    host: true,
+    strictPort: true,
     watch: {
-      usePolling: true,
+      usePolling: true, // Garante que o Docker note as mudanças no Linux/Windows
     },
     hmr: {
-      host: 'localhost',
-      port: 5173,
+      // Ajuste para funcionar via Traefik (HTTPS)
+      clientPort: 443,
     },
   },
   build: {
@@ -21,5 +24,10 @@ export default defineConfig({
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+  },
+  optimizeDeps: {
+    rolldownOptions: {
+      external: [],
+    },
   },
 });

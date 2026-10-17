@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Router } from 'wouter';
+import './index.css';
 import { TOKENS } from './tokens';
 import { I } from './icons';
 import { PETS, MEDS, APPOINTMENTS, EXAMS, DIARY, MEDIA, petById } from './data';

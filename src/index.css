@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+
+/* Petsy design tokens → Tailwind v4 theme.
+   Mirrors src/tokens.ts so utilities (bg-pink, text-ink2, font-display, …)
+   stay in sync with the inline-style design system the rest of the app uses. */
+@theme {
+  /* surfaces */
+  --color-bg: #fbf1de;
+  --color-bg-deep: #f4e3c6;
+  --color-surface: #ffffff;
+  --color-surface2: #fff9ee;
+
+  /* brand */
+  --color-pink: #ed8faa;
+  --color-pink-hover: #d97694;
+  --color-pink-soft: #fbd7e0;
+  --color-pink-pale: #fdedf1;
+  --color-rose: #f4a8b8;
+
+  /* ink / text */
+  --color-ink: #3a2620;
+  --color-ink2: #6b4e45;
+  --color-ink3: #a4877a;
+  --color-ink4: #ccb5a6;
+
+  /* utility */
+  --color-ok: #7ca972;
+  --color-warn: #e29a56;
+  --color-danger: #d1556e;
+  --color-line: rgba(61, 38, 32, 0.1);
+  --color-line-soft: rgba(61, 38, 32, 0.06);
+
+  /* type */
+  --font-display: 'Fredoka', 'Quicksand', system-ui, sans-serif;
+  --font-body: 'Nunito', 'DM Sans', system-ui, sans-serif;
+
+  /* sheet shadow */
+  --shadow-sheet: 0 -10px 30px rgba(58, 38, 32, 0.06);
+
+  /* ─── Dashboard palette (cool rose) — mirrors uploads/petsy-dashboard.png.
+     Additive: does not touch the warm tokens the other screens rely on. */
+  --color-canvas: #faf5f0; /* app background */
+  --color-coral: #ff5a7e; /* primary pink — links, accents, active */
+  --color-coral-deep: #e8476c; /* coral hover */
+  --color-blush: #ffb3c1; /* pastel pink */
+  --color-blush-soft: #ffe3ea; /* pale pink — soft fills, active menu bg */
+  --color-petal: #fff5f7; /* sidebar pale background */
+  --color-charcoal: #2d3436; /* dark text */
+  --color-slate: #6b7280; /* secondary text */
+  --color-mist: #9aa3ad; /* tertiary text / chevrons */
+
+  /* medication status */
+  --color-done: #27ae7a;
+  --color-done-bg: #e7f7ef;
+  --color-due: #e8a13c;
+  --color-due-bg: #fdf1de;
+  --color-upcoming: #9aa3ad;
+  --color-upcoming-bg: #f0f1f3;
+  --color-overdue: #ff4d6d;
+  --color-overdue-bg: #ffe9ee;
+}

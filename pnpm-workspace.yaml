@@ -1,0 +1,4 @@
+# Workspace configuration
+packages:
+  - 'packages/*'
+

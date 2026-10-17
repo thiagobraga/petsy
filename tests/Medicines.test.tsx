@@ -43,7 +43,7 @@ describe('MedicinesScreen', () => {
   it('toggles a dose between Aplicar and Aplicada', async () => {
     const user = userEvent.setup();
 
-    render(<MedicinesScreen petFilter="luna" />);
+    render(<MedicinesScreen petFilter="meg" />);
 
     expect(screen.getByLabelText('A dar: 1')).toBeInTheDocument();
     expect(screen.getByLabelText('Aplicadas: 1')).toBeInTheDocument();

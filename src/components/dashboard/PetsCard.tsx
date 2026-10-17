@@ -1,4 +1,5 @@
-// PetsCard — "Meus Pets" 2-column grid of pet tiles.
+// PetsCard — "Meus Pets" grid of pet tiles. Every pet is listed, so there is no
+// "Ver todos" link.
 
 import React from 'react';
 import { SectionCard, CardHeader } from './primitives';
@@ -8,18 +9,26 @@ import type { DashPet } from './data';
 export function PetsCard({
   pets,
   onSelect,
+  className,
 }: {
   pets: DashPet[];
   onSelect?: (id: string) => void;
+  className?: string;
 }) {
   return (
-    <SectionCard>
-      <CardHeader icon="paw" title="Meus Pets" action="Ver todos" />
-      <div className="mt-3 grid grid-cols-2 gap-2.5">
+    <SectionCard
+      id="meus-pets"
+      titleId="dash-pets-title"
+      className={`@container pb-4! ${className ?? ''}`}
+    >
+      <CardHeader icon="paw" title="Meus Pets" titleId="dash-pets-title" />
+      <ul className="mt-2 grid grid-cols-1 gap-2.5 @[18rem]:grid-cols-2 @[40rem]:grid-cols-3">
         {pets.map((pet) => (
-          <PetTile key={pet.id} pet={pet} onClick={() => onSelect?.(pet.id)} />
+          <li key={pet.id} className="@container flex min-w-0">
+            <PetTile pet={pet} onClick={() => onSelect?.(pet.id)} />
+          </li>
         ))}
-      </div>
+      </ul>
     </SectionCard>
   );
 }

@@ -5,45 +5,49 @@ import React from 'react';
 
 export const TOKENS = {
   // surfaces
-  bg:        '#FBF1DE',  // primary cream
-  bgDeep:    '#F4E3C6',  // section bg / chips
-  surface:   '#FFFFFF',
-  surface2:  '#FFF9EE',
-  scrim:     'rgba(61,33,28,0.4)',
+  bg: '#FBF1DE', // primary cream
+  bgDeep: '#F4E3C6', // section bg / chips
+  surface: '#FFFFFF',
+  surface2: '#FFF9EE',
+  scrim: 'rgba(61,33,28,0.4)',
 
   // brand
-  pink:      '#ED8FAA',  // primary pink — buttons, accents
+  pink: '#ED8FAA', // primary pink — buttons, accents
   pinkHover: '#D97694',
-  pinkSoft:  '#FBD7E0',  // soft pink — bg chips
-  pinkPale:  '#FDEDF1',
-  rose:      '#F4A8B8',
+  pinkSoft: '#FBD7E0', // soft pink — bg chips
+  pinkPale: '#FDEDF1',
+  rose: '#F4A8B8',
 
   // brown / text
-  ink:       '#3A2620',  // headline brown
-  ink2:      '#6B4E45',  // secondary text
-  ink3:      '#A4877A',  // tertiary / muted
-  ink4:      '#CCB5A6',  // disabled
+  ink: '#3A2620', // headline brown
+  ink2: '#6B4E45', // secondary text
+  ink3: '#A4877A', // tertiary / muted
+  ink4: '#CCB5A6', // disabled
 
   // utility
-  ok:        '#7CA972',  // sage green
-  warn:      '#E29A56',  // amber
-  danger:    '#D1556E',
+  ok: '#7CA972', // sage green
+  warn: '#E29A56', // amber
+  danger: '#D1556E',
 
-  border:    'rgba(61,38,32,0.10)',
-  borderSoft:'rgba(61,38,32,0.06)',
+  border: 'rgba(61,38,32,0.10)',
+  borderSoft: 'rgba(61,38,32,0.06)',
 
   // radii — gentle curves (8-12px for interactive, 20px for cards)
-  r1: 4, r2: 8, r3: 12, r4: 20, rPill: 999, // rPill deprecated; use r4 instead
+  r1: 4,
+  r2: 8,
+  r3: 12,
+  r4: 20,
+  rPill: 999, // rPill deprecated; use r4 instead
 
   // shadows
   shadowSm: '0 1px 2px rgba(58,38,32,0.05), 0 2px 6px rgba(58,38,32,0.04)',
-  shadow:   '0 4px 14px rgba(58,38,32,0.07), 0 8px 28px rgba(58,38,32,0.05)',
+  shadow: '0 4px 14px rgba(58,38,32,0.07), 0 8px 28px rgba(58,38,32,0.05)',
   shadowLg: '0 16px 40px rgba(58,38,32,0.12)',
 
   // type
   fontDisplay: '"Fredoka", "Quicksand", system-ui, sans-serif',
-  fontBody:    '"Nunito", "DM Sans", system-ui, sans-serif',
-  fontMono:    '"JetBrains Mono", ui-monospace, monospace',
+  fontBody: '"Nunito", "DM Sans", system-ui, sans-serif',
+  fontMono: '"JetBrains Mono", ui-monospace, monospace',
 };
 
 export type TokenKey = keyof typeof TOKENS;
@@ -55,7 +59,8 @@ export const PetsyFonts = () => {
     const l1 = document.createElement('link');
     l1.id = 'petsy-fonts';
     l1.rel = 'stylesheet';
-    l1.href = 'https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap';
+    l1.href =
+      'https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap';
     document.head.appendChild(l1);
 
     const s = document.createElement('style');

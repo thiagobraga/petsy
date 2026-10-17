@@ -56,8 +56,7 @@ export const mediaApi = {
   /**
    * Get all albums for pet
    */
-  getAlbums: (petId: string) =>
-    apiClient.get<string[]>(`/pets/${petId}/media/albums`),
+  getAlbums: (petId: string) => apiClient.get<string[]>(`/pets/${petId}/media/albums`),
 
   /**
    * Add tags to media item

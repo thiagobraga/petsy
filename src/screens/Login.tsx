@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'wouter';
-import { Button, Checkbox, Input } from '../components';
+import { Button, Checkbox, Input, PetsyMark } from '../components';
 import { useAuthStore } from '../stores/auth';
 import dogImage from '../assets/petsy-dog.png';
 import logoImage from '../assets/petsy-logo-transparent.png';

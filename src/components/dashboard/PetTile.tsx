@@ -1,8 +1,8 @@
-// PetTile — thumbnail + name + type + next event + chevron.
+// PetTile — portrait + name + type + next event + chevron. Opens the profile.
 
 import React from 'react';
 import { Glyph } from './icons';
-import { PetThumb } from './primitives';
+import { FOCUS, PetPortrait } from './primitives';
 import type { DashPet } from './data';
 
 export function PetTile({ pet, onClick }: { pet: DashPet; onClick?: () => void }) {
@@ -10,23 +10,27 @@ export function PetTile({ pet, onClick }: { pet: DashPet; onClick?: () => void }
     <button
       type="button"
       onClick={onClick}
-      aria-label={`${pet.name}, ${pet.type}. ${pet.event}`}
-      className="flex items-center gap-2.5 rounded-2xl bg-canvas/70 p-2.5 text-left ring-1 ring-black/[0.04] transition hover:bg-blush-soft/50 active:scale-[0.98]"
+      className={`group flex w-full min-w-0 items-center gap-2.5 rounded-[14px] border border-hairline bg-surface p-2.5 text-left @max-[10.5rem]:gap-2 @max-[10.5rem]:p-2 shadow-tile transition duration-150 hover:border-blush hover:bg-petal active:scale-[0.99] motion-reduce:transform-none ${FOCUS}`}
     >
-      <PetThumb pet={pet} size={44} />
+      <PetPortrait pet={pet} shape="rounded" className="[--pp:52px] @max-[10.5rem]:[--pp:40px]" />
       <div className="min-w-0 flex-1">
-        <p className="truncate text-[14px] font-extrabold leading-tight text-charcoal">
-          {pet.name}
-        </p>
-        <p className="text-[11px] font-semibold text-slate">{pet.type}</p>
-        <p className="mt-1 flex items-center gap-1 truncate text-[10px] font-bold text-coral">
-          <Glyph name={pet.eventIcon} size={12} />
-          <span className="truncate">{pet.event}</span>
+        <div className="flex items-start justify-between gap-1">
+          <p className="truncate text-[15px] font-extrabold leading-tight text-charcoal">
+            {pet.name}
+          </p>
+          <Glyph
+            name="chevronR"
+            size={16}
+            stroke={2.2}
+            className="mt-px shrink-0 text-coral transition-transform duration-150 group-hover:translate-x-0.5 motion-reduce:transform-none"
+          />
+        </div>
+        <p className="text-[13px] text-slate">{pet.type}</p>
+        <p className="mt-1 flex items-start gap-1 text-[12px] leading-snug text-charcoal/80">
+          <Glyph name={pet.eventIcon} size={14} className="mt-px shrink-0 text-coral" />
+          <span className="line-clamp-2">{pet.event}</span>
         </p>
       </div>
-      <span className="shrink-0 text-mist">
-        <Glyph name="chevronR" size={16} />
-      </span>
     </button>
   );
 }

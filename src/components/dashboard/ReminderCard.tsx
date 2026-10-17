@@ -1,36 +1,55 @@
-// ReminderCard — "Lembretes / Avisos" list with tone-coded icon chips.
+// ReminderCard — "Lembretes / Avisos". Each reminder opens the screen that
+// resolves it; all reminders are listed, so there is no "Ver todos" link.
 
 import React from 'react';
 import { Glyph } from './icons';
-import { SectionCard, CardHeader } from './primitives';
-import type { DashReminder, ReminderTone } from './data';
+import { FOCUS, SectionCard, CardHeader } from './primitives';
 
-const TONE: Record<ReminderTone, string> = {
-  overdue: 'bg-overdue-bg text-overdue',
-  current: 'bg-due-bg text-due',
-  done: 'bg-done-bg text-done',
-};
-
-function ReminderRow({ r }: { r: DashReminder }) {
-  return (
-    <li className="flex items-start gap-3 py-2">
-      <span
-        className={`mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full ${TONE[r.tone]}`}
-      >
-        <Glyph name={r.icon} size={15} stroke={2.2} />
-      </span>
-      <p className="text-[12.5px] font-semibold leading-snug text-charcoal">{r.text}</p>
-    </li>
-  );
+export interface DashReminder {
+  id: string;
+  text: string;
+  icon: string;
+  to: string;
 }
 
-export function ReminderCard({ reminders }: { reminders: DashReminder[] }) {
+export function ReminderCard({
+  reminders,
+  onOpen,
+  className,
+}: {
+  reminders: DashReminder[];
+  onOpen?: (to: string) => void;
+  className?: string;
+}) {
   return (
-    <SectionCard>
-      <CardHeader icon="bell" title="Lembretes / Avisos" />
-      <ul className="mt-1.5 flex flex-col divide-y divide-black/[0.05]">
-        {reminders.map((r) => (
-          <ReminderRow key={r.id} r={r} />
+    <SectionCard titleId="dash-reminders-title" className={className}>
+      <CardHeader icon="bell" title="Lembretes / Avisos" titleId="dash-reminders-title" />
+      <ul className="mt-1 pb-1.5">
+        {reminders.map((r, i) => (
+          <li key={r.id}>
+            <button
+              type="button"
+              onClick={() => onOpen?.(r.to)}
+              className={`group flex w-full items-stretch gap-3 rounded-2xl text-left transition-colors duration-150 hover:bg-petal ${FOCUS}`}
+            >
+              <span className="grid w-9 shrink-0 place-items-center">
+                <Glyph name={r.icon} size={24} stroke={1.7} className="text-coral" />
+              </span>
+              <span
+                className={`flex min-h-12 min-w-0 flex-1 items-center gap-3 py-2 ${i === 0 ? '' : 'border-t border-hairline'}`}
+              >
+                <span className="min-w-0 flex-1 text-[14px] leading-snug text-charcoal">
+                  {r.text}
+                </span>
+                <Glyph
+                  name="chevronR"
+                  size={16}
+                  stroke={2.2}
+                  className="shrink-0 text-coral transition-transform duration-150 group-hover:translate-x-0.5 motion-reduce:transform-none"
+                />
+              </span>
+            </button>
+          </li>
         ))}
       </ul>
     </SectionCard>

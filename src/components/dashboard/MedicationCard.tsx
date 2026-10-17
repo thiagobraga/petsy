@@ -1,28 +1,41 @@
-// MedicationCard — the highlighted "Medicações de Hoje" card.
+// MedicationCard — "Medicações de Hoje". The dashboard owns which doses are
+// taken; each row's status is derived from that, never from the loaded data.
 
 import React from 'react';
 import { SectionCard, CardHeader } from './primitives';
 import { MedicationRow } from './MedicationRow';
-import type { DashMed } from './data';
+import { doseStatus, type DashMed } from './data';
 
 export function MedicationCard({
   meds,
   doneIds,
   onToggle,
+  onSeeAll,
+  className,
 }: {
   meds: DashMed[];
   doneIds: Set<string>;
   onToggle: (id: string) => void;
+  onSeeAll?: () => void;
+  className?: string;
 }) {
   return (
-    <SectionCard highlight>
-      <CardHeader icon="pill" title="Medicações de Hoje" action="Ver todas" />
-      <ul className="mt-3 flex flex-col gap-1.5">
-        {meds.map((med) => (
+    <SectionCard titleId="dash-meds-title" className={`@container ${className ?? ''}`}>
+      <CardHeader
+        icon="capsule"
+        title="Medicações de Hoje"
+        titleId="dash-meds-title"
+        action="Ver todas"
+        onAction={onSeeAll}
+        divider
+      />
+      <ul className="pb-1">
+        {meds.map((med, i) => (
           <MedicationRow
             key={med.id}
             med={med}
-            status={doneIds.has(med.id) ? 'completed' : med.status}
+            first={i === 0}
+            status={doseStatus(med, doneIds.has(med.id))}
             onToggle={() => onToggle(med.id)}
           />
         ))}

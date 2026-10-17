@@ -65,6 +65,5 @@ export const medicinesApi = {
   /**
    * Get today's medicines for pet
    */
-  getTodaysByPetId: (petId: string) =>
-    apiClient.get<Medicine[]>(`/pets/${petId}/medicines/today`),
+  getTodaysByPetId: (petId: string) => apiClient.get<Medicine[]>(`/pets/${petId}/medicines/today`),
 };
